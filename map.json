@@ -1,1 +1,4657 @@
-[]
+[
+  {
+    "name": "ContactsGrid",
+    "fullPath": "C:\\Users\\ddolg\\IdeaProjects\\jllis-mono\\webui\\src\\components\\ContactsGrid.tsx",
+    "path": "components\\ContactsGrid",
+    "imports": [
+      {
+        "input": "import { ErrorBoundary } from 'lib/ErrorBoundary';",
+        "ref": "lib/ErrorBoundary",
+        "file": "lib\\ErrorBoundary",
+        "external": false,
+        "replace": "../lib/ErrorBoundary"
+      },
+      {
+        "input": "import { useFetchActiveLookupData, useGetPOCUsers } from 'redux/hooks';",
+        "ref": "redux/hooks",
+        "file": "redux\\hooks",
+        "external": false,
+        "replace": "../redux/hooks"
+      },
+      {
+        "input": "import { showDefaultNotification } from 'redux/notificationReducer';",
+        "ref": "redux/notificationReducer",
+        "file": "redux\\notificationReducer",
+        "external": false,
+        "replace": "../redux/notificationReducer"
+      },
+      {
+        "input": "import { GeneralFieldPermission, Lookup, LookupKeyValue, PointOfContact, Related, User } from 'types/typesx';",
+        "ref": "types/typesx",
+        "file": "types\\typesx",
+        "external": false,
+        "replace": "../types/typesx"
+      },
+      {
+        "input": "import { ConfirmDialog } from 'components/Generic/dialogs/CommonDialogs';",
+        "ref": "components/Generic/dialogs/CommonDialogs",
+        "file": "components\\Generic\\dialogs\\CommonDialogs",
+        "external": false,
+        "replace": "./Generic/dialogs/CommonDialogs"
+      },
+      {
+        "input": "import AutoCompleteEditor from 'components/Generic/editors/AutoCompleteEditor';",
+        "ref": "components/Generic/editors/AutoCompleteEditor",
+        "file": "components\\Generic\\editors\\AutoCompleteEditor",
+        "external": false,
+        "replace": "./Generic/editors/AutoCompleteEditor"
+      },
+      {
+        "input": "import PhoneEditor, { phoneValueFormatter } from 'modules/MyJLLIS/Sections/Contacts/editors/PhoneEditor';",
+        "ref": "modules/MyJLLIS/Sections/Contacts/editors/PhoneEditor",
+        "file": "modules\\MyJLLIS\\Sections\\Contacts\\editors\\PhoneEditor",
+        "external": false,
+        "replace": "../modules/MyJLLIS/Sections/Contacts/editors/PhoneEditor"
+      }
+    ]
+  },
+  {
+    "name": "EditSectionModal",
+    "fullPath": "C:\\Users\\ddolg\\IdeaProjects\\jllis-mono\\webui\\src\\components\\EditSectionModal.tsx",
+    "path": "components\\EditSectionModal",
+    "imports": [
+      {
+        "input": "import { GridSection } from 'types/typesx';",
+        "ref": "types/typesx",
+        "file": "types\\typesx",
+        "external": false,
+        "replace": "../types/typesx"
+      }
+    ]
+  },
+  {
+    "name": "CalendarDatePickers",
+    "fullPath": "C:\\Users\\ddolg\\IdeaProjects\\jllis-mono\\webui\\src\\components\\Fields\\CalendarDatePickers.tsx",
+    "path": "components\\Fields\\CalendarDatePickers",
+    "imports": [
+      {
+        "input": "import { DateDisplayFormat, DateEditFormat } from 'lib/Date';",
+        "ref": "lib/Date",
+        "file": "lib\\Date",
+        "external": false,
+        "replace": "../../lib/Date"
+      }
+    ]
+  },
+  {
+    "name": "DateLabel",
+    "fullPath": "C:\\Users\\ddolg\\IdeaProjects\\jllis-mono\\webui\\src\\components\\Fields\\DateLabel.tsx",
+    "path": "components\\Fields\\DateLabel",
+    "imports": [
+      {
+        "input": "import { DateDisplayFormat } from 'lib/Date';",
+        "ref": "lib/Date",
+        "file": "lib\\Date",
+        "external": false,
+        "replace": "../../lib/Date"
+      }
+    ]
+  },
+  {
+    "name": "UserSelection",
+    "fullPath": "C:\\Users\\ddolg\\IdeaProjects\\jllis-mono\\webui\\src\\components\\Fields\\dropdowns\\UserSelection.tsx",
+    "path": "components\\Fields\\dropdowns\\UserSelection",
+    "imports": [
+      {
+        "input": "import { User } from 'types/typesx';",
+        "ref": "types/typesx",
+        "file": "types\\typesx",
+        "external": false,
+        "replace": "../../../types/typesx"
+      }
+    ]
+  },
+  {
+    "name": "DataProductCard",
+    "fullPath": "C:\\Users\\ddolg\\IdeaProjects\\jllis-mono\\webui\\src\\components\\Generic\\Cards\\DataProductCard.tsx",
+    "path": "components\\Generic\\Cards\\DataProductCard",
+    "imports": [
+      {
+        "input": "import { FormatDate } from 'lib/Date';",
+        "ref": "lib/Date",
+        "file": "lib\\Date",
+        "external": false,
+        "replace": "../../../lib/Date"
+      },
+      {
+        "input": "import { DataProduct, Related } from 'types/typesx';",
+        "ref": "types/typesx",
+        "file": "types\\typesx",
+        "external": false,
+        "replace": "../../../types/typesx"
+      },
+      {
+        "input": "import { addEllipses } from 'util/stringUtils';",
+        "ref": "util/stringUtils",
+        "file": "util\\stringUtils",
+        "external": false,
+        "replace": "../../../util/stringUtils"
+      }
+    ]
+  },
+  {
+    "name": "FavoriteDataProduct",
+    "fullPath": "C:\\Users\\ddolg\\IdeaProjects\\jllis-mono\\webui\\src\\components\\Generic\\Cards\\FavoriteDataProduct.tsx",
+    "path": "components\\Generic\\Cards\\FavoriteDataProduct",
+    "imports": [
+      {
+        "input": "import { useAddFavoritesMutation, useDeleteFavoritesMutation } from 'redux/endpoints/usersApi';",
+        "ref": "redux/endpoints/usersApi",
+        "file": "redux\\endpoints\\usersApi",
+        "external": false,
+        "replace": "../../../redux/endpoints/usersApi"
+      },
+      {
+        "input": "import { useCurrentUser } from 'redux/hooks';",
+        "ref": "redux/hooks",
+        "file": "redux\\hooks",
+        "external": false,
+        "replace": "../../../redux/hooks"
+      },
+      {
+        "input": "import { defaultCatchHandler } from 'util/apiUtilities';",
+        "ref": "util/apiUtilities",
+        "file": "util\\apiUtilities",
+        "external": false,
+        "replace": "../../../util/apiUtilities"
+      },
+      {
+        "input": "import { isFavorited } from 'modules/MyJLLIS/Options/AdditionalOptions';",
+        "ref": "modules/MyJLLIS/Options/AdditionalOptions",
+        "file": "modules\\MyJLLIS\\Options\\AdditionalOptions",
+        "external": false,
+        "replace": "../../../modules/MyJLLIS/Options/AdditionalOptions"
+      }
+    ]
+  },
+  {
+    "name": "GenericThread",
+    "fullPath": "C:\\Users\\ddolg\\IdeaProjects\\jllis-mono\\webui\\src\\components\\Generic\\GenericThread\\GenericThread.tsx",
+    "path": "components\\Generic\\GenericThread\\GenericThread",
+    "imports": [
+      {
+        "input": "import { ErrorBoundary } from 'lib/ErrorBoundary';",
+        "ref": "lib/ErrorBoundary",
+        "file": "lib\\ErrorBoundary",
+        "external": false,
+        "replace": "../../../lib/ErrorBoundary"
+      },
+      {
+        "input": "import { useCurrentUser } from 'redux/hooks';",
+        "ref": "redux/hooks",
+        "file": "redux\\hooks",
+        "external": false,
+        "replace": "../../../redux/hooks"
+      },
+      {
+        "input": "import { ClassifiedString, CommentFieldPermission, DataProduct, DataproductComment } from 'types/typesx';",
+        "ref": "types/typesx",
+        "file": "types\\typesx",
+        "external": false,
+        "replace": "../../../types/typesx"
+      },
+      {
+        "input": "import { EMPTY_CLASSIFIED_STRING, defaultCatchHandler, isRichTextEditorEmpty } from 'util/apiUtilities';",
+        "ref": "util/apiUtilities",
+        "file": "util\\apiUtilities",
+        "external": false,
+        "replace": "../../../util/apiUtilities"
+      },
+      {
+        "input": "import { PortionMarking } from 'components/Generic/PortionMarking/PortionMarking';",
+        "ref": "components/Generic/PortionMarking/PortionMarking",
+        "file": "components\\Generic\\PortionMarking\\PortionMarking",
+        "external": false,
+        "replace": "../PortionMarking/PortionMarking"
+      }
+    ]
+  },
+  {
+    "name": "ThreadBlock",
+    "fullPath": "C:\\Users\\ddolg\\IdeaProjects\\jllis-mono\\webui\\src\\components\\Generic\\GenericThread\\ThreadBlock.tsx",
+    "path": "components\\Generic\\GenericThread\\ThreadBlock",
+    "imports": [
+      {
+        "input": "import { FormatDate } from 'lib/Date';",
+        "ref": "lib/Date",
+        "file": "lib\\Date",
+        "external": false,
+        "replace": "../../../lib/Date"
+      },
+      {
+        "input": "import { ErrorBoundary } from 'lib/ErrorBoundary';",
+        "ref": "lib/ErrorBoundary",
+        "file": "lib\\ErrorBoundary",
+        "external": false,
+        "replace": "../../../lib/ErrorBoundary"
+      },
+      {
+        "input": "import { useCurrentUser } from 'redux/hooks';",
+        "ref": "redux/hooks",
+        "file": "redux\\hooks",
+        "external": false,
+        "replace": "../../../redux/hooks"
+      },
+      {
+        "input": "import { DataproductComment } from 'types/typesx';",
+        "ref": "types/typesx",
+        "file": "types\\typesx",
+        "external": false,
+        "replace": "../../../types/typesx"
+      },
+      {
+        "input": "import { ReadOnlyTextAreas } from 'components/Fields/TextAreas';",
+        "ref": "components/Fields/TextAreas",
+        "file": "components\\Fields\\TextAreas",
+        "external": false,
+        "replace": "../../Fields/TextAreas"
+      },
+      {
+        "input": "import { PortionMarking } from 'components/Generic/PortionMarking/PortionMarking';",
+        "ref": "components/Generic/PortionMarking/PortionMarking",
+        "file": "components\\Generic\\PortionMarking\\PortionMarking",
+        "external": false,
+        "replace": "../PortionMarking/PortionMarking"
+      }
+    ]
+  },
+  {
+    "name": "AddValueModal",
+    "fullPath": "C:\\Users\\ddolg\\IdeaProjects\\jllis-mono\\webui\\src\\components\\Generic\\PortionMarking\\AddValueModal.tsx",
+    "path": "components\\Generic\\PortionMarking\\AddValueModal",
+    "imports": [
+      {
+        "input": "import { useCreateLookupDataMutation } from 'redux/endpoints/lookupApi';",
+        "ref": "redux/endpoints/lookupApi",
+        "file": "redux\\endpoints\\lookupApi",
+        "external": false,
+        "replace": "../../../redux/endpoints/lookupApi"
+      },
+      {
+        "input": "import { useCurrentUser } from 'redux/hooks';",
+        "ref": "redux/hooks",
+        "file": "redux\\hooks",
+        "external": false,
+        "replace": "../../../redux/hooks"
+      }
+    ]
+  },
+  {
+    "name": "calcClassifictionMarkingString",
+    "fullPath": "C:\\Users\\ddolg\\IdeaProjects\\jllis-mono\\webui\\src\\components\\Generic\\PortionMarking\\calcClassifictionMarkingString.ts",
+    "path": "components\\Generic\\PortionMarking\\calcClassifictionMarkingString",
+    "imports": [
+      {
+        "input": "import { Classification, Lookup, Related } from 'types/typesx';",
+        "ref": "types/typesx",
+        "file": "types\\typesx",
+        "external": false,
+        "replace": "../../../types/typesx"
+      }
+    ]
+  },
+  {
+    "name": "ClassificationTab",
+    "fullPath": "C:\\Users\\ddolg\\IdeaProjects\\jllis-mono\\webui\\src\\components\\Generic\\PortionMarking\\ClassificationTab.tsx",
+    "path": "components\\Generic\\PortionMarking\\ClassificationTab",
+    "imports": [
+      {
+        "input": "import { ErrorBoundary } from 'lib/ErrorBoundary';",
+        "ref": "lib/ErrorBoundary",
+        "file": "lib\\ErrorBoundary",
+        "external": false,
+        "replace": "../../../lib/ErrorBoundary"
+      },
+      {
+        "input": "import { Classification } from 'types/typesx';",
+        "ref": "types/typesx",
+        "file": "types\\typesx",
+        "external": false,
+        "replace": "../../../types/typesx"
+      }
+    ]
+  },
+  {
+    "name": "MarkingTab",
+    "fullPath": "C:\\Users\\ddolg\\IdeaProjects\\jllis-mono\\webui\\src\\components\\Generic\\PortionMarking\\MarkingTab.tsx",
+    "path": "components\\Generic\\PortionMarking\\MarkingTab",
+    "imports": [
+      {
+        "input": "import { ErrorBoundary } from 'lib/ErrorBoundary';",
+        "ref": "lib/ErrorBoundary",
+        "file": "lib\\ErrorBoundary",
+        "external": false,
+        "replace": "../../../lib/ErrorBoundary"
+      },
+      {
+        "input": "import { Classification, Related } from 'types/typesx';",
+        "ref": "types/typesx",
+        "file": "types\\typesx",
+        "external": false,
+        "replace": "../../../types/typesx"
+      }
+    ]
+  },
+  {
+    "name": "PortionMarking",
+    "fullPath": "C:\\Users\\ddolg\\IdeaProjects\\jllis-mono\\webui\\src\\components\\Generic\\PortionMarking\\PortionMarking.tsx",
+    "path": "components\\Generic\\PortionMarking\\PortionMarking",
+    "imports": [
+      {
+        "input": "import { useFetchMarkings } from 'redux/hooks';",
+        "ref": "redux/hooks",
+        "file": "redux\\hooks",
+        "external": false,
+        "replace": "../../../redux/hooks"
+      },
+      {
+        "input": "import { Classification, Related } from 'types/typesx';",
+        "ref": "types/typesx",
+        "file": "types\\typesx",
+        "external": false,
+        "replace": "../../../types/typesx"
+      },
+      {
+        "input": "import { getRuntimeConfig } from 'util/apiUtilities';",
+        "ref": "util/apiUtilities",
+        "file": "util\\apiUtilities",
+        "external": false,
+        "replace": "../../../util/apiUtilities"
+      }
+    ]
+  },
+  {
+    "name": "ReleasableTab",
+    "fullPath": "C:\\Users\\ddolg\\IdeaProjects\\jllis-mono\\webui\\src\\components\\Generic\\PortionMarking\\ReleasableTab.tsx",
+    "path": "components\\Generic\\PortionMarking\\ReleasableTab",
+    "imports": [
+      {
+        "input": "import { ErrorBoundary } from 'lib/ErrorBoundary';",
+        "ref": "lib/ErrorBoundary",
+        "file": "lib\\ErrorBoundary",
+        "external": false,
+        "replace": "../../../lib/ErrorBoundary"
+      },
+      {
+        "input": "import { useFetchActiveLookupData } from 'redux/hooks';",
+        "ref": "redux/hooks",
+        "file": "redux\\hooks",
+        "external": false,
+        "replace": "../../../redux/hooks"
+      },
+      {
+        "input": "import { Classification, Lookup, LookupKeyValue } from 'types/typesx';",
+        "ref": "types/typesx",
+        "file": "types\\typesx",
+        "external": false,
+        "replace": "../../../types/typesx"
+      }
+    ]
+  },
+  {
+    "name": "classificationMarking.spec",
+    "fullPath": "C:\\Users\\ddolg\\IdeaProjects\\jllis-mono\\webui\\src\\components\\Generic\\PortionMarking\\__tests__\\classificationMarking.spec.ts",
+    "path": "components\\Generic\\PortionMarking\\__tests__\\classificationMarking.spec",
+    "imports": [
+      {
+        "input": "import { Classification, Related } from 'types/typesx';",
+        "ref": "types/typesx",
+        "file": "types\\typesx",
+        "external": false,
+        "replace": "../../../../types/typesx"
+      },
+      {
+        "input": "import { mockClassificationLookup } from 'util/__mocks__/mockOther';",
+        "ref": "util/__mocks__/mockOther",
+        "file": "util\\__mocks__\\mockOther",
+        "external": false,
+        "replace": "../../../../util/__mocks__/mockOther"
+      },
+      {
+        "input": "import { setRuntimeConfig } from 'util/apiUtilities';",
+        "ref": "util/apiUtilities",
+        "file": "util\\apiUtilities",
+        "external": false,
+        "replace": "../../../../util/apiUtilities"
+      }
+    ]
+  },
+  {
+    "name": "EnterpriseSearchBox",
+    "fullPath": "C:\\Users\\ddolg\\IdeaProjects\\jllis-mono\\webui\\src\\components\\Generic\\SearchBox\\EnterpriseSearchBox.tsx",
+    "path": "components\\Generic\\SearchBox\\EnterpriseSearchBox",
+    "imports": [
+      {
+        "input": "import { useAppDispatch } from 'redux/hooks';",
+        "ref": "redux/hooks",
+        "file": "redux\\hooks",
+        "external": false,
+        "replace": "../../../redux/hooks"
+      },
+      {
+        "input": "import { getSearchQuerySuggestions, getSearchResults, setRequestQuery, setSuggestionsQuery } from 'redux/searchReducer';",
+        "ref": "redux/searchReducer",
+        "file": "redux\\searchReducer",
+        "external": false,
+        "replace": "../../../redux/searchReducer"
+      },
+      {
+        "input": "import { ReduxState } from 'types/typesx';",
+        "ref": "types/typesx",
+        "file": "types\\typesx",
+        "external": false,
+        "replace": "../../../types/typesx"
+      }
+    ]
+  },
+  {
+    "name": "LocationsGrid",
+    "fullPath": "C:\\Users\\ddolg\\IdeaProjects\\jllis-mono\\webui\\src\\components\\LocationsGrid.tsx",
+    "path": "components\\LocationsGrid",
+    "imports": [
+      {
+        "input": "import { ErrorBoundary } from 'lib/ErrorBoundary';",
+        "ref": "lib/ErrorBoundary",
+        "file": "lib\\ErrorBoundary",
+        "external": false,
+        "replace": "../lib/ErrorBoundary"
+      },
+      {
+        "input": "import { useFetchRelatedData } from 'redux/hooks';",
+        "ref": "redux/hooks",
+        "file": "redux\\hooks",
+        "external": false,
+        "replace": "../redux/hooks"
+      },
+      {
+        "input": "import { showDefaultNotification } from 'redux/notificationReducer';",
+        "ref": "redux/notificationReducer",
+        "file": "redux\\notificationReducer",
+        "external": false,
+        "replace": "../redux/notificationReducer"
+      },
+      {
+        "input": "import { PortionMarking } from 'components/Generic/PortionMarking/PortionMarking';",
+        "ref": "components/Generic/PortionMarking/PortionMarking",
+        "file": "components\\Generic\\PortionMarking\\PortionMarking",
+        "external": false,
+        "replace": "./Generic/PortionMarking/PortionMarking"
+      },
+      {
+        "input": "import { ConfirmDialog } from 'components/Generic/dialogs/CommonDialogs';",
+        "ref": "components/Generic/dialogs/CommonDialogs",
+        "file": "components\\Generic\\dialogs\\CommonDialogs",
+        "external": false,
+        "replace": "./Generic/dialogs/CommonDialogs"
+      },
+      {
+        "input": "import { NumericCellEditor } from 'components/Generic/editors/NumericCellEditor';",
+        "ref": "components/Generic/editors/NumericCellEditor",
+        "file": "components\\Generic\\editors\\NumericCellEditor",
+        "external": false,
+        "replace": "./Generic/editors/NumericCellEditor"
+      }
+    ]
+  },
+  {
+    "name": "DropdownData",
+    "fullPath": "C:\\Users\\ddolg\\IdeaProjects\\jllis-mono\\webui\\src\\components\\Lookups\\DropdownData.tsx",
+    "path": "components\\Lookups\\DropdownData",
+    "imports": [
+      {
+        "input": "import { Lookup, LookupKeyValue, Related } from 'types/typesx';",
+        "ref": "types/typesx",
+        "file": "types\\typesx",
+        "external": false,
+        "replace": "../../types/typesx"
+      }
+    ]
+  },
+  {
+    "name": "LookupDropdown",
+    "fullPath": "C:\\Users\\ddolg\\IdeaProjects\\jllis-mono\\webui\\src\\components\\Lookups\\LookupDropdown.tsx",
+    "path": "components\\Lookups\\LookupDropdown",
+    "imports": [
+      {
+        "input": "import { SingleGroup } from 'lib/Transform';",
+        "ref": "lib/Transform",
+        "file": "lib\\Transform",
+        "external": false,
+        "replace": "../../lib/Transform"
+      },
+      {
+        "input": "import { Lookup, LookupData, LookupKeyValue, Related } from 'types/typesx';",
+        "ref": "types/typesx",
+        "file": "types\\typesx",
+        "external": false,
+        "replace": "../../types/typesx"
+      }
+    ]
+  },
+  {
+    "name": "PairList",
+    "fullPath": "C:\\Users\\ddolg\\IdeaProjects\\jllis-mono\\webui\\src\\components\\Lookups\\PairList.tsx",
+    "path": "components\\Lookups\\PairList",
+    "imports": [
+      {
+        "input": "import { ErrorBoundary } from 'lib/ErrorBoundary';",
+        "ref": "lib/ErrorBoundary",
+        "file": "lib\\ErrorBoundary",
+        "external": false,
+        "replace": "../../lib/ErrorBoundary"
+      },
+      {
+        "input": "import { useFetchLookupData } from 'redux/hooks';",
+        "ref": "redux/hooks",
+        "file": "redux\\hooks",
+        "external": false,
+        "replace": "../../redux/hooks"
+      },
+      {
+        "input": "import { EventType, Lookup, OrganizationMetadata, Related, Task } from 'types/typesx';",
+        "ref": "types/typesx",
+        "file": "types\\typesx",
+        "external": false,
+        "replace": "../../types/typesx"
+      }
+    ]
+  },
+  {
+    "name": "index",
+    "fullPath": "C:\\Users\\ddolg\\IdeaProjects\\jllis-mono\\webui\\src\\components\\RichTextEditor\\index.tsx",
+    "path": "components\\RichTextEditor\\index",
+    "imports": [
+      {
+        "input": "import { isHTML } from 'util/apiUtilities';",
+        "ref": "util/apiUtilities",
+        "file": "util\\apiUtilities",
+        "external": false,
+        "replace": "../../util/apiUtilities"
+      }
+    ]
+  },
+  {
+    "name": "AccountDropdown",
+    "fullPath": "C:\\Users\\ddolg\\IdeaProjects\\jllis-mono\\webui\\src\\components\\Static\\Banner\\AccountDropdown.tsx",
+    "path": "components\\Static\\Banner\\AccountDropdown",
+    "imports": [
+      {
+        "input": "import { useAppDispatch, useCurrentUser } from 'redux/hooks';",
+        "ref": "redux/hooks",
+        "file": "redux\\hooks",
+        "external": false,
+        "replace": "../../../redux/hooks"
+      },
+      {
+        "input": "import { SessionModals, setWhichSessionModal, LogoutState, setLogoutState } from 'redux/sessionReducer';",
+        "ref": "redux/sessionReducer",
+        "file": "redux\\sessionReducer",
+        "external": false,
+        "replace": "../../../redux/sessionReducer"
+      },
+      {
+        "input": "import { ReduxState } from 'types/typesx';",
+        "ref": "types/typesx",
+        "file": "types\\typesx",
+        "external": false,
+        "replace": "../../../types/typesx"
+      }
+    ]
+  },
+  {
+    "name": "ClassificationBanner",
+    "fullPath": "C:\\Users\\ddolg\\IdeaProjects\\jllis-mono\\webui\\src\\components\\Static\\Banner\\ClassificationBanner.tsx",
+    "path": "components\\Static\\Banner\\ClassificationBanner",
+    "imports": [
+      {
+        "input": "import { getRuntimeConfig} from 'util/apiUtilities';",
+        "ref": "util/apiUtilities",
+        "file": "util\\apiUtilities",
+        "external": false,
+        "replace": "../../../util/apiUtilities"
+      }
+    ]
+  },
+  {
+    "name": "SupportBanner",
+    "fullPath": "C:\\Users\\ddolg\\IdeaProjects\\jllis-mono\\webui\\src\\components\\Static\\Banner\\SupportBanner.tsx",
+    "path": "components\\Static\\Banner\\SupportBanner",
+    "imports": [
+      {
+        "input": "import { getRuntimeConfig } from 'util/apiUtilities';",
+        "ref": "util/apiUtilities",
+        "file": "util\\apiUtilities",
+        "external": false,
+        "replace": "../../../util/apiUtilities"
+      }
+    ]
+  },
+  {
+    "name": "UserBanner",
+    "fullPath": "C:\\Users\\ddolg\\IdeaProjects\\jllis-mono\\webui\\src\\components\\Static\\Banner\\UserBanner.tsx",
+    "path": "components\\Static\\Banner\\UserBanner",
+    "imports": [
+      {
+        "input": "import { EnterpriseSearchBox } from 'components/Generic/SearchBox/EnterpriseSearchBox';",
+        "ref": "components/Generic/SearchBox/EnterpriseSearchBox",
+        "file": "components\\Generic\\SearchBox\\EnterpriseSearchBox",
+        "external": false,
+        "replace": "../../Generic/SearchBox/EnterpriseSearchBox"
+      }
+    ]
+  },
+  {
+    "name": "Navigation",
+    "fullPath": "C:\\Users\\ddolg\\IdeaProjects\\jllis-mono\\webui\\src\\components\\Static\\Navigation\\Navigation.tsx",
+    "path": "components\\Static\\Navigation\\Navigation",
+    "imports": [
+      {
+        "input": "import { useCurrentUser } from 'redux/hooks';",
+        "ref": "redux/hooks",
+        "file": "redux\\hooks",
+        "external": false,
+        "replace": "../../../redux/hooks"
+      },
+      {
+        "input": "import Administration from 'modules/Administration/Administration';",
+        "ref": "modules/Administration/Administration",
+        "file": "modules\\Administration\\Administration",
+        "external": false,
+        "replace": "../../../modules/Administration/Administration"
+      },
+      {
+        "input": "import EnterpriseSearch from 'modules/EnterpriseSearch/EnterpriseSearch';",
+        "ref": "modules/EnterpriseSearch/EnterpriseSearch",
+        "file": "modules\\EnterpriseSearch\\EnterpriseSearch",
+        "external": false,
+        "replace": "../../../modules/EnterpriseSearch/EnterpriseSearch"
+      },
+      {
+        "input": "import Home from 'modules/Home/Home';",
+        "ref": "modules/Home/Home",
+        "file": "modules\\Home\\Home",
+        "external": false,
+        "replace": "../../../modules/Home/Home"
+      }
+    ]
+  },
+  {
+    "name": "index",
+    "fullPath": "C:\\Users\\ddolg\\IdeaProjects\\jllis-mono\\webui\\src\\index.tsx",
+    "path": "index",
+    "imports": [
+      {
+        "input": "import { store } from 'redux/store';",
+        "ref": "redux/store",
+        "file": "redux\\store",
+        "external": false,
+        "replace": "./redux/store"
+      },
+      {
+        "input": "import { getRuntimeConfig } from 'util/apiUtilities';",
+        "ref": "util/apiUtilities",
+        "file": "util\\apiUtilities",
+        "external": false,
+        "replace": "./util/apiUtilities"
+      }
+    ]
+  },
+  {
+    "name": "JLLIS",
+    "fullPath": "C:\\Users\\ddolg\\IdeaProjects\\jllis-mono\\webui\\src\\JLLIS.tsx",
+    "path": "JLLIS",
+    "imports": [
+      {
+        "input": "import { resetSearchStore } from 'redux/searchReducer';",
+        "ref": "redux/searchReducer",
+        "file": "redux\\searchReducer",
+        "external": false,
+        "replace": "./redux/searchReducer"
+      },
+      {
+        "input": "import Toaster from 'util/Toaster';",
+        "ref": "util/Toaster",
+        "file": "util\\Toaster",
+        "external": false,
+        "replace": "./util/Toaster"
+      },
+      {
+        "input": "import { Navigation, appPages } from 'components/Static/Navigation/Navigation';",
+        "ref": "components/Static/Navigation/Navigation",
+        "file": "components\\Static\\Navigation\\Navigation",
+        "external": false,
+        "replace": "./components/Static/Navigation/Navigation"
+      },
+      {
+        "input": "import AuthenticationManager from 'modules/Authentication/AuthenticationManager';",
+        "ref": "modules/Authentication/AuthenticationManager",
+        "file": "modules\\Authentication\\AuthenticationManager",
+        "external": false,
+        "replace": "./modules/Authentication/AuthenticationManager"
+      },
+      {
+        "input": "import { DetailSummary } from 'modules/EnterpriseSearch/detail/DetailSummary';",
+        "ref": "modules/EnterpriseSearch/detail/DetailSummary",
+        "file": "modules\\EnterpriseSearch\\detail\\DetailSummary",
+        "external": false,
+        "replace": "./modules/EnterpriseSearch/detail/DetailSummary"
+      },
+      {
+        "input": "import Worksheet from 'modules/Worksheet/Worksheet';",
+        "ref": "modules/Worksheet/Worksheet",
+        "file": "modules\\Worksheet\\Worksheet",
+        "external": false,
+        "replace": "./modules/Worksheet/Worksheet"
+      },
+      {
+        "input": "import { fetchInformation } from 'redux/informationReducer';",
+        "ref": "redux/informationReducer",
+        "file": "redux\\informationReducer",
+        "external": false,
+        "replace": "./redux/informationReducer"
+      },
+      {
+        "input": "import { useAppDispatch } from 'redux/hooks';",
+        "ref": "redux/hooks",
+        "file": "redux\\hooks",
+        "external": false,
+        "replace": "./redux/hooks"
+      },
+      {
+        "input": "import { ReduxState } from 'types/typesx';",
+        "ref": "types/typesx",
+        "file": "types\\typesx",
+        "external": false,
+        "replace": "./types/typesx"
+      }
+    ]
+  },
+  {
+    "name": "AccountManagement",
+    "fullPath": "C:\\Users\\ddolg\\IdeaProjects\\jllis-mono\\webui\\src\\modules\\Administration\\AccountManagement\\AccountManagement.tsx",
+    "path": "modules\\Administration\\AccountManagement\\AccountManagement",
+    "imports": [
+      {
+        "input": "import { useUpdateUserMutation } from 'redux/endpoints/usersApi';",
+        "ref": "redux/endpoints/usersApi",
+        "file": "redux\\endpoints\\usersApi",
+        "external": false,
+        "replace": "../../../redux/endpoints/usersApi"
+      },
+      {
+        "input": "import { useAppSelector, useFetchActiveLookupData, useGetUser } from 'redux/hooks';",
+        "ref": "redux/hooks",
+        "file": "redux\\hooks",
+        "external": false,
+        "replace": "../../../redux/hooks"
+      },
+      {
+        "input": "import { Lookup, LookupKeyValue, Related } from 'types/typesx';",
+        "ref": "types/typesx",
+        "file": "types\\typesx",
+        "external": false,
+        "replace": "../../../types/typesx"
+      },
+      {
+        "input": "import { CustomizableTable } from 'components/Generic/Tables/CustomizableTable';",
+        "ref": "components/Generic/Tables/CustomizableTable",
+        "file": "components\\Generic\\Tables\\CustomizableTable",
+        "external": false,
+        "replace": "../../../components/Generic/Tables/CustomizableTable"
+      },
+      {
+        "input": "import { ConfirmDialog, MessageDialog } from 'components/Generic/dialogs/CommonDialogs';",
+        "ref": "components/Generic/dialogs/CommonDialogs",
+        "file": "components\\Generic\\dialogs\\CommonDialogs",
+        "external": false,
+        "replace": "../../../components/Generic/dialogs/CommonDialogs"
+      },
+      {
+        "input": "import ScrollLock from 'components/ScrollLock';",
+        "ref": "components/ScrollLock",
+        "file": "components\\ScrollLock",
+        "external": false,
+        "replace": "../../../components/ScrollLock"
+      },
+      {
+        "input": "import { UserProfile } from 'modules/User/Profile/UserProfile';",
+        "ref": "modules/User/Profile/UserProfile",
+        "file": "modules\\User\\Profile\\UserProfile",
+        "external": false,
+        "replace": "../../User/Profile/UserProfile"
+      }
+    ]
+  },
+  {
+    "name": "AccountMngSsd",
+    "fullPath": "C:\\Users\\ddolg\\IdeaProjects\\jllis-mono\\webui\\src\\modules\\Administration\\AccountManagement\\AccountMngSsd.ts",
+    "path": "modules\\Administration\\AccountManagement\\AccountMngSsd",
+    "imports": [
+      {
+        "input": "import { buildUrlFromPathAndOptionalQuery, sortModelToQueryArgs } from 'util/apiUtilities';",
+        "ref": "util/apiUtilities",
+        "file": "util\\apiUtilities",
+        "external": false,
+        "replace": "../../../util/apiUtilities"
+      }
+    ]
+  },
+  {
+    "name": "Actions",
+    "fullPath": "C:\\Users\\ddolg\\IdeaProjects\\jllis-mono\\webui\\src\\modules\\Administration\\AccountManagement\\Actions.tsx",
+    "path": "modules\\Administration\\AccountManagement\\Actions",
+    "imports": [
+      {
+        "input": "import { FormatDate } from 'lib/Date';",
+        "ref": "lib/Date",
+        "file": "lib\\Date",
+        "external": false,
+        "replace": "../../../lib/Date"
+      },
+      {
+        "input": "import { DeepCopy } from 'lib/Transform';",
+        "ref": "lib/Transform",
+        "file": "lib\\Transform",
+        "external": false,
+        "replace": "../../../lib/Transform"
+      },
+      {
+        "input": "import { Lookup } from 'types/typesx';",
+        "ref": "types/typesx",
+        "file": "types\\typesx",
+        "external": false,
+        "replace": "../../../types/typesx"
+      }
+    ]
+  },
+  {
+    "name": "getColumns",
+    "fullPath": "C:\\Users\\ddolg\\IdeaProjects\\jllis-mono\\webui\\src\\modules\\Administration\\AccountManagement\\getColumns.tsx",
+    "path": "modules\\Administration\\AccountManagement\\getColumns",
+    "imports": [
+      {
+        "input": "import { FormatDate } from 'lib/Date';",
+        "ref": "lib/Date",
+        "file": "lib\\Date",
+        "external": false,
+        "replace": "../../../lib/Date"
+      },
+      {
+        "input": "import { getCookieValue } from 'redux/persisted/CookieManager';",
+        "ref": "redux/persisted/CookieManager",
+        "file": "redux\\persisted\\CookieManager",
+        "external": false,
+        "replace": "../../../redux/persisted/CookieManager"
+      }
+    ]
+  },
+  {
+    "name": "Statistics",
+    "fullPath": "C:\\Users\\ddolg\\IdeaProjects\\jllis-mono\\webui\\src\\modules\\Administration\\AccountManagement\\Statistics.tsx",
+    "path": "modules\\Administration\\AccountManagement\\Statistics",
+    "imports": [
+      {
+        "input": "import { useGetUserStatsQuery } from 'redux/endpoints/usersApi';",
+        "ref": "redux/endpoints/usersApi",
+        "file": "redux\\endpoints\\usersApi",
+        "external": false,
+        "replace": "../../../redux/endpoints/usersApi"
+      },
+      {
+        "input": "import { useAppSelector, useFetchActiveLookupData } from 'redux/hooks';",
+        "ref": "redux/hooks",
+        "file": "redux\\hooks",
+        "external": false,
+        "replace": "../../../redux/hooks"
+      }
+    ]
+  },
+  {
+    "name": "Administration",
+    "fullPath": "C:\\Users\\ddolg\\IdeaProjects\\jllis-mono\\webui\\src\\modules\\Administration\\Administration.tsx",
+    "path": "modules\\Administration\\Administration",
+    "imports": [
+      {
+        "input": "import { useCurrentUser } from 'redux/hooks';",
+        "ref": "redux/hooks",
+        "file": "redux\\hooks",
+        "external": false,
+        "replace": "../../redux/hooks"
+      },
+      {
+        "input": "import { Tabs } from 'components/Generic/Tabs/Tabs';",
+        "ref": "components/Generic/Tabs/Tabs",
+        "file": "components\\Generic\\Tabs\\Tabs",
+        "external": false,
+        "replace": "../../components/Generic/Tabs/Tabs"
+      }
+    ]
+  },
+  {
+    "name": "AddEditValueModal",
+    "fullPath": "C:\\Users\\ddolg\\IdeaProjects\\jllis-mono\\webui\\src\\modules\\Administration\\LibraryData\\addLibraryValue\\AddEditValueModal.tsx",
+    "path": "modules\\Administration\\LibraryData\\addLibraryValue\\AddEditValueModal",
+    "imports": [
+      {
+        "input": "import { useCreateLookupDataMutation, useUpdateLookupDataMutation } from 'redux/endpoints/lookupApi';",
+        "ref": "redux/endpoints/lookupApi",
+        "file": "redux\\endpoints\\lookupApi",
+        "external": false,
+        "replace": "../../../../redux/endpoints/lookupApi"
+      }
+    ]
+  },
+  {
+    "name": "CardDataTable",
+    "fullPath": "C:\\Users\\ddolg\\IdeaProjects\\jllis-mono\\webui\\src\\modules\\Administration\\LibraryData\\CardDataTable.tsx",
+    "path": "modules\\Administration\\LibraryData\\CardDataTable",
+    "imports": [
+      {
+        "input": "import { useUpdateLookupDataMutation } from 'redux/endpoints/lookupApi';",
+        "ref": "redux/endpoints/lookupApi",
+        "file": "redux\\endpoints\\lookupApi",
+        "external": false,
+        "replace": "../../../redux/endpoints/lookupApi"
+      },
+      {
+        "input": "import { useAppSelector, useFetchAllLookupData } from 'redux/hooks';",
+        "ref": "redux/hooks",
+        "file": "redux\\hooks",
+        "external": false,
+        "replace": "../../../redux/hooks"
+      },
+      {
+        "input": "import { CustomizableTable } from 'components/Generic/Tables/CustomizableTable';",
+        "ref": "components/Generic/Tables/CustomizableTable",
+        "file": "components\\Generic\\Tables\\CustomizableTable",
+        "external": false,
+        "replace": "../../../components/Generic/Tables/CustomizableTable"
+      }
+    ]
+  },
+  {
+    "name": "ColumnDefs",
+    "fullPath": "C:\\Users\\ddolg\\IdeaProjects\\jllis-mono\\webui\\src\\modules\\Administration\\LibraryData\\ColumnDefs.tsx",
+    "path": "modules\\Administration\\LibraryData\\ColumnDefs",
+    "imports": [
+      {
+        "input": "import { FormatDate } from 'lib/Date';",
+        "ref": "lib/Date",
+        "file": "lib\\Date",
+        "external": false,
+        "replace": "../../../lib/Date"
+      },
+      {
+        "input": "import { LookupData } from 'types/typesx';",
+        "ref": "types/typesx",
+        "file": "types\\typesx",
+        "external": false,
+        "replace": "../../../types/typesx"
+      }
+    ]
+  },
+  {
+    "name": "LibraryData",
+    "fullPath": "C:\\Users\\ddolg\\IdeaProjects\\jllis-mono\\webui\\src\\modules\\Administration\\LibraryData\\LibraryData.tsx",
+    "path": "modules\\Administration\\LibraryData\\LibraryData",
+    "imports": [
+      {
+        "input": "import { FormatDate } from 'lib/Date';",
+        "ref": "lib/Date",
+        "file": "lib\\Date",
+        "external": false,
+        "replace": "../../../lib/Date"
+      },
+      {
+        "input": "import { ErrorBoundary } from 'lib/ErrorBoundary';",
+        "ref": "lib/ErrorBoundary",
+        "file": "lib\\ErrorBoundary",
+        "external": false,
+        "replace": "../../../lib/ErrorBoundary"
+      },
+      {
+        "input": "import { useFetchLibraryDataQuery } from 'redux/endpoints/lookupApi';",
+        "ref": "redux/endpoints/lookupApi",
+        "file": "redux\\endpoints\\lookupApi",
+        "external": false,
+        "replace": "../../../redux/endpoints/lookupApi"
+      },
+      {
+        "input": "import { useAppSelector } from 'redux/hooks';",
+        "ref": "redux/hooks",
+        "file": "redux\\hooks",
+        "external": false,
+        "replace": "../../../redux/hooks"
+      },
+      {
+        "input": "import { Cards } from 'components/Generic/Cards/Cards';",
+        "ref": "components/Generic/Cards/Cards",
+        "file": "components\\Generic\\Cards\\Cards",
+        "external": false,
+        "replace": "../../../components/Generic/Cards/Cards"
+      },
+      {
+        "input": "import { Tabs } from 'components/Generic/Tabs/Tabs';",
+        "ref": "components/Generic/Tabs/Tabs",
+        "file": "components\\Generic\\Tabs\\Tabs",
+        "external": false,
+        "replace": "../../../components/Generic/Tabs/Tabs"
+      }
+    ]
+  },
+  {
+    "name": "LibraryOrder",
+    "fullPath": "C:\\Users\\ddolg\\IdeaProjects\\jllis-mono\\webui\\src\\modules\\Administration\\LibraryData\\LibraryOrder.tsx",
+    "path": "modules\\Administration\\LibraryData\\LibraryOrder",
+    "imports": [
+      {
+        "input": "import { SearchDropdown, SingleGroup } from 'lib/Transform';",
+        "ref": "lib/Transform",
+        "file": "lib\\Transform",
+        "external": false,
+        "replace": "../../../lib/Transform"
+      },
+      {
+        "input": "import { useFetchLibraryDataQuery } from 'redux/endpoints/lookupApi';",
+        "ref": "redux/endpoints/lookupApi",
+        "file": "redux\\endpoints\\lookupApi",
+        "external": false,
+        "replace": "../../../redux/endpoints/lookupApi"
+      },
+      {
+        "input": "import { useFetchAllLookupData } from 'redux/hooks';",
+        "ref": "redux/hooks",
+        "file": "redux\\hooks",
+        "external": false,
+        "replace": "../../../redux/hooks"
+      },
+      {
+        "input": "import { GeneralFieldPermission } from 'types/typesx';",
+        "ref": "types/typesx",
+        "file": "types\\typesx",
+        "external": false,
+        "replace": "../../../types/typesx"
+      }
+    ]
+  },
+  {
+    "name": "LibraryOrderTable",
+    "fullPath": "C:\\Users\\ddolg\\IdeaProjects\\jllis-mono\\webui\\src\\modules\\Administration\\LibraryData\\LibraryOrderTable.tsx",
+    "path": "modules\\Administration\\LibraryData\\LibraryOrderTable",
+    "imports": [
+      {
+        "input": "import { useUpdateLookupDataMutation } from 'redux/endpoints/lookupApi';",
+        "ref": "redux/endpoints/lookupApi",
+        "file": "redux\\endpoints\\lookupApi",
+        "external": false,
+        "replace": "../../../redux/endpoints/lookupApi"
+      },
+      {
+        "input": "import { Lookup } from 'types/typesx';",
+        "ref": "types/typesx",
+        "file": "types\\typesx",
+        "external": false,
+        "replace": "../../../types/typesx"
+      },
+      {
+        "input": "import { StyledTable } from 'components/Generic/Tables/CustomizableTable';",
+        "ref": "components/Generic/Tables/CustomizableTable",
+        "file": "components\\Generic\\Tables\\CustomizableTable",
+        "external": false,
+        "replace": "../../../components/Generic/Tables/CustomizableTable"
+      }
+    ]
+  },
+  {
+    "name": "AccessDenied",
+    "fullPath": "C:\\Users\\ddolg\\IdeaProjects\\jllis-mono\\webui\\src\\modules\\Authentication\\AccessDenied.tsx",
+    "path": "modules\\Authentication\\AccessDenied",
+    "imports": [
+      {
+        "input": "import { SessionModals } from 'redux/sessionReducer';",
+        "ref": "redux/sessionReducer",
+        "file": "redux\\sessionReducer",
+        "external": false,
+        "replace": "../../redux/sessionReducer"
+      }
+    ]
+  },
+  {
+    "name": "DODTerms",
+    "fullPath": "C:\\Users\\ddolg\\IdeaProjects\\jllis-mono\\webui\\src\\modules\\Authentication\\DODTerms.tsx",
+    "path": "modules\\Authentication\\DODTerms",
+    "imports": [
+      {
+        "input": "import { SessionModals } from 'redux/sessionReducer';",
+        "ref": "redux/sessionReducer",
+        "file": "redux\\sessionReducer",
+        "external": false,
+        "replace": "../../redux/sessionReducer"
+      }
+    ]
+  },
+  {
+    "name": "Login",
+    "fullPath": "C:\\Users\\ddolg\\IdeaProjects\\jllis-mono\\webui\\src\\modules\\Authentication\\Login.tsx",
+    "path": "modules\\Authentication\\Login",
+    "imports": [
+      {
+        "input": "import { UserSelection } from 'components/Fields/dropdowns/UserSelection';",
+        "ref": "components/Fields/dropdowns/UserSelection",
+        "file": "components\\Fields\\dropdowns\\UserSelection",
+        "external": false,
+        "replace": "../../components/Fields/dropdowns/UserSelection"
+      }
+    ]
+  },
+  {
+    "name": "Logout",
+    "fullPath": "C:\\Users\\ddolg\\IdeaProjects\\jllis-mono\\webui\\src\\modules\\Authentication\\Logout.tsx",
+    "path": "modules\\Authentication\\Logout",
+    "imports": [
+      {
+        "input": "import { useAppDispatch } from 'redux/hooks';",
+        "ref": "redux/hooks",
+        "file": "redux\\hooks",
+        "external": false,
+        "replace": "../../redux/hooks"
+      },
+      {
+        "input": "import { getRuntimeConfig } from 'util/apiUtilities';",
+        "ref": "util/apiUtilities",
+        "file": "util\\apiUtilities",
+        "external": false,
+        "replace": "../../util/apiUtilities"
+      }
+    ]
+  },
+  {
+    "name": "Registration",
+    "fullPath": "C:\\Users\\ddolg\\IdeaProjects\\jllis-mono\\webui\\src\\modules\\Authentication\\Registration.tsx",
+    "path": "modules\\Authentication\\Registration",
+    "imports": [
+      {
+        "input": "import { useRegisterUserMutation } from 'redux/endpoints/usersApi';",
+        "ref": "redux/endpoints/usersApi",
+        "file": "redux\\endpoints\\usersApi",
+        "external": false,
+        "replace": "../../redux/endpoints/usersApi"
+      },
+      {
+        "input": "import { showErrorNotification, showSuccessNotification } from 'redux/notificationReducer';",
+        "ref": "redux/notificationReducer",
+        "file": "redux\\notificationReducer",
+        "external": false,
+        "replace": "../../redux/notificationReducer"
+      },
+      {
+        "input": "import { LogoutState, SessionModals, setLogoutState } from 'redux/sessionReducer';",
+        "ref": "redux/sessionReducer",
+        "file": "redux\\sessionReducer",
+        "external": false,
+        "replace": "../../redux/sessionReducer"
+      },
+      {
+        "input": "import { ReduxState, Related, User } from 'types/typesx';",
+        "ref": "types/typesx",
+        "file": "types\\typesx",
+        "external": false,
+        "replace": "../../types/typesx"
+      },
+      {
+        "input": "import { OrganizationsAndUnitsLookup } from 'components/Lookups/OrganizationsAndUnitsLookup';",
+        "ref": "components/Lookups/OrganizationsAndUnitsLookup",
+        "file": "components\\Lookups\\OrganizationsAndUnitsLookup",
+        "external": false,
+        "replace": "../../components/Lookups/OrganizationsAndUnitsLookup"
+      },
+      {
+        "input": "import { LookupDropdown } from 'components/Lookups/LookupDropdown';",
+        "ref": "components/Lookups/LookupDropdown",
+        "file": "components\\Lookups\\LookupDropdown",
+        "external": false,
+        "replace": "../../components/Lookups/LookupDropdown"
+      },
+      {
+        "input": "import { validateForm } from 'modules/MyJLLIS/Sections/GeneralInformation/Helper';",
+        "ref": "modules/MyJLLIS/Sections/GeneralInformation/Helper",
+        "file": "modules\\MyJLLIS\\Sections\\GeneralInformation\\Helper",
+        "external": false,
+        "replace": "../MyJLLIS/Sections/GeneralInformation/Helper"
+      },
+      {
+        "input": "import { Dsn } from 'components/Fields/Phone';",
+        "ref": "components/Fields/Phone",
+        "file": "components\\Fields\\Phone",
+        "external": false,
+        "replace": "../../components/Fields/Phone"
+      }
+    ]
+  },
+  {
+    "name": "ServiceDeskContactInfo",
+    "fullPath": "C:\\Users\\ddolg\\IdeaProjects\\jllis-mono\\webui\\src\\modules\\Authentication\\ServiceDeskContactInfo.tsx",
+    "path": "modules\\Authentication\\ServiceDeskContactInfo",
+    "imports": [
+      {
+        "input": "import { getRuntimeConfig } from 'util/apiUtilities';",
+        "ref": "util/apiUtilities",
+        "file": "util\\apiUtilities",
+        "external": false,
+        "replace": "../../util/apiUtilities"
+      }
+    ]
+  },
+  {
+    "name": "SessionManager",
+    "fullPath": "C:\\Users\\ddolg\\IdeaProjects\\jllis-mono\\webui\\src\\modules\\Authentication\\SessionManager.tsx",
+    "path": "modules\\Authentication\\SessionManager",
+    "imports": [
+      {
+        "input": "import { useAppDispatch } from 'redux/hooks';",
+        "ref": "redux/hooks",
+        "file": "redux\\hooks",
+        "external": false,
+        "replace": "../../redux/hooks"
+      },
+      {
+        "input": "import { ReduxState } from 'types/typesx';",
+        "ref": "types/typesx",
+        "file": "types\\typesx",
+        "external": false,
+        "replace": "../../types/typesx"
+      },
+      {
+        "input": "import { getRuntimeConfig } from 'util/apiUtilities';",
+        "ref": "util/apiUtilities",
+        "file": "util\\apiUtilities",
+        "external": false,
+        "replace": "../../util/apiUtilities"
+      }
+    ]
+  },
+  {
+    "name": "AttachmentsDetailsView",
+    "fullPath": "C:\\Users\\ddolg\\IdeaProjects\\jllis-mono\\webui\\src\\modules\\EnterpriseSearch\\detail\\attachments\\AttachmentsDetailsView.tsx",
+    "path": "modules\\EnterpriseSearch\\detail\\attachments\\AttachmentsDetailsView",
+    "imports": [
+      {
+        "input": "import { Attachment } from 'types/typesx';",
+        "ref": "types/typesx",
+        "file": "types\\typesx",
+        "external": false,
+        "replace": "../../../../types/typesx"
+      },
+      {
+        "input": "import { PortionMarking } from 'components/Generic/PortionMarking/PortionMarking';",
+        "ref": "components/Generic/PortionMarking/PortionMarking",
+        "file": "components\\Generic\\PortionMarking\\PortionMarking",
+        "external": false,
+        "replace": "../../../../components/Generic/PortionMarking/PortionMarking"
+      },
+      {
+        "input": "import { Tooltip } from 'components/Tooltip';",
+        "ref": "components/Tooltip",
+        "file": "components\\Tooltip",
+        "external": false,
+        "replace": "../../../../components/Tooltip"
+      },
+      {
+        "input": "import { GridRow, organizeBySections } from 'shared/const';",
+        "ref": "shared/const",
+        "file": "shared\\const",
+        "external": false,
+        "replace": "../../../../shared/const"
+      }
+    ]
+  },
+  {
+    "name": "ContactsDetailsView",
+    "fullPath": "C:\\Users\\ddolg\\IdeaProjects\\jllis-mono\\webui\\src\\modules\\EnterpriseSearch\\detail\\contacts\\ContactsDetailsView.tsx",
+    "path": "modules\\EnterpriseSearch\\detail\\contacts\\ContactsDetailsView",
+    "imports": [
+      {
+        "input": "import { DataProduct } from 'types/typesx';",
+        "ref": "types/typesx",
+        "file": "types\\typesx",
+        "external": false,
+        "replace": "../../../../types/typesx"
+      }
+    ]
+  },
+  {
+    "name": "DataProductDetailsView",
+    "fullPath": "C:\\Users\\ddolg\\IdeaProjects\\jllis-mono\\webui\\src\\modules\\EnterpriseSearch\\detail\\details\\DataProductDetailsView.tsx",
+    "path": "modules\\EnterpriseSearch\\detail\\details\\DataProductDetailsView",
+    "imports": [
+      {
+        "input": "import { DataProduct } from 'types/typesx';",
+        "ref": "types/typesx",
+        "file": "types\\typesx",
+        "external": false,
+        "replace": "../../../../types/typesx"
+      }
+    ]
+  },
+  {
+    "name": "DataProductDetailsView_AAR",
+    "fullPath": "C:\\Users\\ddolg\\IdeaProjects\\jllis-mono\\webui\\src\\modules\\EnterpriseSearch\\detail\\details\\DataProductDetailsView_AAR.tsx",
+    "path": "modules\\EnterpriseSearch\\detail\\details\\DataProductDetailsView_AAR",
+    "imports": [
+      {
+        "input": "import { AAR_Details, AAR_GeneralInformation } from 'types/sectionTypes';",
+        "ref": "types/sectionTypes",
+        "file": "types\\sectionTypes",
+        "external": false,
+        "replace": "../../../../types/sectionTypes"
+      },
+      {
+        "input": "import LocationGrid from 'components/LocationsGrid';",
+        "ref": "components/LocationsGrid",
+        "file": "components\\LocationsGrid",
+        "external": false,
+        "replace": "../../../../components/LocationsGrid"
+      }
+    ]
+  },
+  {
+    "name": "DataProductDetailsView_BIN",
+    "fullPath": "C:\\Users\\ddolg\\IdeaProjects\\jllis-mono\\webui\\src\\modules\\EnterpriseSearch\\detail\\details\\DataProductDetailsView_BIN.tsx",
+    "path": "modules\\EnterpriseSearch\\detail\\details\\DataProductDetailsView_BIN",
+    "imports": [
+      {
+        "input": "import { BIN_GeneralInformation } from 'types/sectionTypes';",
+        "ref": "types/sectionTypes",
+        "file": "types\\sectionTypes",
+        "external": false,
+        "replace": "../../../../types/sectionTypes"
+      }
+    ]
+  },
+  {
+    "name": "DataProductDetailsView_COL",
+    "fullPath": "C:\\Users\\ddolg\\IdeaProjects\\jllis-mono\\webui\\src\\modules\\EnterpriseSearch\\detail\\details\\DataProductDetailsView_COL.tsx",
+    "path": "modules\\EnterpriseSearch\\detail\\details\\DataProductDetailsView_COL",
+    "imports": [
+      {
+        "input": "import { COL_Details, COL_GeneralInformation } from 'types/sectionTypes';",
+        "ref": "types/sectionTypes",
+        "file": "types\\sectionTypes",
+        "external": false,
+        "replace": "../../../../types/sectionTypes"
+      },
+      {
+        "input": "import LocationGrid from 'components/LocationsGrid';",
+        "ref": "components/LocationsGrid",
+        "file": "components\\LocationsGrid",
+        "external": false,
+        "replace": "../../../../components/LocationsGrid"
+      }
+    ]
+  },
+  {
+    "name": "DataProductDetailsView_COP",
+    "fullPath": "C:\\Users\\ddolg\\IdeaProjects\\jllis-mono\\webui\\src\\modules\\EnterpriseSearch\\detail\\details\\DataProductDetailsView_COP.tsx",
+    "path": "modules\\EnterpriseSearch\\detail\\details\\DataProductDetailsView_COP",
+    "imports": [
+      {
+        "input": "import {DataproductComment } from 'types/typesx';",
+        "ref": "types/typesx",
+        "file": "types\\typesx",
+        "external": false,
+        "replace": "../../../../types/typesx"
+      },
+      {
+        "input": "import { ReadonlyGenericThread } from 'components/Generic/GenericThread/GenericThread';",
+        "ref": "components/Generic/GenericThread/GenericThread",
+        "file": "components\\Generic\\GenericThread\\GenericThread",
+        "external": false,
+        "replace": "../../../../components/Generic/GenericThread/GenericThread"
+      },
+      {
+        "input": "import { COP_GeneralInformation } from 'types/sectionTypes';",
+        "ref": "types/sectionTypes",
+        "file": "types\\sectionTypes",
+        "external": false,
+        "replace": "../../../../types/sectionTypes"
+      }
+    ]
+  },
+  {
+    "name": "DataProductDetailsView_OBS",
+    "fullPath": "C:\\Users\\ddolg\\IdeaProjects\\jllis-mono\\webui\\src\\modules\\EnterpriseSearch\\detail\\details\\DataProductDetailsView_OBS.tsx",
+    "path": "modules\\EnterpriseSearch\\detail\\details\\DataProductDetailsView_OBS",
+    "imports": [
+      {
+        "input": "import { OBS_Details, OBS_GeneralInformation } from 'types/sectionTypes';",
+        "ref": "types/sectionTypes",
+        "file": "types\\sectionTypes",
+        "external": false,
+        "replace": "../../../../types/sectionTypes"
+      },
+      {
+        "input": "import LocationGrid from 'components/LocationsGrid';",
+        "ref": "components/LocationsGrid",
+        "file": "components\\LocationsGrid",
+        "external": false,
+        "replace": "../../../../components/LocationsGrid"
+      }
+    ]
+  },
+  {
+    "name": "DataProductDetailsView_PVR",
+    "fullPath": "C:\\Users\\ddolg\\IdeaProjects\\jllis-mono\\webui\\src\\modules\\EnterpriseSearch\\detail\\details\\DataProductDetailsView_PVR.tsx",
+    "path": "modules\\EnterpriseSearch\\detail\\details\\DataProductDetailsView_PVR",
+    "imports": [
+      {
+        "input": "import { PVR_Details, PVR_GeneralInformation } from 'types/sectionTypes';",
+        "ref": "types/sectionTypes",
+        "file": "types\\sectionTypes",
+        "external": false,
+        "replace": "../../../../types/sectionTypes"
+      }
+    ]
+  },
+  {
+    "name": "DataProductDetailsView_RES",
+    "fullPath": "C:\\Users\\ddolg\\IdeaProjects\\jllis-mono\\webui\\src\\modules\\EnterpriseSearch\\detail\\details\\DataProductDetailsView_RES.tsx",
+    "path": "modules\\EnterpriseSearch\\detail\\details\\DataProductDetailsView_RES",
+    "imports": [
+      {
+        "input": "import { ReadonlyGenericThread } from 'components/Generic/GenericThread/GenericThread';",
+        "ref": "components/Generic/GenericThread/GenericThread",
+        "file": "components\\Generic\\GenericThread\\GenericThread",
+        "external": false,
+        "replace": "../../../../components/Generic/GenericThread/GenericThread"
+      },
+      {
+        "input": "import LocationGrid from 'components/LocationsGrid';",
+        "ref": "components/LocationsGrid",
+        "file": "components\\LocationsGrid",
+        "external": false,
+        "replace": "../../../../components/LocationsGrid"
+      },
+      {
+        "input": "import { RES_Details, RES_GeneralInformation } from 'types/sectionTypes';",
+        "ref": "types/sectionTypes",
+        "file": "types\\sectionTypes",
+        "external": false,
+        "replace": "../../../../types/sectionTypes"
+      }
+    ]
+  },
+  {
+    "name": "DetailSummary",
+    "fullPath": "C:\\Users\\ddolg\\IdeaProjects\\jllis-mono\\webui\\src\\modules\\EnterpriseSearch\\detail\\DetailSummary.tsx",
+    "path": "modules\\EnterpriseSearch\\detail\\DetailSummary",
+    "imports": [
+      {
+        "input": "import { exportDataProduct } from 'redux/appStateReducer';",
+        "ref": "redux/appStateReducer",
+        "file": "redux\\appStateReducer",
+        "external": false,
+        "replace": "../../../redux/appStateReducer"
+      },
+      {
+        "input": "import { useAppDispatch, useDataProduct } from 'redux/hooks';",
+        "ref": "redux/hooks",
+        "file": "redux\\hooks",
+        "external": false,
+        "replace": "../../../redux/hooks"
+      },
+      {
+        "input": "import { DataProduct } from 'types/typesx';",
+        "ref": "types/typesx",
+        "file": "types\\typesx",
+        "external": false,
+        "replace": "../../../types/typesx"
+      },
+      {
+        "input": "import { DateLabel } from 'components/Fields/DateLabel';",
+        "ref": "components/Fields/DateLabel",
+        "file": "components\\Fields\\DateLabel",
+        "external": false,
+        "replace": "../../../components/Fields/DateLabel"
+      },
+      {
+        "input": "import { FavoriteDataProduct } from 'components/Generic/Cards/FavoriteDataProduct';",
+        "ref": "components/Generic/Cards/FavoriteDataProduct",
+        "file": "components\\Generic\\Cards\\FavoriteDataProduct",
+        "external": false,
+        "replace": "../../../components/Generic/Cards/FavoriteDataProduct"
+      },
+      {
+        "input": "import { ReadonlyGenericThread } from 'components/Generic/GenericThread/GenericThread';",
+        "ref": "components/Generic/GenericThread/GenericThread",
+        "file": "components\\Generic\\GenericThread\\GenericThread",
+        "external": false,
+        "replace": "../../../components/Generic/GenericThread/GenericThread"
+      },
+      {
+        "input": "import History from 'modules/MyJLLIS/Sections/History/History';",
+        "ref": "modules/MyJLLIS/Sections/History/History",
+        "file": "modules\\MyJLLIS\\Sections\\History\\History",
+        "external": false,
+        "replace": "../../MyJLLIS/Sections/History/History"
+      }
+    ]
+  },
+  {
+    "name": "LinksDetailsView",
+    "fullPath": "C:\\Users\\ddolg\\IdeaProjects\\jllis-mono\\webui\\src\\modules\\EnterpriseSearch\\detail\\links\\LinksDetailsView.tsx",
+    "path": "modules\\EnterpriseSearch\\detail\\links\\LinksDetailsView",
+    "imports": [
+      {
+        "input": "import { useGetLinksQuery } from 'redux/endpoints/linksApi';",
+        "ref": "redux/endpoints/linksApi",
+        "file": "redux\\endpoints\\linksApi",
+        "external": false,
+        "replace": "../../../../redux/endpoints/linksApi"
+      },
+      {
+        "input": "import { DataProduct } from 'types/typesx';",
+        "ref": "types/typesx",
+        "file": "types\\typesx",
+        "external": false,
+        "replace": "../../../../types/typesx"
+      },
+      {
+        "input": "import { openInNewWindow, shortDataProductId } from 'util/apiUtilities';",
+        "ref": "util/apiUtilities",
+        "file": "util\\apiUtilities",
+        "external": false,
+        "replace": "../../../../util/apiUtilities"
+      },
+      {
+        "input": "import { Tooltip } from 'components/Tooltip';",
+        "ref": "components/Tooltip",
+        "file": "components\\Tooltip",
+        "external": false,
+        "replace": "../../../../components/Tooltip"
+      },
+      {
+        "input": "import { GridRow, organizeBySections } from 'shared/const';",
+        "ref": "shared/const",
+        "file": "shared\\const",
+        "external": false,
+        "replace": "../../../../shared/const"
+      }
+    ]
+  },
+  {
+    "name": "MetadataDetailsView",
+    "fullPath": "C:\\Users\\ddolg\\IdeaProjects\\jllis-mono\\webui\\src\\modules\\EnterpriseSearch\\detail\\metadata\\MetadataDetailsView.tsx",
+    "path": "modules\\EnterpriseSearch\\detail\\metadata\\MetadataDetailsView",
+    "imports": [
+      {
+        "input": "import { DataProduct } from 'types/typesx';",
+        "ref": "types/typesx",
+        "file": "types\\typesx",
+        "external": false,
+        "replace": "../../../../types/typesx"
+      }
+    ]
+  },
+  {
+    "name": "MetadataDetailsView_BIN",
+    "fullPath": "C:\\Users\\ddolg\\IdeaProjects\\jllis-mono\\webui\\src\\modules\\EnterpriseSearch\\detail\\metadata\\MetadataDetailsView_BIN.tsx",
+    "path": "modules\\EnterpriseSearch\\detail\\metadata\\MetadataDetailsView_BIN",
+    "imports": [
+      {
+        "input": "import { DataproductMetadata, DoctrinePublication, OrganizationMetadata, Task } from 'types/typesx';",
+        "ref": "types/typesx",
+        "file": "types\\typesx",
+        "external": false,
+        "replace": "../../../../types/typesx"
+      }
+    ]
+  },
+  {
+    "name": "MetadataDetailsView_OBS",
+    "fullPath": "C:\\Users\\ddolg\\IdeaProjects\\jllis-mono\\webui\\src\\modules\\EnterpriseSearch\\detail\\metadata\\MetadataDetailsView_OBS.tsx",
+    "path": "modules\\EnterpriseSearch\\detail\\metadata\\MetadataDetailsView_OBS",
+    "imports": [
+      {
+        "input": "import { DataproductMetadata, DoctrinePublication, OrganizationMetadata, Task } from 'types/typesx';",
+        "ref": "types/typesx",
+        "file": "types\\typesx",
+        "external": false,
+        "replace": "../../../../types/typesx"
+      }
+    ]
+  },
+  {
+    "name": "MetadataDetailsView_PVR",
+    "fullPath": "C:\\Users\\ddolg\\IdeaProjects\\jllis-mono\\webui\\src\\modules\\EnterpriseSearch\\detail\\metadata\\MetadataDetailsView_PVR.tsx",
+    "path": "modules\\EnterpriseSearch\\detail\\metadata\\MetadataDetailsView_PVR",
+    "imports": [
+      {
+        "input": "import { DataproductMetadata, DoctrinePublication, OrganizationMetadata, Task } from 'types/typesx';",
+        "ref": "types/typesx",
+        "file": "types\\typesx",
+        "external": false,
+        "replace": "../../../../types/typesx"
+      }
+    ]
+  },
+  {
+    "name": "MetadataDetailsView_RES",
+    "fullPath": "C:\\Users\\ddolg\\IdeaProjects\\jllis-mono\\webui\\src\\modules\\EnterpriseSearch\\detail\\metadata\\MetadataDetailsView_RES.tsx",
+    "path": "modules\\EnterpriseSearch\\detail\\metadata\\MetadataDetailsView_RES",
+    "imports": [
+      {
+        "input": "import { DataproductMetadata, DoctrinePublication, Milestone, OrganizationMetadata, Task } from 'types/typesx';",
+        "ref": "types/typesx",
+        "file": "types\\typesx",
+        "external": false,
+        "replace": "../../../../types/typesx"
+      }
+    ]
+  },
+  {
+    "name": "SharedComponents",
+    "fullPath": "C:\\Users\\ddolg\\IdeaProjects\\jllis-mono\\webui\\src\\modules\\EnterpriseSearch\\detail\\SharedComponents.tsx",
+    "path": "modules\\EnterpriseSearch\\detail\\SharedComponents",
+    "imports": [
+      {
+        "input": "import { Classification, Milestone, Objective, PointOfContact, Related, Task } from 'types/typesx';",
+        "ref": "types/typesx",
+        "file": "types\\typesx",
+        "external": false,
+        "replace": "../../../types/typesx"
+      },
+      {
+        "input": "import { asString } from 'util/stringUtils';",
+        "ref": "util/stringUtils",
+        "file": "util\\stringUtils",
+        "external": false,
+        "replace": "../../../util/stringUtils"
+      },
+      {
+        "input": "import { DateLabel } from 'components/Fields/DateLabel';",
+        "ref": "components/Fields/DateLabel",
+        "file": "components\\Fields\\DateLabel",
+        "external": false,
+        "replace": "../../../components/Fields/DateLabel"
+      },
+      {
+        "input": "import { ReadOnlyTextAreas } from 'components/Fields/TextAreas';",
+        "ref": "components/Fields/TextAreas",
+        "file": "components\\Fields\\TextAreas",
+        "external": false,
+        "replace": "../../../components/Fields/TextAreas"
+      },
+      {
+        "input": "import { StyledTable } from 'components/Generic/Tables/CustomizableTable';",
+        "ref": "components/Generic/Tables/CustomizableTable",
+        "file": "components\\Generic\\Tables\\CustomizableTable",
+        "external": false,
+        "replace": "../../../components/Generic/Tables/CustomizableTable"
+      },
+      {
+        "input": "import LocationGrid from 'components/LocationsGrid';",
+        "ref": "components/LocationsGrid",
+        "file": "components\\LocationsGrid",
+        "external": false,
+        "replace": "../../../components/LocationsGrid"
+      }
+    ]
+  },
+  {
+    "name": "EnterpriseSearch",
+    "fullPath": "C:\\Users\\ddolg\\IdeaProjects\\jllis-mono\\webui\\src\\modules\\EnterpriseSearch\\EnterpriseSearch.tsx",
+    "path": "modules\\EnterpriseSearch\\EnterpriseSearch",
+    "imports": [
+      {
+        "input": "import { ErrorBoundary } from 'lib/ErrorBoundary';",
+        "ref": "lib/ErrorBoundary",
+        "file": "lib\\ErrorBoundary",
+        "external": false,
+        "replace": "../../lib/ErrorBoundary"
+      },
+      {
+        "input": "import { useAppDispatch, useDataProduct } from 'redux/hooks';",
+        "ref": "redux/hooks",
+        "file": "redux\\hooks",
+        "external": false,
+        "replace": "../../redux/hooks"
+      },
+      {
+        "input": "import { getDateRange, getSearchResults, setCurrentPage, setSearchEngine } from 'redux/searchReducer';",
+        "ref": "redux/searchReducer",
+        "file": "redux\\searchReducer",
+        "external": false,
+        "replace": "../../redux/searchReducer"
+      },
+      {
+        "input": "import { ReduxState } from 'types/typesx';",
+        "ref": "types/typesx",
+        "file": "types\\typesx",
+        "external": false,
+        "replace": "../../types/typesx"
+      }
+    ]
+  },
+  {
+    "name": "DateSelect",
+    "fullPath": "C:\\Users\\ddolg\\IdeaProjects\\jllis-mono\\webui\\src\\modules\\EnterpriseSearch\\facetView\\DateSelect.tsx",
+    "path": "modules\\EnterpriseSearch\\facetView\\DateSelect",
+    "imports": [
+      {
+        "input": "import { addSearchRangeFilterForRequest } from 'redux/searchReducer';",
+        "ref": "redux/searchReducer",
+        "file": "redux\\searchReducer",
+        "external": false,
+        "replace": "../../../redux/searchReducer"
+      },
+      {
+        "input": "import { RangeFilter, ReduxState, SearchState, SummaryFacet } from 'types/typesx';",
+        "ref": "types/typesx",
+        "file": "types\\typesx",
+        "external": false,
+        "replace": "../../../types/typesx"
+      },
+      {
+        "input": "import { CalendarDatePicker, CalendarDateRangePicker } from 'components/Fields/CalendarDatePickers';",
+        "ref": "components/Fields/CalendarDatePickers",
+        "file": "components\\Fields\\CalendarDatePickers",
+        "external": false,
+        "replace": "../../../components/Fields/CalendarDatePickers"
+      }
+    ]
+  },
+  {
+    "name": "ExtraBagOfParts",
+    "fullPath": "C:\\Users\\ddolg\\IdeaProjects\\jllis-mono\\webui\\src\\modules\\EnterpriseSearch\\facetView\\ExtraBagOfParts.tsx",
+    "path": "modules\\EnterpriseSearch\\facetView\\ExtraBagOfParts",
+    "imports": [
+      {
+        "input": "import { addSearchFilterForRequest, removeSearchFilterForRequest } from 'redux/searchReducer';",
+        "ref": "redux/searchReducer",
+        "file": "redux\\searchReducer",
+        "external": false,
+        "replace": "../../../redux/searchReducer"
+      },
+      {
+        "input": "import { Filters, ValueFilter } from 'types/typesx';",
+        "ref": "types/typesx",
+        "file": "types\\typesx",
+        "external": false,
+        "replace": "../../../types/typesx"
+      }
+    ]
+  },
+  {
+    "name": "FacetList",
+    "fullPath": "C:\\Users\\ddolg\\IdeaProjects\\jllis-mono\\webui\\src\\modules\\EnterpriseSearch\\facetView\\FacetList.tsx",
+    "path": "modules\\EnterpriseSearch\\facetView\\FacetList",
+    "imports": [
+      {
+        "input": "import { useAppDispatch } from 'redux/hooks';",
+        "ref": "redux/hooks",
+        "file": "redux\\hooks",
+        "external": false,
+        "replace": "../../../redux/hooks"
+      },
+      {
+        "input": "import { clearFilterRequest, getSearchResults, setCurrentPage } from 'redux/searchReducer';",
+        "ref": "redux/searchReducer",
+        "file": "redux\\searchReducer",
+        "external": false,
+        "replace": "../../../redux/searchReducer"
+      },
+      {
+        "input": "import { ReduxState } from 'types/typesx';",
+        "ref": "types/typesx",
+        "file": "types\\typesx",
+        "external": false,
+        "replace": "../../../types/typesx"
+      }
+    ]
+  },
+  {
+    "name": "OrganizationSelector",
+    "fullPath": "C:\\Users\\ddolg\\IdeaProjects\\jllis-mono\\webui\\src\\modules\\EnterpriseSearch\\facetView\\OrganizationSelector.tsx",
+    "path": "modules\\EnterpriseSearch\\facetView\\OrganizationSelector",
+    "imports": [
+      {
+        "input": "import { addSearchFilterForRequest, removeSearchFilterForRequest } from 'redux/searchReducer';",
+        "ref": "redux/searchReducer",
+        "file": "redux\\searchReducer",
+        "external": false,
+        "replace": "../../../redux/searchReducer"
+      }
+    ]
+  },
+  {
+    "name": "ValueFilterSelector",
+    "fullPath": "C:\\Users\\ddolg\\IdeaProjects\\jllis-mono\\webui\\src\\modules\\EnterpriseSearch\\facetView\\ValueFilterSelector.tsx",
+    "path": "modules\\EnterpriseSearch\\facetView\\ValueFilterSelector",
+    "imports": [
+      {
+        "input": "import { addSearchFilterForRequest, removeSearchFilterForRequest } from 'redux/searchReducer';",
+        "ref": "redux/searchReducer",
+        "file": "redux\\searchReducer",
+        "external": false,
+        "replace": "../../../redux/searchReducer"
+      },
+      {
+        "input": "import { Filters, SummaryFacet, ValueFilter } from 'types/typesx';",
+        "ref": "types/typesx",
+        "file": "types\\typesx",
+        "external": false,
+        "replace": "../../../types/typesx"
+      }
+    ]
+  },
+  {
+    "name": "PaginationView",
+    "fullPath": "C:\\Users\\ddolg\\IdeaProjects\\jllis-mono\\webui\\src\\modules\\EnterpriseSearch\\PaginationView.tsx",
+    "path": "modules\\EnterpriseSearch\\PaginationView",
+    "imports": [
+      {
+        "input": "import { useAppDispatch } from 'redux/hooks';",
+        "ref": "redux/hooks",
+        "file": "redux\\hooks",
+        "external": false,
+        "replace": "../../redux/hooks"
+      },
+      {
+        "input": "import { getSearchResults, setCurrentPage } from 'redux/searchReducer';",
+        "ref": "redux/searchReducer",
+        "file": "redux\\searchReducer",
+        "external": false,
+        "replace": "../../redux/searchReducer"
+      },
+      {
+        "input": "import { Page } from 'types/typesx';",
+        "ref": "types/typesx",
+        "file": "types\\typesx",
+        "external": false,
+        "replace": "../../types/typesx"
+      }
+    ]
+  },
+  {
+    "name": "AttachmentCard",
+    "fullPath": "C:\\Users\\ddolg\\IdeaProjects\\jllis-mono\\webui\\src\\modules\\EnterpriseSearch\\resultView\\AttachmentCard.tsx",
+    "path": "modules\\EnterpriseSearch\\resultView\\AttachmentCard",
+    "imports": [
+      {
+        "input": "import { AttachmentResultType } from 'types/typesx';",
+        "ref": "types/typesx",
+        "file": "types\\typesx",
+        "external": false,
+        "replace": "../../../types/typesx"
+      },
+      {
+        "input": "import { openInNewWindow } from 'util/apiUtilities';",
+        "ref": "util/apiUtilities",
+        "file": "util\\apiUtilities",
+        "external": false,
+        "replace": "../../../util/apiUtilities"
+      }
+    ]
+  },
+  {
+    "name": "DataProductCard",
+    "fullPath": "C:\\Users\\ddolg\\IdeaProjects\\jllis-mono\\webui\\src\\modules\\EnterpriseSearch\\resultView\\DataProductCard.tsx",
+    "path": "modules\\EnterpriseSearch\\resultView\\DataProductCard",
+    "imports": [
+      {
+        "input": "import { LinkType, ResultType } from 'types/typesx';",
+        "ref": "types/typesx",
+        "file": "types\\typesx",
+        "external": false,
+        "replace": "../../../types/typesx"
+      },
+      {
+        "input": "import { openInNewWindow, shortDataProductId } from 'util/apiUtilities';",
+        "ref": "util/apiUtilities",
+        "file": "util\\apiUtilities",
+        "external": false,
+        "replace": "../../../util/apiUtilities"
+      }
+    ]
+  },
+  {
+    "name": "EnterpriseSearchBoxWithGoBack",
+    "fullPath": "C:\\Users\\ddolg\\IdeaProjects\\jllis-mono\\webui\\src\\modules\\EnterpriseSearch\\resultView\\EnterpriseSearchBoxWithGoBack.tsx",
+    "path": "modules\\EnterpriseSearch\\resultView\\EnterpriseSearchBoxWithGoBack",
+    "imports": [
+      {
+        "input": "import { EnterpriseSearchBox, EnterpriseSearchBoxProps } from 'components/Generic/SearchBox/EnterpriseSearchBox';",
+        "ref": "components/Generic/SearchBox/EnterpriseSearchBox",
+        "file": "components\\Generic\\SearchBox\\EnterpriseSearchBox",
+        "external": false,
+        "replace": "../../../components/Generic/SearchBox/EnterpriseSearchBox"
+      }
+    ]
+  },
+  {
+    "name": "LinkDataproductSsd",
+    "fullPath": "C:\\Users\\ddolg\\IdeaProjects\\jllis-mono\\webui\\src\\modules\\EnterpriseSearch\\resultView\\LinkDataproductSsd.ts",
+    "path": "modules\\EnterpriseSearch\\resultView\\LinkDataproductSsd",
+    "imports": [
+      {
+        "input": "import { buildUrlFromPathAndOptionalQuery, sortModelToQueryArgs } from 'util/apiUtilities';",
+        "ref": "util/apiUtilities",
+        "file": "util\\apiUtilities",
+        "external": false,
+        "replace": "../../../util/apiUtilities"
+      }
+    ]
+  },
+  {
+    "name": "LinkParentModal",
+    "fullPath": "C:\\Users\\ddolg\\IdeaProjects\\jllis-mono\\webui\\src\\modules\\EnterpriseSearch\\resultView\\LinkParentModal.tsx",
+    "path": "modules\\EnterpriseSearch\\resultView\\LinkParentModal",
+    "imports": [
+      {
+        "input": "import { LinkUpdateArgType, useAddLinkMutation, useDeleteLinkMutation } from 'redux/endpoints/linksApi';",
+        "ref": "redux/endpoints/linksApi",
+        "file": "redux\\endpoints\\linksApi",
+        "external": false,
+        "replace": "../../../redux/endpoints/linksApi"
+      },
+      {
+        "input": "import { useGetLinksById } from 'redux/hooks';",
+        "ref": "redux/hooks",
+        "file": "redux\\hooks",
+        "external": false,
+        "replace": "../../../redux/hooks"
+      },
+      {
+        "input": "import { ResultType } from 'types/typesx';",
+        "ref": "types/typesx",
+        "file": "types\\typesx",
+        "external": false,
+        "replace": "../../../types/typesx"
+      },
+      {
+        "input": "import { shortDataProductId } from 'util/apiUtilities';",
+        "ref": "util/apiUtilities",
+        "file": "util\\apiUtilities",
+        "external": false,
+        "replace": "../../../util/apiUtilities"
+      },
+      {
+        "input": "import { CustomizableTable } from 'components/Generic/Tables/CustomizableTable';",
+        "ref": "components/Generic/Tables/CustomizableTable",
+        "file": "components\\Generic\\Tables\\CustomizableTable",
+        "external": false,
+        "replace": "../../../components/Generic/Tables/CustomizableTable"
+      }
+    ]
+  },
+  {
+    "name": "ResultsView",
+    "fullPath": "C:\\Users\\ddolg\\IdeaProjects\\jllis-mono\\webui\\src\\modules\\EnterpriseSearch\\resultView\\ResultsView.tsx",
+    "path": "modules\\EnterpriseSearch\\resultView\\ResultsView",
+    "imports": [
+      {
+        "input": "import { exportAllDataProducts } from 'redux/appStateReducer';",
+        "ref": "redux/appStateReducer",
+        "file": "redux\\appStateReducer",
+        "external": false,
+        "replace": "../../../redux/appStateReducer"
+      },
+      {
+        "input": "import { LinkUpdateArgType, useAddLinkMutation, useDeleteLinkMutation } from 'redux/endpoints/linksApi';",
+        "ref": "redux/endpoints/linksApi",
+        "file": "redux\\endpoints\\linksApi",
+        "external": false,
+        "replace": "../../../redux/endpoints/linksApi"
+      },
+      {
+        "input": "import { useAppDispatch, useGetLinksById } from 'redux/hooks';",
+        "ref": "redux/hooks",
+        "file": "redux\\hooks",
+        "external": false,
+        "replace": "../../../redux/hooks"
+      },
+      {
+        "input": "import { AttachmentResultType, DataProduct, LinkType, ReduxState, ResultType } from 'types/typesx';",
+        "ref": "types/typesx",
+        "file": "types\\typesx",
+        "external": false,
+        "replace": "../../../types/typesx"
+      }
+    ]
+  },
+  {
+    "name": "SizeView",
+    "fullPath": "C:\\Users\\ddolg\\IdeaProjects\\jllis-mono\\webui\\src\\modules\\EnterpriseSearch\\SizeView.tsx",
+    "path": "modules\\EnterpriseSearch\\SizeView",
+    "imports": [
+      {
+        "input": "import { useAppDispatch } from 'redux/hooks';",
+        "ref": "redux/hooks",
+        "file": "redux\\hooks",
+        "external": false,
+        "replace": "../../redux/hooks"
+      },
+      {
+        "input": "import { getSearchResults, setCurrentPage, setPageSize } from 'redux/searchReducer';",
+        "ref": "redux/searchReducer",
+        "file": "redux\\searchReducer",
+        "external": false,
+        "replace": "../../redux/searchReducer"
+      },
+      {
+        "input": "import { ReduxState } from 'types/typesx';",
+        "ref": "types/typesx",
+        "file": "types\\typesx",
+        "external": false,
+        "replace": "../../types/typesx"
+      }
+    ]
+  },
+  {
+    "name": "Home",
+    "fullPath": "C:\\Users\\ddolg\\IdeaProjects\\jllis-mono\\webui\\src\\modules\\Home\\Home.tsx",
+    "path": "modules\\Home\\Home",
+    "imports": [
+      {
+        "input": "import { useAppSelector } from 'redux/hooks';",
+        "ref": "redux/hooks",
+        "file": "redux\\hooks",
+        "external": false,
+        "replace": "../../redux/hooks"
+      },
+      {
+        "input": "import { EnterpriseSearchBox } from 'components/Generic/SearchBox/EnterpriseSearchBox';",
+        "ref": "components/Generic/SearchBox/EnterpriseSearchBox",
+        "file": "components\\Generic\\SearchBox\\EnterpriseSearchBox",
+        "external": false,
+        "replace": "../../components/Generic/SearchBox/EnterpriseSearchBox"
+      }
+    ]
+  },
+  {
+    "name": "EditField",
+    "fullPath": "C:\\Users\\ddolg\\IdeaProjects\\jllis-mono\\webui\\src\\modules\\InformationMangement\\EditField.tsx",
+    "path": "modules\\InformationMangement\\EditField",
+    "imports": [
+      {
+        "input": "import { useAppDispatch, useCurrentUser } from 'redux/hooks';",
+        "ref": "redux/hooks",
+        "file": "redux\\hooks",
+        "external": false,
+        "replace": "../../redux/hooks"
+      },
+      {
+        "input": "import { updateEdit, updateInformation } from 'redux/informationReducer';",
+        "ref": "redux/informationReducer",
+        "file": "redux\\informationReducer",
+        "external": false,
+        "replace": "../../redux/informationReducer"
+      },
+      {
+        "input": "import { Information } from 'types/typesx';",
+        "ref": "types/typesx",
+        "file": "types\\typesx",
+        "external": false,
+        "replace": "../../types/typesx"
+      },
+      {
+        "input": "import { isRichTextEditorEmpty } from 'util/apiUtilities';",
+        "ref": "util/apiUtilities",
+        "file": "util\\apiUtilities",
+        "external": false,
+        "replace": "../../util/apiUtilities"
+      }
+    ]
+  },
+  {
+    "name": "FileModal",
+    "fullPath": "C:\\Users\\ddolg\\IdeaProjects\\jllis-mono\\webui\\src\\modules\\InformationMangement\\Files\\FileModal.tsx",
+    "path": "modules\\InformationMangement\\Files\\FileModal",
+    "imports": [
+      {
+        "input": "import { FileCreateDto, User } from 'types/typesx';",
+        "ref": "types/typesx",
+        "file": "types\\typesx",
+        "external": false,
+        "replace": "../../../types/typesx"
+      },
+      {
+        "input": "import { useAppDispatch } from 'redux/hooks';",
+        "ref": "redux/hooks",
+        "file": "redux\\hooks",
+        "external": false,
+        "replace": "../../../redux/hooks"
+      },
+      {
+        "input": "import { uploadInformationFile } from 'redux/informationReducer';",
+        "ref": "redux/informationReducer",
+        "file": "redux\\informationReducer",
+        "external": false,
+        "replace": "../../../redux/informationReducer"
+      }
+    ]
+  },
+  {
+    "name": "Files",
+    "fullPath": "C:\\Users\\ddolg\\IdeaProjects\\jllis-mono\\webui\\src\\modules\\InformationMangement\\Files\\Files.tsx",
+    "path": "modules\\InformationMangement\\Files\\Files",
+    "imports": [
+      {
+        "input": "import { ErrorBoundary } from 'lib/ErrorBoundary';",
+        "ref": "lib/ErrorBoundary",
+        "file": "lib\\ErrorBoundary",
+        "external": false,
+        "replace": "../../../lib/ErrorBoundary"
+      },
+      {
+        "input": "import { useAppDispatch, useCurrentUser } from 'redux/hooks';",
+        "ref": "redux/hooks",
+        "file": "redux\\hooks",
+        "external": false,
+        "replace": "../../../redux/hooks"
+      },
+      {
+        "input": "import { File } from 'types/typesx';",
+        "ref": "types/typesx",
+        "file": "types\\typesx",
+        "external": false,
+        "replace": "../../../types/typesx"
+      },
+      {
+        "input": "import { ConfirmDialog } from 'components/Generic/dialogs/CommonDialogs';",
+        "ref": "components/Generic/dialogs/CommonDialogs",
+        "file": "components\\Generic\\dialogs\\CommonDialogs",
+        "external": false,
+        "replace": "../../../components/Generic/dialogs/CommonDialogs"
+      },
+      {
+        "input": "import { Tooltip } from 'components/Tooltip';",
+        "ref": "components/Tooltip",
+        "file": "components\\Tooltip",
+        "external": false,
+        "replace": "../../../components/Tooltip"
+      },
+      {
+        "input": "import { deleteInformationFile, updateFileSections } from 'redux/informationReducer';",
+        "ref": "redux/informationReducer",
+        "file": "redux\\informationReducer",
+        "external": false,
+        "replace": "../../../redux/informationReducer"
+      }
+    ]
+  },
+  {
+    "name": "SectionModal",
+    "fullPath": "C:\\Users\\ddolg\\IdeaProjects\\jllis-mono\\webui\\src\\modules\\InformationMangement\\Files\\SectionModal.tsx",
+    "path": "modules\\InformationMangement\\Files\\SectionModal",
+    "imports": [
+      {
+        "input": "import { ConfirmDialog } from 'components/Generic/dialogs/CommonDialogs';",
+        "ref": "components/Generic/dialogs/CommonDialogs",
+        "file": "components\\Generic\\dialogs\\CommonDialogs",
+        "external": false,
+        "replace": "../../../components/Generic/dialogs/CommonDialogs"
+      }
+    ]
+  },
+  {
+    "name": "types",
+    "fullPath": "C:\\Users\\ddolg\\IdeaProjects\\jllis-mono\\webui\\src\\modules\\InformationMangement\\Files\\types.ts",
+    "path": "modules\\InformationMangement\\Files\\types",
+    "imports": [
+      {
+        "input": "import { File } from 'types/typesx';",
+        "ref": "types/typesx",
+        "file": "types\\typesx",
+        "external": false,
+        "replace": "../../../types/typesx"
+      }
+    ]
+  },
+  {
+    "name": "InformationManagement",
+    "fullPath": "C:\\Users\\ddolg\\IdeaProjects\\jllis-mono\\webui\\src\\modules\\InformationMangement\\InformationManagement.tsx",
+    "path": "modules\\InformationMangement\\InformationManagement",
+    "imports": [
+      {
+        "input": "import { useAppSelector, useCurrentUser } from 'redux/hooks';",
+        "ref": "redux/hooks",
+        "file": "redux\\hooks",
+        "external": false,
+        "replace": "../../redux/hooks"
+      }
+    ]
+  },
+  {
+    "name": "Display",
+    "fullPath": "C:\\Users\\ddolg\\IdeaProjects\\jllis-mono\\webui\\src\\modules\\MyJLLIS\\Display.tsx",
+    "path": "modules\\MyJLLIS\\Display",
+    "imports": [
+      {
+        "input": "import { ErrorBoundary } from 'lib/ErrorBoundary';",
+        "ref": "lib/ErrorBoundary",
+        "file": "lib\\ErrorBoundary",
+        "external": false,
+        "replace": "../../lib/ErrorBoundary"
+      },
+      {
+        "input": "import { setActiveSection } from 'redux/appStateReducer';",
+        "ref": "redux/appStateReducer",
+        "file": "redux\\appStateReducer",
+        "external": false,
+        "replace": "../../redux/appStateReducer"
+      },
+      {
+        "input": "import { getNewDataProduct } from 'redux/endpoints/dataProductsApi';",
+        "ref": "redux/endpoints/dataProductsApi",
+        "file": "redux\\endpoints\\dataProductsApi",
+        "external": false,
+        "replace": "../../redux/endpoints/dataProductsApi"
+      },
+      {
+        "input": "import { DataProductTypeDefinitions } from 'types/dataproductTypes';",
+        "ref": "types/dataproductTypes",
+        "file": "types\\dataproductTypes",
+        "external": false,
+        "replace": "../../types/dataproductTypes"
+      },
+      {
+        "input": "import { DataProduct } from 'types/typesx';",
+        "ref": "types/typesx",
+        "file": "types\\typesx",
+        "external": false,
+        "replace": "../../types/typesx"
+      },
+      {
+        "input": "import { ConfirmDialog } from 'components/Generic/dialogs/CommonDialogs';",
+        "ref": "components/Generic/dialogs/CommonDialogs",
+        "file": "components\\Generic\\dialogs\\CommonDialogs",
+        "external": false,
+        "replace": "../../components/Generic/dialogs/CommonDialogs"
+      },
+      {
+        "input": "import { ComingSoon } from 'components/Static/Banner/ComingSoon';",
+        "ref": "components/Static/Banner/ComingSoon",
+        "file": "components\\Static\\Banner\\ComingSoon",
+        "external": false,
+        "replace": "../../components/Static/Banner/ComingSoon"
+      }
+    ]
+  },
+  {
+    "name": "DisplayConfiguration",
+    "fullPath": "C:\\Users\\ddolg\\IdeaProjects\\jllis-mono\\webui\\src\\modules\\MyJLLIS\\DisplayConfiguration.tsx",
+    "path": "modules\\MyJLLIS\\DisplayConfiguration",
+    "imports": [
+      {
+        "input": "import { DataProduct } from 'types/typesx';",
+        "ref": "types/typesx",
+        "file": "types\\typesx",
+        "external": false,
+        "replace": "../../types/typesx"
+      }
+    ]
+  },
+  {
+    "name": "GeneralTab",
+    "fullPath": "C:\\Users\\ddolg\\IdeaProjects\\jllis-mono\\webui\\src\\modules\\MyJLLIS\\List\\GeneralTab.tsx",
+    "path": "modules\\MyJLLIS\\List\\GeneralTab",
+    "imports": [
+      {
+        "input": "import { ErrorBoundary } from 'lib/ErrorBoundary';",
+        "ref": "lib/ErrorBoundary",
+        "file": "lib\\ErrorBoundary",
+        "external": false,
+        "replace": "../../../lib/ErrorBoundary"
+      },
+      {
+        "input": "import { setActiveSection } from 'redux/appStateReducer';",
+        "ref": "redux/appStateReducer",
+        "file": "redux\\appStateReducer",
+        "external": false,
+        "replace": "../../../redux/appStateReducer"
+      },
+      {
+        "input": "import { useGetDataProductsQuery } from 'redux/endpoints/dataProductsApi';",
+        "ref": "redux/endpoints/dataProductsApi",
+        "file": "redux\\endpoints\\dataProductsApi",
+        "external": false,
+        "replace": "../../../redux/endpoints/dataProductsApi"
+      },
+      {
+        "input": "import { useAppDispatch, useAppSelector } from 'redux/hooks';",
+        "ref": "redux/hooks",
+        "file": "redux\\hooks",
+        "external": false,
+        "replace": "../../../redux/hooks"
+      },
+      {
+        "input": "import { DataProductTabsEnum, GeneralTabState, TypeDropdownMode } from 'types/dataproductTypes';",
+        "ref": "types/dataproductTypes",
+        "file": "types\\dataproductTypes",
+        "external": false,
+        "replace": "../../../types/dataproductTypes"
+      },
+      {
+        "input": "import { DataProduct } from 'types/typesx';",
+        "ref": "types/typesx",
+        "file": "types\\typesx",
+        "external": false,
+        "replace": "../../../types/typesx"
+      },
+      {
+        "input": "import { getPathToDataproduct } from 'util/apiUtilities';",
+        "ref": "util/apiUtilities",
+        "file": "util\\apiUtilities",
+        "external": false,
+        "replace": "../../../util/apiUtilities"
+      },
+      {
+        "input": "import { DataProductCard } from 'components/Generic/Cards/DataProductCard';",
+        "ref": "components/Generic/Cards/DataProductCard",
+        "file": "components\\Generic\\Cards\\DataProductCard",
+        "external": false,
+        "replace": "../../../components/Generic/Cards/DataProductCard"
+      }
+    ]
+  },
+  {
+    "name": "List",
+    "fullPath": "C:\\Users\\ddolg\\IdeaProjects\\jllis-mono\\webui\\src\\modules\\MyJLLIS\\List\\List.tsx",
+    "path": "modules\\MyJLLIS\\List\\List",
+    "imports": [
+      {
+        "input": "import { ErrorBoundary } from 'lib/ErrorBoundary';",
+        "ref": "lib/ErrorBoundary",
+        "file": "lib\\ErrorBoundary",
+        "external": false,
+        "replace": "../../../lib/ErrorBoundary"
+      },
+      {
+        "input": "import { setActiveTab } from 'redux/appStateReducer';",
+        "ref": "redux/appStateReducer",
+        "file": "redux\\appStateReducer",
+        "external": false,
+        "replace": "../../../redux/appStateReducer"
+      },
+      {
+        "input": "import { useAppSelector } from 'redux/hooks';",
+        "ref": "redux/hooks",
+        "file": "redux\\hooks",
+        "external": false,
+        "replace": "../../../redux/hooks"
+      },
+      {
+        "input": "import { DataProductTabsEnum, DataProductTabsLabelsEnum } from 'types/dataproductTypes';",
+        "ref": "types/dataproductTypes",
+        "file": "types\\dataproductTypes",
+        "external": false,
+        "replace": "../../../types/dataproductTypes"
+      }
+    ]
+  },
+  {
+    "name": "DataProductListSearch",
+    "fullPath": "C:\\Users\\ddolg\\IdeaProjects\\jllis-mono\\webui\\src\\modules\\MyJLLIS\\List\\search\\DataProductListSearch.tsx",
+    "path": "modules\\MyJLLIS\\List\\search\\DataProductListSearch",
+    "imports": [
+      {
+        "input": "import { TypeDropdownMode } from 'types/dataproductTypes';",
+        "ref": "types/dataproductTypes",
+        "file": "types\\dataproductTypes",
+        "external": false,
+        "replace": "../../../../types/dataproductTypes"
+      }
+    ]
+  },
+  {
+    "name": "SearchTypeSelector",
+    "fullPath": "C:\\Users\\ddolg\\IdeaProjects\\jllis-mono\\webui\\src\\modules\\MyJLLIS\\List\\search\\SearchTypeSelector.tsx",
+    "path": "modules\\MyJLLIS\\List\\search\\SearchTypeSelector",
+    "imports": [
+      {
+        "input": "import { TypeDropdownMode } from 'types/dataproductTypes';",
+        "ref": "types/dataproductTypes",
+        "file": "types\\dataproductTypes",
+        "external": false,
+        "replace": "../../../../types/dataproductTypes"
+      }
+    ]
+  },
+  {
+    "name": "Manage",
+    "fullPath": "C:\\Users\\ddolg\\IdeaProjects\\jllis-mono\\webui\\src\\modules\\MyJLLIS\\Manage.tsx",
+    "path": "modules\\MyJLLIS\\Manage",
+    "imports": [
+      {
+        "input": "import { ErrorBoundary } from 'lib/ErrorBoundary';",
+        "ref": "lib/ErrorBoundary",
+        "file": "lib\\ErrorBoundary",
+        "external": false,
+        "replace": "../../lib/ErrorBoundary"
+      },
+      {
+        "input": "import { useCurrentUser } from 'redux/hooks';",
+        "ref": "redux/hooks",
+        "file": "redux\\hooks",
+        "external": false,
+        "replace": "../../redux/hooks"
+      }
+    ]
+  },
+  {
+    "name": "MyJLLIS",
+    "fullPath": "C:\\Users\\ddolg\\IdeaProjects\\jllis-mono\\webui\\src\\modules\\MyJLLIS\\MyJLLIS.tsx",
+    "path": "modules\\MyJLLIS\\MyJLLIS",
+    "imports": [
+      {
+        "input": "import { ErrorBoundary } from 'lib/ErrorBoundary';",
+        "ref": "lib/ErrorBoundary",
+        "file": "lib\\ErrorBoundary",
+        "external": false,
+        "replace": "../../lib/ErrorBoundary"
+      }
+    ]
+  },
+  {
+    "name": "AdditionalOptions",
+    "fullPath": "C:\\Users\\ddolg\\IdeaProjects\\jllis-mono\\webui\\src\\modules\\MyJLLIS\\Options\\AdditionalOptions.tsx",
+    "path": "modules\\MyJLLIS\\Options\\AdditionalOptions",
+    "imports": [
+      {
+        "input": "import { exportDataProduct, setActiveSection, setActiveTab } from 'redux/appStateReducer';",
+        "ref": "redux/appStateReducer",
+        "file": "redux\\appStateReducer",
+        "external": false,
+        "replace": "../../../redux/appStateReducer"
+      },
+      {
+        "input": "import { useCopyDataProductMutation } from 'redux/endpoints/dataProductsApi';",
+        "ref": "redux/endpoints/dataProductsApi",
+        "file": "redux\\endpoints\\dataProductsApi",
+        "external": false,
+        "replace": "../../../redux/endpoints/dataProductsApi"
+      },
+      {
+        "input": "import { useAddFavoritesMutation, useDeleteFavoritesMutation } from 'redux/endpoints/usersApi';",
+        "ref": "redux/endpoints/usersApi",
+        "file": "redux\\endpoints\\usersApi",
+        "external": false,
+        "replace": "../../../redux/endpoints/usersApi"
+      },
+      {
+        "input": "import { useAppDispatch, useAppSelector, useCurrentUser } from 'redux/hooks';",
+        "ref": "redux/hooks",
+        "file": "redux\\hooks",
+        "external": false,
+        "replace": "../../../redux/hooks"
+      },
+      {
+        "input": "import { DataProductTabsEnum } from 'types/dataproductTypes';",
+        "ref": "types/dataproductTypes",
+        "file": "types\\dataproductTypes",
+        "external": false,
+        "replace": "../../../types/dataproductTypes"
+      },
+      {
+        "input": "import { ClassifiedString, DataProduct } from 'types/typesx';",
+        "ref": "types/typesx",
+        "file": "types\\typesx",
+        "external": false,
+        "replace": "../../../types/typesx"
+      },
+      {
+        "input": "import { Asterisk } from 'components/Generic/Asterisk';",
+        "ref": "components/Generic/Asterisk",
+        "file": "components\\Generic\\Asterisk",
+        "external": false,
+        "replace": "../../../components/Generic/Asterisk"
+      }
+    ]
+  },
+  {
+    "name": "CopyAsResolution",
+    "fullPath": "C:\\Users\\ddolg\\IdeaProjects\\jllis-mono\\webui\\src\\modules\\MyJLLIS\\Options\\CopyAsResolution.tsx",
+    "path": "modules\\MyJLLIS\\Options\\CopyAsResolution",
+    "imports": [
+      {
+        "input": "import { ErrorBoundary } from 'lib/ErrorBoundary';",
+        "ref": "lib/ErrorBoundary",
+        "file": "lib\\ErrorBoundary",
+        "external": false,
+        "replace": "../../../lib/ErrorBoundary"
+      },
+      {
+        "input": "import { setActiveSection, setActiveTab } from 'redux/appStateReducer';",
+        "ref": "redux/appStateReducer",
+        "file": "redux\\appStateReducer",
+        "external": false,
+        "replace": "../../../redux/appStateReducer"
+      },
+      {
+        "input": "import { useElevateToRESMutation } from 'redux/endpoints/dataProductsApi';",
+        "ref": "redux/endpoints/dataProductsApi",
+        "file": "redux\\endpoints\\dataProductsApi",
+        "external": false,
+        "replace": "../../../redux/endpoints/dataProductsApi"
+      },
+      {
+        "input": "import { useAppDispatch } from 'redux/hooks';",
+        "ref": "redux/hooks",
+        "file": "redux\\hooks",
+        "external": false,
+        "replace": "../../../redux/hooks"
+      },
+      {
+        "input": "import { DataProductTabsEnum } from 'types/dataproductTypes';",
+        "ref": "types/dataproductTypes",
+        "file": "types\\dataproductTypes",
+        "external": false,
+        "replace": "../../../types/dataproductTypes"
+      },
+      {
+        "input": "import { DataProduct, Related } from 'types/typesx';",
+        "ref": "types/typesx",
+        "file": "types\\typesx",
+        "external": false,
+        "replace": "../../../types/typesx"
+      },
+      {
+        "input": "import { Asterisk } from 'components/Generic/Asterisk';",
+        "ref": "components/Generic/Asterisk",
+        "file": "components\\Generic\\Asterisk",
+        "external": false,
+        "replace": "../../../components/Generic/Asterisk"
+      },
+      {
+        "input": "import { DataProductTypeLookup } from 'components/Lookups/DataProductTypeLookup';",
+        "ref": "components/Lookups/DataProductTypeLookup",
+        "file": "components\\Lookups\\DataProductTypeLookup",
+        "external": false,
+        "replace": "../../../components/Lookups/DataProductTypeLookup"
+      }
+    ]
+  },
+  {
+    "name": "AnalysisCorrectiveActionsEvaluation",
+    "fullPath": "C:\\Users\\ddolg\\IdeaProjects\\jllis-mono\\webui\\src\\modules\\MyJLLIS\\Sections\\AnalysisCorrectiveActionsEvaluation\\AnalysisCorrectiveActionsEvaluation.tsx",
+    "path": "modules\\MyJLLIS\\Sections\\AnalysisCorrectiveActionsEvaluation\\AnalysisCorrectiveActionsEvaluation",
+    "imports": [
+      {
+        "input": "import { useDataProduct, useUpdateDataProduct } from 'redux/hooks';",
+        "ref": "redux/hooks",
+        "file": "redux\\hooks",
+        "external": false,
+        "replace": "../../../../redux/hooks"
+      },
+      {
+        "input": "import { defaultDataProduct } from 'shared/defaults';",
+        "ref": "shared/defaults",
+        "file": "shared\\defaults",
+        "external": false,
+        "replace": "../../../../shared/defaults"
+      },
+      {
+        "input": "import { DataProductAnalysisCorrectiveActionsEvaluation } from 'types/typesx';",
+        "ref": "types/typesx",
+        "file": "types\\typesx",
+        "external": false,
+        "replace": "../../../../types/typesx"
+      },
+      {
+        "input": "import { GenericThread } from 'components/Generic/GenericThread/GenericThread';",
+        "ref": "components/Generic/GenericThread/GenericThread",
+        "file": "components\\Generic\\GenericThread\\GenericThread",
+        "external": false,
+        "replace": "../../../../components/Generic/GenericThread/GenericThread"
+      },
+      {
+        "input": "import { PortionMarking } from 'components/Generic/PortionMarking/PortionMarking';",
+        "ref": "components/Generic/PortionMarking/PortionMarking",
+        "file": "components\\Generic\\PortionMarking\\PortionMarking",
+        "external": false,
+        "replace": "../../../../components/Generic/PortionMarking/PortionMarking"
+      }
+    ]
+  },
+  {
+    "name": "Announcements",
+    "fullPath": "C:\\Users\\ddolg\\IdeaProjects\\jllis-mono\\webui\\src\\modules\\MyJLLIS\\Sections\\Announcements\\Announcements.tsx",
+    "path": "modules\\MyJLLIS\\Sections\\Announcements\\Announcements",
+    "imports": [
+      {
+        "input": "import { SectionProps } from 'types/typesx';",
+        "ref": "types/typesx",
+        "file": "types\\typesx",
+        "external": false,
+        "replace": "../../../../types/typesx"
+      },
+      {
+        "input": "import { GenericThread } from 'components/Generic/GenericThread/GenericThread';",
+        "ref": "components/Generic/GenericThread/GenericThread",
+        "file": "components\\Generic\\GenericThread\\GenericThread",
+        "external": false,
+        "replace": "../../../../components/Generic/GenericThread/GenericThread"
+      }
+    ]
+  },
+  {
+    "name": "AttachFileModal",
+    "fullPath": "C:\\Users\\ddolg\\IdeaProjects\\jllis-mono\\webui\\src\\modules\\MyJLLIS\\Sections\\Attachments\\AttachFileModal.tsx",
+    "path": "modules\\MyJLLIS\\Sections\\Attachments\\AttachFileModal",
+    "imports": [
+      {
+        "input": "import { useUploadDataProductAttachmentMutation } from 'redux/endpoints/dataProductsApi';",
+        "ref": "redux/endpoints/dataProductsApi",
+        "file": "redux\\endpoints\\dataProductsApi",
+        "external": false,
+        "replace": "../../../../redux/endpoints/dataProductsApi"
+      },
+      {
+        "input": "import { useFetchActiveLookupData } from 'redux/hooks';",
+        "ref": "redux/hooks",
+        "file": "redux\\hooks",
+        "external": false,
+        "replace": "../../../../redux/hooks"
+      },
+      {
+        "input": "import { AttachmentCreateDto, Classification, ClassifiedString, DataProduct, GridSection, User } from 'types/typesx';",
+        "ref": "types/typesx",
+        "file": "types\\typesx",
+        "external": false,
+        "replace": "../../../../types/typesx"
+      },
+      {
+        "input": "import { getRuntimeConfig } from 'util/apiUtilities';",
+        "ref": "util/apiUtilities",
+        "file": "util\\apiUtilities",
+        "external": false,
+        "replace": "../../../../util/apiUtilities"
+      },
+      {
+        "input": "import { ClassificationTab } from 'components/Generic/PortionMarking/ClassificationTab';",
+        "ref": "components/Generic/PortionMarking/ClassificationTab",
+        "file": "components\\Generic\\PortionMarking\\ClassificationTab",
+        "external": false,
+        "replace": "../../../../components/Generic/PortionMarking/ClassificationTab"
+      },
+      {
+        "input": "import { MarkingTab } from 'components/Generic/PortionMarking/MarkingTab';",
+        "ref": "components/Generic/PortionMarking/MarkingTab",
+        "file": "components\\Generic\\PortionMarking\\MarkingTab",
+        "external": false,
+        "replace": "../../../../components/Generic/PortionMarking/MarkingTab"
+      },
+      {
+        "input": "import { ReleasableTab } from 'components/Generic/PortionMarking/ReleasableTab';",
+        "ref": "components/Generic/PortionMarking/ReleasableTab",
+        "file": "components\\Generic\\PortionMarking\\ReleasableTab",
+        "external": false,
+        "replace": "../../../../components/Generic/PortionMarking/ReleasableTab"
+      }
+    ]
+  },
+  {
+    "name": "Attachments",
+    "fullPath": "C:\\Users\\ddolg\\IdeaProjects\\jllis-mono\\webui\\src\\modules\\MyJLLIS\\Sections\\Attachments\\Attachments.tsx",
+    "path": "modules\\MyJLLIS\\Sections\\Attachments\\Attachments",
+    "imports": [
+      {
+        "input": "import { ErrorBoundary } from 'lib/ErrorBoundary';",
+        "ref": "lib/ErrorBoundary",
+        "file": "lib\\ErrorBoundary",
+        "external": false,
+        "replace": "../../../../lib/ErrorBoundary"
+      },
+      {
+        "input": "import { useAppDispatch, useCurrentUser, useUpdateDataProduct } from 'redux/hooks';",
+        "ref": "redux/hooks",
+        "file": "redux\\hooks",
+        "external": false,
+        "replace": "../../../../redux/hooks"
+      },
+      {
+        "input": "import { Attachment, AttachmentFieldPermission, Classification, GridSection, SectionProps } from 'types/typesx';",
+        "ref": "types/typesx",
+        "file": "types\\typesx",
+        "external": false,
+        "replace": "../../../../types/typesx"
+      },
+      {
+        "input": "import { EditSectionModal, ModalType } from 'components/EditSectionModal';",
+        "ref": "components/EditSectionModal",
+        "file": "components\\EditSectionModal",
+        "external": false,
+        "replace": "../../../../components/EditSectionModal"
+      },
+      {
+        "input": "import { ConfirmDialog } from 'components/Generic/dialogs/CommonDialogs';",
+        "ref": "components/Generic/dialogs/CommonDialogs",
+        "file": "components\\Generic\\dialogs\\CommonDialogs",
+        "external": false,
+        "replace": "../../../../components/Generic/dialogs/CommonDialogs"
+      },
+      {
+        "input": "import { Tooltip } from 'components/Tooltip';",
+        "ref": "components/Tooltip",
+        "file": "components\\Tooltip",
+        "external": false,
+        "replace": "../../../../components/Tooltip"
+      }
+    ]
+  },
+  {
+    "name": "getColumnSettings",
+    "fullPath": "C:\\Users\\ddolg\\IdeaProjects\\jllis-mono\\webui\\src\\modules\\MyJLLIS\\Sections\\Attachments\\getColumnSettings.tsx",
+    "path": "modules\\MyJLLIS\\Sections\\Attachments\\getColumnSettings",
+    "imports": [
+      {
+        "input": "import { AttachmentFieldPermission } from 'types/typesx';",
+        "ref": "types/typesx",
+        "file": "types\\typesx",
+        "external": false,
+        "replace": "../../../../types/typesx"
+      },
+      {
+        "input": "import { PortionMarking } from 'components/Generic/PortionMarking/PortionMarking';",
+        "ref": "components/Generic/PortionMarking/PortionMarking",
+        "file": "components\\Generic\\PortionMarking\\PortionMarking",
+        "external": false,
+        "replace": "../../../../components/Generic/PortionMarking/PortionMarking"
+      }
+    ]
+  },
+  {
+    "name": "types",
+    "fullPath": "C:\\Users\\ddolg\\IdeaProjects\\jllis-mono\\webui\\src\\modules\\MyJLLIS\\Sections\\Attachments\\types.ts",
+    "path": "modules\\MyJLLIS\\Sections\\Attachments\\types",
+    "imports": [
+      {
+        "input": "import { Attachment, GridSection } from 'types/typesx';",
+        "ref": "types/typesx",
+        "file": "types\\typesx",
+        "external": false,
+        "replace": "../../../../types/typesx"
+      }
+    ]
+  },
+  {
+    "name": "Comments",
+    "fullPath": "C:\\Users\\ddolg\\IdeaProjects\\jllis-mono\\webui\\src\\modules\\MyJLLIS\\Sections\\Comments\\Comments.tsx",
+    "path": "modules\\MyJLLIS\\Sections\\Comments\\Comments",
+    "imports": [
+      {
+        "input": "import { SectionProps } from 'types/typesx';",
+        "ref": "types/typesx",
+        "file": "types\\typesx",
+        "external": false,
+        "replace": "../../../../types/typesx"
+      },
+      {
+        "input": "import { GenericThread } from 'components/Generic/GenericThread/GenericThread';",
+        "ref": "components/Generic/GenericThread/GenericThread",
+        "file": "components\\Generic\\GenericThread\\GenericThread",
+        "external": false,
+        "replace": "../../../../components/Generic/GenericThread/GenericThread"
+      }
+    ]
+  },
+  {
+    "name": "CommonTypes",
+    "fullPath": "C:\\Users\\ddolg\\IdeaProjects\\jllis-mono\\webui\\src\\modules\\MyJLLIS\\Sections\\CommonTypes.ts",
+    "path": "modules\\MyJLLIS\\Sections\\CommonTypes",
+    "imports": [
+      {
+        "input": "import { FieldConfigurations, FieldPermissions, User } from 'types/typesx';",
+        "ref": "types/typesx",
+        "file": "types\\typesx",
+        "external": false,
+        "replace": "../../../types/typesx"
+      }
+    ]
+  },
+  {
+    "name": "Contacts",
+    "fullPath": "C:\\Users\\ddolg\\IdeaProjects\\jllis-mono\\webui\\src\\modules\\MyJLLIS\\Sections\\Contacts\\Contacts.tsx",
+    "path": "modules\\MyJLLIS\\Sections\\Contacts\\Contacts",
+    "imports": [
+      {
+        "input": "import { useUpdateDataProduct } from 'redux/hooks';",
+        "ref": "redux/hooks",
+        "file": "redux\\hooks",
+        "external": false,
+        "replace": "../../../../redux/hooks"
+      },
+      {
+        "input": "import { PointOfContact, SectionProps } from 'types/typesx';",
+        "ref": "types/typesx",
+        "file": "types\\typesx",
+        "external": false,
+        "replace": "../../../../types/typesx"
+      },
+      {
+        "input": "import ContactsGrid from 'components/ContactsGrid';",
+        "ref": "components/ContactsGrid",
+        "file": "components\\ContactsGrid",
+        "external": false,
+        "replace": "../../../../components/ContactsGrid"
+      }
+    ]
+  },
+  {
+    "name": "DetailsMaster",
+    "fullPath": "C:\\Users\\ddolg\\IdeaProjects\\jllis-mono\\webui\\src\\modules\\MyJLLIS\\Sections\\Details\\DetailsMaster.tsx",
+    "path": "modules\\MyJLLIS\\Sections\\Details\\DetailsMaster",
+    "imports": [
+      {
+        "input": "import { useCurrentUser, useUpdateDataProduct } from 'redux/hooks';",
+        "ref": "redux/hooks",
+        "file": "redux\\hooks",
+        "external": false,
+        "replace": "../../../../redux/hooks"
+      },
+      {
+        "input": "import { FieldPermissions, ReduxState, SectionProps } from 'types/typesx';",
+        "ref": "types/typesx",
+        "file": "types\\typesx",
+        "external": false,
+        "replace": "../../../../types/typesx"
+      },
+      {
+        "input": "import { noOp } from 'util/apiUtilities';",
+        "ref": "util/apiUtilities",
+        "file": "util\\apiUtilities",
+        "external": false,
+        "replace": "../../../../util/apiUtilities"
+      }
+    ]
+  },
+  {
+    "name": "FactoryComponent",
+    "fullPath": "C:\\Users\\ddolg\\IdeaProjects\\jllis-mono\\webui\\src\\modules\\MyJLLIS\\Sections\\Details\\FactoryComponent.tsx",
+    "path": "modules\\MyJLLIS\\Sections\\Details\\FactoryComponent",
+    "imports": [
+      {
+        "input": "import { checkEditStatus } from 'util/apiUtilities';",
+        "ref": "util/apiUtilities",
+        "file": "util\\apiUtilities",
+        "external": false,
+        "replace": "../../../../util/apiUtilities"
+      },
+      {
+        "input": "import { TextAreas } from 'components/Fields/TextAreas';",
+        "ref": "components/Fields/TextAreas",
+        "file": "components\\Fields\\TextAreas",
+        "external": false,
+        "replace": "../../../../components/Fields/TextAreas"
+      },
+      {
+        "input": "import { Asterisk } from 'components/Generic/Asterisk';",
+        "ref": "components/Generic/Asterisk",
+        "file": "components\\Generic\\Asterisk",
+        "external": false,
+        "replace": "../../../../components/Generic/Asterisk"
+      },
+      {
+        "input": "import { PortionMarking } from 'components/Generic/PortionMarking/PortionMarking';",
+        "ref": "components/Generic/PortionMarking/PortionMarking",
+        "file": "components\\Generic\\PortionMarking\\PortionMarking",
+        "external": false,
+        "replace": "../../../../components/Generic/PortionMarking/PortionMarking"
+      },
+      {
+        "input": "import LocationsGrid from 'components/LocationsGrid';",
+        "ref": "components/LocationsGrid",
+        "file": "components\\LocationsGrid",
+        "external": false,
+        "replace": "../../../../components/LocationsGrid"
+      },
+      {
+        "input": "import { OrganizationsAndUnitsLookup } from 'components/Lookups/OrganizationsAndUnitsLookup';",
+        "ref": "components/Lookups/OrganizationsAndUnitsLookup",
+        "file": "components\\Lookups\\OrganizationsAndUnitsLookup",
+        "external": false,
+        "replace": "../../../../components/Lookups/OrganizationsAndUnitsLookup"
+      },
+      {
+        "input": "import { AllDetailTypes } from 'types/sectionTypes';",
+        "ref": "types/sectionTypes",
+        "file": "types\\sectionTypes",
+        "external": false,
+        "replace": "../../../../types/sectionTypes"
+      }
+    ]
+  },
+  {
+    "name": "Helper",
+    "fullPath": "C:\\Users\\ddolg\\IdeaProjects\\jllis-mono\\webui\\src\\modules\\MyJLLIS\\Sections\\Details\\Helper.ts",
+    "path": "modules\\MyJLLIS\\Sections\\Details\\Helper",
+    "imports": [
+      {
+        "input": "import { isReallyEmpty } from 'util/apiUtilities';",
+        "ref": "util/apiUtilities",
+        "file": "util\\apiUtilities",
+        "external": false,
+        "replace": "../../../../util/apiUtilities"
+      }
+    ]
+  },
+  {
+    "name": "Details_AAR",
+    "fullPath": "C:\\Users\\ddolg\\IdeaProjects\\jllis-mono\\webui\\src\\modules\\MyJLLIS\\Sections\\Details\\sections\\Details_AAR.tsx",
+    "path": "modules\\MyJLLIS\\Sections\\Details\\sections\\Details_AAR",
+    "imports": [
+      {
+        "input": "import { FieldPermissions } from 'types/typesx';",
+        "ref": "types/typesx",
+        "file": "types\\typesx",
+        "external": false,
+        "replace": "../../../../../types/typesx"
+      },
+      {
+        "input": "import { areAllDisabled, EMPTY_CLASSIFIED_STRING } from 'util/apiUtilities';",
+        "ref": "util/apiUtilities",
+        "file": "util\\apiUtilities",
+        "external": false,
+        "replace": "../../../../../util/apiUtilities"
+      },
+      {
+        "input": "import { AAR_Details } from 'types/sectionTypes';",
+        "ref": "types/sectionTypes",
+        "file": "types\\sectionTypes",
+        "external": false,
+        "replace": "../../../../../types/sectionTypes"
+      }
+    ]
+  },
+  {
+    "name": "Details_COL",
+    "fullPath": "C:\\Users\\ddolg\\IdeaProjects\\jllis-mono\\webui\\src\\modules\\MyJLLIS\\Sections\\Details\\sections\\Details_COL.tsx",
+    "path": "modules\\MyJLLIS\\Sections\\Details\\sections\\Details_COL",
+    "imports": [
+      {
+        "input": "import { FieldPermissions } from 'types/typesx';",
+        "ref": "types/typesx",
+        "file": "types\\typesx",
+        "external": false,
+        "replace": "../../../../../types/typesx"
+      },
+      {
+        "input": "import { EMPTY_CLASSIFIED_STRING, areAllDisabled } from 'util/apiUtilities';",
+        "ref": "util/apiUtilities",
+        "file": "util\\apiUtilities",
+        "external": false,
+        "replace": "../../../../../util/apiUtilities"
+      },
+      {
+        "input": "import { COL_Details } from 'types/sectionTypes';",
+        "ref": "types/sectionTypes",
+        "file": "types\\sectionTypes",
+        "external": false,
+        "replace": "../../../../../types/sectionTypes"
+      }
+    ]
+  },
+  {
+    "name": "Details_OBS",
+    "fullPath": "C:\\Users\\ddolg\\IdeaProjects\\jllis-mono\\webui\\src\\modules\\MyJLLIS\\Sections\\Details\\sections\\Details_OBS.tsx",
+    "path": "modules\\MyJLLIS\\Sections\\Details\\sections\\Details_OBS",
+    "imports": [
+      {
+        "input": "import { FieldPermissions, Related } from 'types/typesx';",
+        "ref": "types/typesx",
+        "file": "types\\typesx",
+        "external": false,
+        "replace": "../../../../../types/typesx"
+      },
+      {
+        "input": "import { areAllDisabled } from 'util/apiUtilities';",
+        "ref": "util/apiUtilities",
+        "file": "util\\apiUtilities",
+        "external": false,
+        "replace": "../../../../../util/apiUtilities"
+      },
+      {
+        "input": "import { OBS_Details } from 'types/sectionTypes';",
+        "ref": "types/sectionTypes",
+        "file": "types\\sectionTypes",
+        "external": false,
+        "replace": "../../../../../types/sectionTypes"
+      }
+    ]
+  },
+  {
+    "name": "Details_PVR",
+    "fullPath": "C:\\Users\\ddolg\\IdeaProjects\\jllis-mono\\webui\\src\\modules\\MyJLLIS\\Sections\\Details\\sections\\Details_PVR.tsx",
+    "path": "modules\\MyJLLIS\\Sections\\Details\\sections\\Details_PVR",
+    "imports": [
+      {
+        "input": "import { FieldPermissions } from 'types/typesx';",
+        "ref": "types/typesx",
+        "file": "types\\typesx",
+        "external": false,
+        "replace": "../../../../../types/typesx"
+      },
+      {
+        "input": "import { areAllDisabled } from 'util/apiUtilities';",
+        "ref": "util/apiUtilities",
+        "file": "util\\apiUtilities",
+        "external": false,
+        "replace": "../../../../../util/apiUtilities"
+      },
+      {
+        "input": "import { PVR_Details } from 'types/sectionTypes';",
+        "ref": "types/sectionTypes",
+        "file": "types\\sectionTypes",
+        "external": false,
+        "replace": "../../../../../types/sectionTypes"
+      }
+    ]
+  },
+  {
+    "name": "Details_RES",
+    "fullPath": "C:\\Users\\ddolg\\IdeaProjects\\jllis-mono\\webui\\src\\modules\\MyJLLIS\\Sections\\Details\\sections\\Details_RES.tsx",
+    "path": "modules\\MyJLLIS\\Sections\\Details\\sections\\Details_RES",
+    "imports": [
+      {
+        "input": "import { FieldPermissions, Related } from 'types/typesx';",
+        "ref": "types/typesx",
+        "file": "types\\typesx",
+        "external": false,
+        "replace": "../../../../../types/typesx"
+      },
+      {
+        "input": "import { areAllDisabled } from 'util/apiUtilities';",
+        "ref": "util/apiUtilities",
+        "file": "util\\apiUtilities",
+        "external": false,
+        "replace": "../../../../../util/apiUtilities"
+      },
+      {
+        "input": "import { RES_Details } from 'types/sectionTypes';",
+        "ref": "types/sectionTypes",
+        "file": "types\\sectionTypes",
+        "external": false,
+        "replace": "../../../../../types/sectionTypes"
+      }
+    ]
+  },
+  {
+    "name": "FactoryComponent",
+    "fullPath": "C:\\Users\\ddolg\\IdeaProjects\\jllis-mono\\webui\\src\\modules\\MyJLLIS\\Sections\\GeneralInformation\\FactoryComponent.tsx",
+    "path": "modules\\MyJLLIS\\Sections\\GeneralInformation\\FactoryComponent",
+    "imports": [
+      {
+        "input": "import { FormatDate } from 'lib/Date';",
+        "ref": "lib/Date",
+        "file": "lib\\Date",
+        "external": false,
+        "replace": "../../../../lib/Date"
+      },
+      {
+        "input": "import { DataProductStatusVisibilityRules, Related } from 'types/typesx';",
+        "ref": "types/typesx",
+        "file": "types\\typesx",
+        "external": false,
+        "replace": "../../../../types/typesx"
+      },
+      {
+        "input": "import { checkEditStatus } from 'util/apiUtilities';",
+        "ref": "util/apiUtilities",
+        "file": "util\\apiUtilities",
+        "external": false,
+        "replace": "../../../../util/apiUtilities"
+      },
+      {
+        "input": "import { CalendarDatePicker, CalendarDateRangePicker } from 'components/Fields/CalendarDatePickers';",
+        "ref": "components/Fields/CalendarDatePickers",
+        "file": "components\\Fields\\CalendarDatePickers",
+        "external": false,
+        "replace": "../../../../components/Fields/CalendarDatePickers"
+      },
+      {
+        "input": "import { TextAreas } from 'components/Fields/TextAreas';",
+        "ref": "components/Fields/TextAreas",
+        "file": "components\\Fields\\TextAreas",
+        "external": false,
+        "replace": "../../../../components/Fields/TextAreas"
+      },
+      {
+        "input": "import { VisibilityToggle } from 'components/Fields/VisibilityToggle';",
+        "ref": "components/Fields/VisibilityToggle",
+        "file": "components\\Fields\\VisibilityToggle",
+        "external": false,
+        "replace": "../../../../components/Fields/VisibilityToggle"
+      },
+      {
+        "input": "import { Asterisk } from 'components/Generic/Asterisk';",
+        "ref": "components/Generic/Asterisk",
+        "file": "components\\Generic\\Asterisk",
+        "external": false,
+        "replace": "../../../../components/Generic/Asterisk"
+      },
+      {
+        "input": "import { PortionMarking } from 'components/Generic/PortionMarking/PortionMarking';",
+        "ref": "components/Generic/PortionMarking/PortionMarking",
+        "file": "components\\Generic\\PortionMarking\\PortionMarking",
+        "external": false,
+        "replace": "../../../../components/Generic/PortionMarking/PortionMarking"
+      },
+      {
+        "input": "import { DataProductCategoryLookup } from 'components/Lookups/DataProductCategoryLookup';",
+        "ref": "components/Lookups/DataProductCategoryLookup",
+        "file": "components\\Lookups\\DataProductCategoryLookup",
+        "external": false,
+        "replace": "../../../../components/Lookups/DataProductCategoryLookup"
+      },
+      {
+        "input": "import { DataProductStatusLookup } from 'components/Lookups/DataProductStatusLookup';",
+        "ref": "components/Lookups/DataProductStatusLookup",
+        "file": "components\\Lookups\\DataProductStatusLookup",
+        "external": false,
+        "replace": "../../../../components/Lookups/DataProductStatusLookup"
+      },
+      {
+        "input": "import { DataProductTypeLookup } from 'components/Lookups/DataProductTypeLookup';",
+        "ref": "components/Lookups/DataProductTypeLookup",
+        "file": "components\\Lookups\\DataProductTypeLookup",
+        "external": false,
+        "replace": "../../../../components/Lookups/DataProductTypeLookup"
+      },
+      {
+        "input": "import { DisabledOptions } from 'components/Lookups/DropdownData';",
+        "ref": "components/Lookups/DropdownData",
+        "file": "components\\Lookups\\DropdownData",
+        "external": false,
+        "replace": "../../../../components/Lookups/DropdownData"
+      },
+      {
+        "input": "import { OrganizationsAndUnitsLookup } from 'components/Lookups/OrganizationsAndUnitsLookup';",
+        "ref": "components/Lookups/OrganizationsAndUnitsLookup",
+        "file": "components\\Lookups\\OrganizationsAndUnitsLookup",
+        "external": false,
+        "replace": "../../../../components/Lookups/OrganizationsAndUnitsLookup"
+      },
+      {
+        "input": "import { PortLookup } from 'components/Lookups/PortLookup';",
+        "ref": "components/Lookups/PortLookup",
+        "file": "components\\Lookups\\PortLookup",
+        "external": false,
+        "replace": "../../../../components/Lookups/PortLookup"
+      },
+      {
+        "input": "import { itMayBeRelatedToString, LookupDropdown } from 'components/Lookups/LookupDropdown';",
+        "ref": "components/Lookups/LookupDropdown",
+        "file": "components\\Lookups\\LookupDropdown",
+        "external": false,
+        "replace": "../../../../components/Lookups/LookupDropdown"
+      }
+    ]
+  },
+  {
+    "name": "GeneralInformationMaster",
+    "fullPath": "C:\\Users\\ddolg\\IdeaProjects\\jllis-mono\\webui\\src\\modules\\MyJLLIS\\Sections\\GeneralInformation\\GeneralInformationMaster.tsx",
+    "path": "modules\\MyJLLIS\\Sections\\GeneralInformation\\GeneralInformationMaster",
+    "imports": [
+      {
+        "input": "import { setActiveTab } from 'redux/appStateReducer';",
+        "ref": "redux/appStateReducer",
+        "file": "redux\\appStateReducer",
+        "external": false,
+        "replace": "../../../../redux/appStateReducer"
+      },
+      {
+        "input": "import { useAppDispatch, useCreateDataProduct, useCurrentUser, useUpdateDataProduct } from 'redux/hooks';",
+        "ref": "redux/hooks",
+        "file": "redux\\hooks",
+        "external": false,
+        "replace": "../../../../redux/hooks"
+      },
+      {
+        "input": "import { DataProductTabsEnum } from 'types/dataproductTypes';",
+        "ref": "types/dataproductTypes",
+        "file": "types\\dataproductTypes",
+        "external": false,
+        "replace": "../../../../types/dataproductTypes"
+      },
+      {
+        "input": "import { FieldPermissions, ReduxState, SectionProps } from 'types/typesx';",
+        "ref": "types/typesx",
+        "file": "types\\typesx",
+        "external": false,
+        "replace": "../../../../types/typesx"
+      },
+      {
+        "input": "import { getPathToDataproduct, noOp } from 'util/apiUtilities';",
+        "ref": "util/apiUtilities",
+        "file": "util\\apiUtilities",
+        "external": false,
+        "replace": "../../../../util/apiUtilities"
+      },
+      {
+        "input": "import { Asterisk } from 'components/Generic/Asterisk';",
+        "ref": "components/Generic/Asterisk",
+        "file": "components\\Generic\\Asterisk",
+        "external": false,
+        "replace": "../../../../components/Generic/Asterisk"
+      },
+      {
+        "input": "import { PortionMarking } from 'components/Generic/PortionMarking/PortionMarking';",
+        "ref": "components/Generic/PortionMarking/PortionMarking",
+        "file": "components\\Generic\\PortionMarking\\PortionMarking",
+        "external": false,
+        "replace": "../../../../components/Generic/PortionMarking/PortionMarking"
+      }
+    ]
+  },
+  {
+    "name": "Helper",
+    "fullPath": "C:\\Users\\ddolg\\IdeaProjects\\jllis-mono\\webui\\src\\modules\\MyJLLIS\\Sections\\GeneralInformation\\Helper.ts",
+    "path": "modules\\MyJLLIS\\Sections\\GeneralInformation\\Helper",
+    "imports": [
+      {
+        "input": "import { isReallyEmpty } from 'util/apiUtilities';",
+        "ref": "util/apiUtilities",
+        "file": "util\\apiUtilities",
+        "external": false,
+        "replace": "../../../../util/apiUtilities"
+      }
+    ]
+  },
+  {
+    "name": "Reducer",
+    "fullPath": "C:\\Users\\ddolg\\IdeaProjects\\jllis-mono\\webui\\src\\modules\\MyJLLIS\\Sections\\GeneralInformation\\Reducer.ts",
+    "path": "modules\\MyJLLIS\\Sections\\GeneralInformation\\Reducer",
+    "imports": [
+      {
+        "input": "import { DataProductStatusVisibilityRules } from 'types/typesx';",
+        "ref": "types/typesx",
+        "file": "types\\typesx",
+        "external": false,
+        "replace": "../../../../types/typesx"
+      }
+    ]
+  },
+  {
+    "name": "GeneralInformation_AAR",
+    "fullPath": "C:\\Users\\ddolg\\IdeaProjects\\jllis-mono\\webui\\src\\modules\\MyJLLIS\\Sections\\GeneralInformation\\sections\\GeneralInformation_AAR.tsx",
+    "path": "modules\\MyJLLIS\\Sections\\GeneralInformation\\sections\\GeneralInformation_AAR",
+    "imports": [
+      {
+        "input": "import { FieldPermissions, Related } from 'types/typesx';",
+        "ref": "types/typesx",
+        "file": "types\\typesx",
+        "external": false,
+        "replace": "../../../../../types/typesx"
+      },
+      {
+        "input": "import { areAllDisabled } from 'util/apiUtilities';",
+        "ref": "util/apiUtilities",
+        "file": "util\\apiUtilities",
+        "external": false,
+        "replace": "../../../../../util/apiUtilities"
+      },
+      {
+        "input": "import { AAR_GeneralInformation } from 'types/sectionTypes';",
+        "ref": "types/sectionTypes",
+        "file": "types\\sectionTypes",
+        "external": false,
+        "replace": "../../../../../types/sectionTypes"
+      }
+    ]
+  },
+  {
+    "name": "GeneralInformation_BIN",
+    "fullPath": "C:\\Users\\ddolg\\IdeaProjects\\jllis-mono\\webui\\src\\modules\\MyJLLIS\\Sections\\GeneralInformation\\sections\\GeneralInformation_BIN.tsx",
+    "path": "modules\\MyJLLIS\\Sections\\GeneralInformation\\sections\\GeneralInformation_BIN",
+    "imports": [
+      {
+        "input": "import { FieldPermissions, Related } from 'types/typesx';",
+        "ref": "types/typesx",
+        "file": "types\\typesx",
+        "external": false,
+        "replace": "../../../../../types/typesx"
+      },
+      {
+        "input": "import { areAllDisabled } from 'util/apiUtilities';",
+        "ref": "util/apiUtilities",
+        "file": "util\\apiUtilities",
+        "external": false,
+        "replace": "../../../../../util/apiUtilities"
+      },
+      {
+        "input": "import { BIN_GeneralInformation } from 'types/sectionTypes';",
+        "ref": "types/sectionTypes",
+        "file": "types\\sectionTypes",
+        "external": false,
+        "replace": "../../../../../types/sectionTypes"
+      }
+    ]
+  },
+  {
+    "name": "GeneralInformation_COL",
+    "fullPath": "C:\\Users\\ddolg\\IdeaProjects\\jllis-mono\\webui\\src\\modules\\MyJLLIS\\Sections\\GeneralInformation\\sections\\GeneralInformation_COL.tsx",
+    "path": "modules\\MyJLLIS\\Sections\\GeneralInformation\\sections\\GeneralInformation_COL",
+    "imports": [
+      {
+        "input": "import { FieldPermissions, Related } from 'types/typesx';",
+        "ref": "types/typesx",
+        "file": "types\\typesx",
+        "external": false,
+        "replace": "../../../../../types/typesx"
+      },
+      {
+        "input": "import { EMPTY_CLASSIFIED_STRING, areAllDisabled } from 'util/apiUtilities';",
+        "ref": "util/apiUtilities",
+        "file": "util\\apiUtilities",
+        "external": false,
+        "replace": "../../../../../util/apiUtilities"
+      },
+      {
+        "input": "import { COL_GeneralInformation } from 'types/sectionTypes';",
+        "ref": "types/sectionTypes",
+        "file": "types\\sectionTypes",
+        "external": false,
+        "replace": "../../../../../types/sectionTypes"
+      }
+    ]
+  },
+  {
+    "name": "GeneralInformation_COP",
+    "fullPath": "C:\\Users\\ddolg\\IdeaProjects\\jllis-mono\\webui\\src\\modules\\MyJLLIS\\Sections\\GeneralInformation\\sections\\GeneralInformation_COP.tsx",
+    "path": "modules\\MyJLLIS\\Sections\\GeneralInformation\\sections\\GeneralInformation_COP",
+    "imports": [
+      {
+        "input": "import { FieldPermissions, Related } from 'types/typesx';",
+        "ref": "types/typesx",
+        "file": "types\\typesx",
+        "external": false,
+        "replace": "../../../../../types/typesx"
+      },
+      {
+        "input": "import { EMPTY_CLASSIFIED_STRING, areAllDisabled } from 'util/apiUtilities';",
+        "ref": "util/apiUtilities",
+        "file": "util\\apiUtilities",
+        "external": false,
+        "replace": "../../../../../util/apiUtilities"
+      }
+    ]
+  },
+  {
+    "name": "GeneralInformation_OBS",
+    "fullPath": "C:\\Users\\ddolg\\IdeaProjects\\jllis-mono\\webui\\src\\modules\\MyJLLIS\\Sections\\GeneralInformation\\sections\\GeneralInformation_OBS.tsx",
+    "path": "modules\\MyJLLIS\\Sections\\GeneralInformation\\sections\\GeneralInformation_OBS",
+    "imports": [
+      {
+        "input": "import { FieldPermissions, Related } from 'types/typesx';",
+        "ref": "types/typesx",
+        "file": "types\\typesx",
+        "external": false,
+        "replace": "../../../../../types/typesx"
+      },
+      {
+        "input": "import { EMPTY_CLASSIFIED_STRING, areAllDisabled } from 'util/apiUtilities';",
+        "ref": "util/apiUtilities",
+        "file": "util\\apiUtilities",
+        "external": false,
+        "replace": "../../../../../util/apiUtilities"
+      },
+      {
+        "input": "import { OBS_GeneralInformation } from 'types/sectionTypes';",
+        "ref": "types/sectionTypes",
+        "file": "types\\sectionTypes",
+        "external": false,
+        "replace": "../../../../../types/sectionTypes"
+      }
+    ]
+  },
+  {
+    "name": "GeneralInformation_PVR",
+    "fullPath": "C:\\Users\\ddolg\\IdeaProjects\\jllis-mono\\webui\\src\\modules\\MyJLLIS\\Sections\\GeneralInformation\\sections\\GeneralInformation_PVR.tsx",
+    "path": "modules\\MyJLLIS\\Sections\\GeneralInformation\\sections\\GeneralInformation_PVR",
+    "imports": [
+      {
+        "input": "import { FieldPermissions, Related } from 'types/typesx';",
+        "ref": "types/typesx",
+        "file": "types\\typesx",
+        "external": false,
+        "replace": "../../../../../types/typesx"
+      },
+      {
+        "input": "import { areAllDisabled } from 'util/apiUtilities';",
+        "ref": "util/apiUtilities",
+        "file": "util\\apiUtilities",
+        "external": false,
+        "replace": "../../../../../util/apiUtilities"
+      },
+      {
+        "input": "import { PVR_GeneralInformation } from 'types/sectionTypes';",
+        "ref": "types/sectionTypes",
+        "file": "types\\sectionTypes",
+        "external": false,
+        "replace": "../../../../../types/sectionTypes"
+      }
+    ]
+  },
+  {
+    "name": "GeneralInformation_RES",
+    "fullPath": "C:\\Users\\ddolg\\IdeaProjects\\jllis-mono\\webui\\src\\modules\\MyJLLIS\\Sections\\GeneralInformation\\sections\\GeneralInformation_RES.tsx",
+    "path": "modules\\MyJLLIS\\Sections\\GeneralInformation\\sections\\GeneralInformation_RES",
+    "imports": [
+      {
+        "input": "import { FieldPermissions, Related } from 'types/typesx';",
+        "ref": "types/typesx",
+        "file": "types\\typesx",
+        "external": false,
+        "replace": "../../../../../types/typesx"
+      },
+      {
+        "input": "import { areAllDisabled } from 'util/apiUtilities';",
+        "ref": "util/apiUtilities",
+        "file": "util\\apiUtilities",
+        "external": false,
+        "replace": "../../../../../util/apiUtilities"
+      },
+      {
+        "input": "import { RES_GeneralInformation } from 'types/sectionTypes';",
+        "ref": "types/sectionTypes",
+        "file": "types\\sectionTypes",
+        "external": false,
+        "replace": "../../../../../types/sectionTypes"
+      }
+    ]
+  },
+  {
+    "name": "History",
+    "fullPath": "C:\\Users\\ddolg\\IdeaProjects\\jllis-mono\\webui\\src\\modules\\MyJLLIS\\Sections\\History\\History.tsx",
+    "path": "modules\\MyJLLIS\\Sections\\History\\History",
+    "imports": [
+      {
+        "input": "import { useGetDataProductByIdQuery } from 'redux/endpoints/dataProductsApi';",
+        "ref": "redux/endpoints/dataProductsApi",
+        "file": "redux\\endpoints\\dataProductsApi",
+        "external": false,
+        "replace": "../../../../redux/endpoints/dataProductsApi"
+      },
+      {
+        "input": "import { useAppSelector } from 'redux/hooks';",
+        "ref": "redux/hooks",
+        "file": "redux\\hooks",
+        "external": false,
+        "replace": "../../../../redux/hooks"
+      },
+      {
+        "input": "import { getPanelTitle } from 'modules/MyJLLIS/DisplayConfiguration';",
+        "ref": "modules/MyJLLIS/DisplayConfiguration",
+        "file": "modules\\MyJLLIS\\DisplayConfiguration",
+        "external": false,
+        "replace": "../../DisplayConfiguration"
+      }
+    ]
+  },
+  {
+    "name": "HistorySSD",
+    "fullPath": "C:\\Users\\ddolg\\IdeaProjects\\jllis-mono\\webui\\src\\modules\\MyJLLIS\\Sections\\History\\HistorySSD.ts",
+    "path": "modules\\MyJLLIS\\Sections\\History\\HistorySSD",
+    "imports": [
+      {
+        "input": "import { buildUrlFromPathAndOptionalQuery, sortModelToQueryArgs } from 'util/apiUtilities';",
+        "ref": "util/apiUtilities",
+        "file": "util\\apiUtilities",
+        "external": false,
+        "replace": "../../../../util/apiUtilities"
+      }
+    ]
+  },
+  {
+    "name": "Links",
+    "fullPath": "C:\\Users\\ddolg\\IdeaProjects\\jllis-mono\\webui\\src\\modules\\MyJLLIS\\Sections\\Links\\Links.tsx",
+    "path": "modules\\MyJLLIS\\Sections\\Links\\Links",
+    "imports": [
+      {
+        "input": "import { useDeleteLinkMutation, useGetLinksQuery, useUpdateSectionsMutation } from 'redux/endpoints/linksApi';",
+        "ref": "redux/endpoints/linksApi",
+        "file": "redux\\endpoints\\linksApi",
+        "external": false,
+        "replace": "../../../../redux/endpoints/linksApi"
+      },
+      {
+        "input": "import { DataProductLink, GridSection, LinkFieldPermission } from 'types/typesx';",
+        "ref": "types/typesx",
+        "file": "types\\typesx",
+        "external": false,
+        "replace": "../../../../types/typesx"
+      },
+      {
+        "input": "import { openInNewWindow, shortDataProductId } from 'util/apiUtilities';",
+        "ref": "util/apiUtilities",
+        "file": "util\\apiUtilities",
+        "external": false,
+        "replace": "../../../../util/apiUtilities"
+      },
+      {
+        "input": "import { EditSectionModal, ModalType } from 'components/EditSectionModal';",
+        "ref": "components/EditSectionModal",
+        "file": "components\\EditSectionModal",
+        "external": false,
+        "replace": "../../../../components/EditSectionModal"
+      },
+      {
+        "input": "import { Tooltip } from 'components/Tooltip';",
+        "ref": "components/Tooltip",
+        "file": "components\\Tooltip",
+        "external": false,
+        "replace": "../../../../components/Tooltip"
+      }
+    ]
+  },
+  {
+    "name": "LinksWithExternalLinks",
+    "fullPath": "C:\\Users\\ddolg\\IdeaProjects\\jllis-mono\\webui\\src\\modules\\MyJLLIS\\Sections\\Links\\LinksWithExternalLinks.tsx",
+    "path": "modules\\MyJLLIS\\Sections\\Links\\LinksWithExternalLinks",
+    "imports": [
+      {
+        "input": "import { useUpdateDataProduct } from 'redux/hooks';",
+        "ref": "redux/hooks",
+        "file": "redux\\hooks",
+        "external": false,
+        "replace": "../../../../redux/hooks"
+      },
+      {
+        "input": "import { ClassifiedString, DataProduct } from 'types/typesx';",
+        "ref": "types/typesx",
+        "file": "types\\typesx",
+        "external": false,
+        "replace": "../../../../types/typesx"
+      },
+      {
+        "input": "import { checkEditStatus } from 'util/apiUtilities';",
+        "ref": "util/apiUtilities",
+        "file": "util\\apiUtilities",
+        "external": false,
+        "replace": "../../../../util/apiUtilities"
+      },
+      {
+        "input": "import { PortionMarking } from 'components/Generic/PortionMarking/PortionMarking';",
+        "ref": "components/Generic/PortionMarking/PortionMarking",
+        "file": "components\\Generic\\PortionMarking\\PortionMarking",
+        "external": false,
+        "replace": "../../../../components/Generic/PortionMarking/PortionMarking"
+      }
+    ]
+  },
+  {
+    "name": "Metadata",
+    "fullPath": "C:\\Users\\ddolg\\IdeaProjects\\jllis-mono\\webui\\src\\modules\\MyJLLIS\\Sections\\Metadata\\Metadata.tsx",
+    "path": "modules\\MyJLLIS\\Sections\\Metadata\\Metadata",
+    "imports": [
+      {
+        "input": "import { ErrorBoundary } from 'lib/ErrorBoundary';",
+        "ref": "lib/ErrorBoundary",
+        "file": "lib\\ErrorBoundary",
+        "external": false,
+        "replace": "../../../../lib/ErrorBoundary"
+      },
+      {
+        "input": "import { useUpdateDataProduct } from 'redux/hooks';",
+        "ref": "redux/hooks",
+        "file": "redux\\hooks",
+        "external": false,
+        "replace": "../../../../redux/hooks"
+      },
+      {
+        "input": "import { defaultDataProduct } from 'shared/defaults';",
+        "ref": "shared/defaults",
+        "file": "shared\\defaults",
+        "external": false,
+        "replace": "../../../../shared/defaults"
+      },
+      {
+        "input": "import { DataproductMetadata, SectionProps } from 'types/typesx';",
+        "ref": "types/typesx",
+        "file": "types\\typesx",
+        "external": false,
+        "replace": "../../../../types/typesx"
+      }
+    ]
+  },
+  {
+    "name": "MetaDataBase",
+    "fullPath": "C:\\Users\\ddolg\\IdeaProjects\\jllis-mono\\webui\\src\\modules\\MyJLLIS\\Sections\\Metadata\\MetaDataBase.tsx",
+    "path": "modules\\MyJLLIS\\Sections\\Metadata\\MetaDataBase",
+    "imports": [
+      {
+        "input": "import { DataproductMetadata, DoctrinePublication, FieldPermissions, OrganizationMetadata } from 'types/typesx';",
+        "ref": "types/typesx",
+        "file": "types\\typesx",
+        "external": false,
+        "replace": "../../../../types/typesx"
+      }
+    ]
+  },
+  {
+    "name": "Contacts",
+    "fullPath": "C:\\Users\\ddolg\\IdeaProjects\\jllis-mono\\webui\\src\\modules\\MyJLLIS\\Sections\\Milestones\\Contacts.tsx",
+    "path": "modules\\MyJLLIS\\Sections\\Milestones\\Contacts",
+    "imports": [
+      {
+        "input": "import { useDataProduct, useUpdateDataProduct } from 'redux/hooks';",
+        "ref": "redux/hooks",
+        "file": "redux\\hooks",
+        "external": false,
+        "replace": "../../../../redux/hooks"
+      },
+      {
+        "input": "import { Milestone, PointOfContact } from 'types/typesx';",
+        "ref": "types/typesx",
+        "file": "types\\typesx",
+        "external": false,
+        "replace": "../../../../types/typesx"
+      },
+      {
+        "input": "import ContactsGrid from 'components/ContactsGrid';",
+        "ref": "components/ContactsGrid",
+        "file": "components\\ContactsGrid",
+        "external": false,
+        "replace": "../../../../components/ContactsGrid"
+      }
+    ]
+  },
+  {
+    "name": "MilestoneModal",
+    "fullPath": "C:\\Users\\ddolg\\IdeaProjects\\jllis-mono\\webui\\src\\modules\\MyJLLIS\\Sections\\Milestones\\MilestoneModal.tsx",
+    "path": "modules\\MyJLLIS\\Sections\\Milestones\\MilestoneModal",
+    "imports": [
+      {
+        "input": "import { Milestone } from 'types/typesx';",
+        "ref": "types/typesx",
+        "file": "types\\typesx",
+        "external": false,
+        "replace": "../../../../types/typesx"
+      },
+      {
+        "input": "import { isRichTextEditorEmpty } from 'util/apiUtilities';",
+        "ref": "util/apiUtilities",
+        "file": "util\\apiUtilities",
+        "external": false,
+        "replace": "../../../../util/apiUtilities"
+      },
+      {
+        "input": "import { Asterisk } from 'components/Generic/Asterisk';",
+        "ref": "components/Generic/Asterisk",
+        "file": "components\\Generic\\Asterisk",
+        "external": false,
+        "replace": "../../../../components/Generic/Asterisk"
+      },
+      {
+        "input": "import { PortionMarking } from 'components/Generic/PortionMarking/PortionMarking';",
+        "ref": "components/Generic/PortionMarking/PortionMarking",
+        "file": "components\\Generic\\PortionMarking\\PortionMarking",
+        "external": false,
+        "replace": "../../../../components/Generic/PortionMarking/PortionMarking"
+      },
+      {
+        "input": "import { GeneralModal, ModalStatus } from 'components/Generic/dialogs/GeneralModal';",
+        "ref": "components/Generic/dialogs/GeneralModal",
+        "file": "components\\Generic\\dialogs\\GeneralModal",
+        "external": false,
+        "replace": "../../../../components/Generic/dialogs/GeneralModal"
+      }
+    ]
+  },
+  {
+    "name": "MilestonePointOfContactModal",
+    "fullPath": "C:\\Users\\ddolg\\IdeaProjects\\jllis-mono\\webui\\src\\modules\\MyJLLIS\\Sections\\Milestones\\MilestonePointOfContactModal.tsx",
+    "path": "modules\\MyJLLIS\\Sections\\Milestones\\MilestonePointOfContactModal",
+    "imports": [
+      {
+        "input": "import { ErrorBoundary } from 'lib/ErrorBoundary';",
+        "ref": "lib/ErrorBoundary",
+        "file": "lib\\ErrorBoundary",
+        "external": false,
+        "replace": "../../../../lib/ErrorBoundary"
+      },
+      {
+        "input": "import { useGetPOCUsers } from 'redux/hooks';",
+        "ref": "redux/hooks",
+        "file": "redux\\hooks",
+        "external": false,
+        "replace": "../../../../redux/hooks"
+      },
+      {
+        "input": "import { PointOfContact, Related } from 'types/typesx';",
+        "ref": "types/typesx",
+        "file": "types\\typesx",
+        "external": false,
+        "replace": "../../../../types/typesx"
+      },
+      {
+        "input": "import { UserSelection } from 'components/Fields/dropdowns/UserSelection';",
+        "ref": "components/Fields/dropdowns/UserSelection",
+        "file": "components\\Fields\\dropdowns\\UserSelection",
+        "external": false,
+        "replace": "../../../../components/Fields/dropdowns/UserSelection"
+      },
+      {
+        "input": "import { StyledTable } from 'components/Generic/Tables/CustomizableTable';",
+        "ref": "components/Generic/Tables/CustomizableTable",
+        "file": "components\\Generic\\Tables\\CustomizableTable",
+        "external": false,
+        "replace": "../../../../components/Generic/Tables/CustomizableTable"
+      },
+      {
+        "input": "import { OrganizationsAndUnitsLookup } from 'components/Lookups/OrganizationsAndUnitsLookup';",
+        "ref": "components/Lookups/OrganizationsAndUnitsLookup",
+        "file": "components\\Lookups\\OrganizationsAndUnitsLookup",
+        "external": false,
+        "replace": "../../../../components/Lookups/OrganizationsAndUnitsLookup"
+      }
+    ]
+  },
+  {
+    "name": "Milestones",
+    "fullPath": "C:\\Users\\ddolg\\IdeaProjects\\jllis-mono\\webui\\src\\modules\\MyJLLIS\\Sections\\Milestones\\Milestones.tsx",
+    "path": "modules\\MyJLLIS\\Sections\\Milestones\\Milestones",
+    "imports": [
+      {
+        "input": "import { FormatDate } from 'lib/Date';",
+        "ref": "lib/Date",
+        "file": "lib\\Date",
+        "external": false,
+        "replace": "../../../../lib/Date"
+      },
+      {
+        "input": "import { useUpdateDataProduct } from 'redux/hooks';",
+        "ref": "redux/hooks",
+        "file": "redux\\hooks",
+        "external": false,
+        "replace": "../../../../redux/hooks"
+      },
+      {
+        "input": "import { Location, Milestone, SectionProps } from 'types/typesx';",
+        "ref": "types/typesx",
+        "file": "types\\typesx",
+        "external": false,
+        "replace": "../../../../types/typesx"
+      },
+      {
+        "input": "import { ReadOnlyTextAreas } from 'components/Fields/TextAreas';",
+        "ref": "components/Fields/TextAreas",
+        "file": "components\\Fields\\TextAreas",
+        "external": false,
+        "replace": "../../../../components/Fields/TextAreas"
+      },
+      {
+        "input": "import { PortionMarking } from 'components/Generic/PortionMarking/PortionMarking';",
+        "ref": "components/Generic/PortionMarking/PortionMarking",
+        "file": "components\\Generic\\PortionMarking\\PortionMarking",
+        "external": false,
+        "replace": "../../../../components/Generic/PortionMarking/PortionMarking"
+      },
+      {
+        "input": "import { ModalStatus } from 'components/Generic/dialogs/GeneralModal';",
+        "ref": "components/Generic/dialogs/GeneralModal",
+        "file": "components\\Generic\\dialogs\\GeneralModal",
+        "external": false,
+        "replace": "../../../../components/Generic/dialogs/GeneralModal"
+      },
+      {
+        "input": "import LocationGrid from 'components/LocationsGrid';",
+        "ref": "components/LocationsGrid",
+        "file": "components\\LocationsGrid",
+        "external": false,
+        "replace": "../../../../components/LocationsGrid"
+      }
+    ]
+  },
+  {
+    "name": "ObjectiveContacts",
+    "fullPath": "C:\\Users\\ddolg\\IdeaProjects\\jllis-mono\\webui\\src\\modules\\MyJLLIS\\Sections\\Objectives\\ObjectiveContacts.tsx",
+    "path": "modules\\MyJLLIS\\Sections\\Objectives\\ObjectiveContacts",
+    "imports": [
+      {
+        "input": "import { useUpdateDataProduct } from 'redux/hooks';",
+        "ref": "redux/hooks",
+        "file": "redux\\hooks",
+        "external": false,
+        "replace": "../../../../redux/hooks"
+      },
+      {
+        "input": "import { DataProduct, Objective, PointOfContact } from 'types/typesx';",
+        "ref": "types/typesx",
+        "file": "types\\typesx",
+        "external": false,
+        "replace": "../../../../types/typesx"
+      },
+      {
+        "input": "import ContactsGrid from 'components/ContactsGrid';",
+        "ref": "components/ContactsGrid",
+        "file": "components\\ContactsGrid",
+        "external": false,
+        "replace": "../../../../components/ContactsGrid"
+      }
+    ]
+  },
+  {
+    "name": "ObjectiveItem",
+    "fullPath": "C:\\Users\\ddolg\\IdeaProjects\\jllis-mono\\webui\\src\\modules\\MyJLLIS\\Sections\\Objectives\\ObjectiveItem.tsx",
+    "path": "modules\\MyJLLIS\\Sections\\Objectives\\ObjectiveItem",
+    "imports": [
+      {
+        "input": "import { useUpdateDataProduct } from 'redux/hooks';",
+        "ref": "redux/hooks",
+        "file": "redux\\hooks",
+        "external": false,
+        "replace": "../../../../redux/hooks"
+      },
+      {
+        "input": "import { ClassifiedString, DataProduct, GeneralFieldPermission, Objective, Task } from 'types/typesx';",
+        "ref": "types/typesx",
+        "file": "types\\typesx",
+        "external": false,
+        "replace": "../../../../types/typesx"
+      },
+      {
+        "input": "import { ReadOnlyTextAreas } from 'components/Fields/TextAreas';",
+        "ref": "components/Fields/TextAreas",
+        "file": "components\\Fields\\TextAreas",
+        "external": false,
+        "replace": "../../../../components/Fields/TextAreas"
+      },
+      {
+        "input": "import { PortionMarking } from 'components/Generic/PortionMarking/PortionMarking';",
+        "ref": "components/Generic/PortionMarking/PortionMarking",
+        "file": "components\\Generic\\PortionMarking\\PortionMarking",
+        "external": false,
+        "replace": "../../../../components/Generic/PortionMarking/PortionMarking"
+      },
+      {
+        "input": "import { ModalStatus } from 'components/Generic/dialogs/GeneralModal';",
+        "ref": "components/Generic/dialogs/GeneralModal",
+        "file": "components\\Generic\\dialogs\\GeneralModal",
+        "external": false,
+        "replace": "../../../../components/Generic/dialogs/GeneralModal"
+      }
+    ]
+  },
+  {
+    "name": "ObjectiveModal",
+    "fullPath": "C:\\Users\\ddolg\\IdeaProjects\\jllis-mono\\webui\\src\\modules\\MyJLLIS\\Sections\\Objectives\\ObjectiveModal.tsx",
+    "path": "modules\\MyJLLIS\\Sections\\Objectives\\ObjectiveModal",
+    "imports": [
+      {
+        "input": "import { ClassifiedString } from 'types/typesx';",
+        "ref": "types/typesx",
+        "file": "types\\typesx",
+        "external": false,
+        "replace": "../../../../types/typesx"
+      },
+      {
+        "input": "import { isRichTextEditorEmpty } from 'util/apiUtilities';",
+        "ref": "util/apiUtilities",
+        "file": "util\\apiUtilities",
+        "external": false,
+        "replace": "../../../../util/apiUtilities"
+      },
+      {
+        "input": "import { Asterisk } from 'components/Generic/Asterisk';",
+        "ref": "components/Generic/Asterisk",
+        "file": "components\\Generic\\Asterisk",
+        "external": false,
+        "replace": "../../../../components/Generic/Asterisk"
+      },
+      {
+        "input": "import { PortionMarking } from 'components/Generic/PortionMarking/PortionMarking';",
+        "ref": "components/Generic/PortionMarking/PortionMarking",
+        "file": "components\\Generic\\PortionMarking\\PortionMarking",
+        "external": false,
+        "replace": "../../../../components/Generic/PortionMarking/PortionMarking"
+      },
+      {
+        "input": "import { GeneralModal, ModalStatus } from 'components/Generic/dialogs/GeneralModal';",
+        "ref": "components/Generic/dialogs/GeneralModal",
+        "file": "components\\Generic\\dialogs\\GeneralModal",
+        "external": false,
+        "replace": "../../../../components/Generic/dialogs/GeneralModal"
+      }
+    ]
+  },
+  {
+    "name": "Objectives",
+    "fullPath": "C:\\Users\\ddolg\\IdeaProjects\\jllis-mono\\webui\\src\\modules\\MyJLLIS\\Sections\\Objectives\\Objectives.tsx",
+    "path": "modules\\MyJLLIS\\Sections\\Objectives\\Objectives",
+    "imports": [
+      {
+        "input": "import { useUpdateDataProduct } from 'redux/hooks';",
+        "ref": "redux/hooks",
+        "file": "redux\\hooks",
+        "external": false,
+        "replace": "../../../../redux/hooks"
+      },
+      {
+        "input": "import { ClassifiedString, Objective, SectionProps } from 'types/typesx';",
+        "ref": "types/typesx",
+        "file": "types\\typesx",
+        "external": false,
+        "replace": "../../../../types/typesx"
+      },
+      {
+        "input": "import { EMPTY_CLASSIFIED_STRING } from 'util/apiUtilities';",
+        "ref": "util/apiUtilities",
+        "file": "util\\apiUtilities",
+        "external": false,
+        "replace": "../../../../util/apiUtilities"
+      },
+      {
+        "input": "import { ModalStatus } from 'components/Generic/dialogs/GeneralModal';",
+        "ref": "components/Generic/dialogs/GeneralModal",
+        "file": "components\\Generic\\dialogs\\GeneralModal",
+        "external": false,
+        "replace": "../../../../components/Generic/dialogs/GeneralModal"
+      }
+    ]
+  },
+  {
+    "name": "UserProfile",
+    "fullPath": "C:\\Users\\ddolg\\IdeaProjects\\jllis-mono\\webui\\src\\modules\\User\\Profile\\UserProfile.tsx",
+    "path": "modules\\User\\Profile\\UserProfile",
+    "imports": [
+      {
+        "input": "import { FormatDate } from 'lib/Date';",
+        "ref": "lib/Date",
+        "file": "lib\\Date",
+        "external": false,
+        "replace": "../../../lib/Date"
+      },
+      {
+        "input": "import { useUpdateUserMutation } from 'redux/endpoints/usersApi';",
+        "ref": "redux/endpoints/usersApi",
+        "file": "redux\\endpoints\\usersApi",
+        "external": false,
+        "replace": "../../../redux/endpoints/usersApi"
+      },
+      {
+        "input": "import { useGetUser } from 'redux/hooks';",
+        "ref": "redux/hooks",
+        "file": "redux\\hooks",
+        "external": false,
+        "replace": "../../../redux/hooks"
+      },
+      {
+        "input": "import { SECURITY_TEXT_VALUE } from 'shared/const';",
+        "ref": "shared/const",
+        "file": "shared\\const",
+        "external": false,
+        "replace": "../../../shared/const"
+      },
+      {
+        "input": "import { User } from 'types/typesx';",
+        "ref": "types/typesx",
+        "file": "types\\typesx",
+        "external": false,
+        "replace": "../../../types/typesx"
+      },
+      {
+        "input": "import { areAllDisabled, checkEditStatus } from 'util/apiUtilities';",
+        "ref": "util/apiUtilities",
+        "file": "util\\apiUtilities",
+        "external": false,
+        "replace": "../../../util/apiUtilities"
+      },
+      {
+        "input": "import { AccountStatusLookup } from 'components/Lookups/AccountStatusLookup';",
+        "ref": "components/Lookups/AccountStatusLookup",
+        "file": "components\\Lookups\\AccountStatusLookup",
+        "external": false,
+        "replace": "../../../components/Lookups/AccountStatusLookup"
+      },
+      {
+        "input": "import { OrganizationsAndUnitsLookup } from 'components/Lookups/OrganizationsAndUnitsLookup';",
+        "ref": "components/Lookups/OrganizationsAndUnitsLookup",
+        "file": "components\\Lookups\\OrganizationsAndUnitsLookup",
+        "external": false,
+        "replace": "../../../components/Lookups/OrganizationsAndUnitsLookup"
+      },
+      {
+        "input": "import { UserRoleLookup } from 'components/Lookups/UserRoleLookup';",
+        "ref": "components/Lookups/UserRoleLookup",
+        "file": "components\\Lookups\\UserRoleLookup",
+        "external": false,
+        "replace": "../../../components/Lookups/UserRoleLookup"
+      }
+    ]
+  },
+  {
+    "name": "UserProfileCard",
+    "fullPath": "C:\\Users\\ddolg\\IdeaProjects\\jllis-mono\\webui\\src\\modules\\User\\Profile\\UserProfileCard.tsx",
+    "path": "modules\\User\\Profile\\UserProfileCard",
+    "imports": [
+      {
+        "input": "import { noOp } from 'util/apiUtilities';",
+        "ref": "util/apiUtilities",
+        "file": "util\\apiUtilities",
+        "external": false,
+        "replace": "../../../util/apiUtilities"
+      },
+      {
+        "input": "import { disabledStyle, editStyle } from 'modules/MyJLLIS/Sections/CommonTypes';",
+        "ref": "modules/MyJLLIS/Sections/CommonTypes",
+        "file": "modules\\MyJLLIS\\Sections\\CommonTypes",
+        "external": false,
+        "replace": "../../MyJLLIS/Sections/CommonTypes"
+      }
+    ]
+  },
+  {
+    "name": "Profile",
+    "fullPath": "C:\\Users\\ddolg\\IdeaProjects\\jllis-mono\\webui\\src\\modules\\User\\Profile.tsx",
+    "path": "modules\\User\\Profile",
+    "imports": [
+      {
+        "input": "import { useCurrentUser } from 'redux/hooks';",
+        "ref": "redux/hooks",
+        "file": "redux\\hooks",
+        "external": false,
+        "replace": "../../redux/hooks"
+      }
+    ]
+  },
+  {
+    "name": "Worksheet",
+    "fullPath": "C:\\Users\\ddolg\\IdeaProjects\\jllis-mono\\webui\\src\\modules\\Worksheet\\Worksheet.tsx",
+    "path": "modules\\Worksheet\\Worksheet",
+    "imports": [
+      {
+        "input": "import { getNewDataProduct } from 'redux/endpoints/dataProductsApi';",
+        "ref": "redux/endpoints/dataProductsApi",
+        "file": "redux\\endpoints\\dataProductsApi",
+        "external": false,
+        "replace": "../../redux/endpoints/dataProductsApi"
+      },
+      {
+        "input": "import { useAppDispatch, useCurrentUser } from 'redux/hooks';",
+        "ref": "redux/hooks",
+        "file": "redux\\hooks",
+        "external": false,
+        "replace": "../../redux/hooks"
+      },
+      {
+        "input": "import { showDefaultNotification, showErrorNotification } from 'redux/notificationReducer';",
+        "ref": "redux/notificationReducer",
+        "file": "redux\\notificationReducer",
+        "external": false,
+        "replace": "../../redux/notificationReducer"
+      },
+      {
+        "input": "import { defaultDataProduct } from 'shared/defaults';",
+        "ref": "shared/defaults",
+        "file": "shared\\defaults",
+        "external": false,
+        "replace": "../../shared/defaults"
+      },
+      {
+        "input": "import { buildUrlFromPathAndOptionalQuery } from 'util/apiUtilities';",
+        "ref": "util/apiUtilities",
+        "file": "util\\apiUtilities",
+        "external": false,
+        "replace": "../../util/apiUtilities"
+      },
+      {
+        "input": "import { CalendarDateRangePicker } from 'components/Fields/CalendarDatePickers';",
+        "ref": "components/Fields/CalendarDatePickers",
+        "file": "components\\Fields\\CalendarDatePickers",
+        "external": false,
+        "replace": "../../components/Fields/CalendarDatePickers"
+      },
+      {
+        "input": "import { VisibilityToggle } from 'components/Fields/VisibilityToggle';",
+        "ref": "components/Fields/VisibilityToggle",
+        "file": "components\\Fields\\VisibilityToggle",
+        "external": false,
+        "replace": "../../components/Fields/VisibilityToggle"
+      },
+      {
+        "input": "import { Asterisk } from 'components/Generic/Asterisk';",
+        "ref": "components/Generic/Asterisk",
+        "file": "components\\Generic\\Asterisk",
+        "external": false,
+        "replace": "../../components/Generic/Asterisk"
+      },
+      {
+        "input": "import { DataProductStatusLookup } from 'components/Lookups/DataProductStatusLookup';",
+        "ref": "components/Lookups/DataProductStatusLookup",
+        "file": "components\\Lookups\\DataProductStatusLookup",
+        "external": false,
+        "replace": "../../components/Lookups/DataProductStatusLookup"
+      },
+      {
+        "input": "import { OrganizationsAndUnitsLookup } from 'components/Lookups/OrganizationsAndUnitsLookup';",
+        "ref": "components/Lookups/OrganizationsAndUnitsLookup",
+        "file": "components\\Lookups\\OrganizationsAndUnitsLookup",
+        "external": false,
+        "replace": "../../components/Lookups/OrganizationsAndUnitsLookup"
+      },
+      {
+        "input": "import MetaDataBase from 'modules/MyJLLIS/Sections/Metadata/MetaDataBase';",
+        "ref": "modules/MyJLLIS/Sections/Metadata/MetaDataBase",
+        "file": "modules\\MyJLLIS\\Sections\\Metadata\\MetaDataBase",
+        "external": false,
+        "replace": "../MyJLLIS/Sections/Metadata/MetaDataBase"
+      },
+      {
+        "input": "import DeletableLozenge from 'modules/MyJLLIS/Sections/Objectives/DeletableLozenge';",
+        "ref": "modules/MyJLLIS/Sections/Objectives/DeletableLozenge",
+        "file": "modules\\MyJLLIS\\Sections\\Objectives\\DeletableLozenge",
+        "external": false,
+        "replace": "../MyJLLIS/Sections/Objectives/DeletableLozenge"
+      }
+    ]
+  },
+  {
+    "name": "appStateReducer",
+    "fullPath": "C:\\Users\\ddolg\\IdeaProjects\\jllis-mono\\webui\\src\\redux\\appStateReducer.ts",
+    "path": "redux\\appStateReducer",
+    "imports": [
+      {
+        "input": "import { DataProductTabsEnum } from 'types/dataproductTypes';",
+        "ref": "types/dataproductTypes",
+        "file": "types\\dataproductTypes",
+        "external": false,
+        "replace": "../types/dataproductTypes"
+      },
+      {
+        "input": "import { EnterpriseSearchRequest } from 'types/typesx';",
+        "ref": "types/typesx",
+        "file": "types\\typesx",
+        "external": false,
+        "replace": "../types/typesx"
+      },
+      {
+        "input": "import { buildUrlFromPathAndOptionalQuery } from 'util/apiUtilities';",
+        "ref": "util/apiUtilities",
+        "file": "util\\apiUtilities",
+        "external": false,
+        "replace": "../util/apiUtilities"
+      }
+    ]
+  },
+  {
+    "name": "dataProductsApi",
+    "fullPath": "C:\\Users\\ddolg\\IdeaProjects\\jllis-mono\\webui\\src\\redux\\endpoints\\dataProductsApi.ts",
+    "path": "redux\\endpoints\\dataProductsApi",
+    "imports": [
+      {
+        "input": "import { showDefaultNotification, showErrorNotification } from 'redux/notificationReducer';",
+        "ref": "redux/notificationReducer",
+        "file": "redux\\notificationReducer",
+        "external": false,
+        "replace": "../notificationReducer"
+      },
+      {
+        "input": "import { DataProductParams, DataProductTabsEnum, DataProductTypeDefinitions } from 'types/dataproductTypes';",
+        "ref": "types/dataproductTypes",
+        "file": "types\\dataproductTypes",
+        "external": false,
+        "replace": "../../types/dataproductTypes"
+      },
+      {
+        "input": "import { ClassifiedString, DataProduct, ReduxState, Related } from 'types/typesx';",
+        "ref": "types/typesx",
+        "file": "types\\typesx",
+        "external": false,
+        "replace": "../../types/typesx"
+      }
+    ]
+  },
+  {
+    "name": "linksApi",
+    "fullPath": "C:\\Users\\ddolg\\IdeaProjects\\jllis-mono\\webui\\src\\redux\\endpoints\\linksApi.ts",
+    "path": "redux\\endpoints\\linksApi",
+    "imports": [
+      {
+        "input": "import { showDefaultNotification, showErrorNotification } from 'redux/notificationReducer';",
+        "ref": "redux/notificationReducer",
+        "file": "redux\\notificationReducer",
+        "external": false,
+        "replace": "../notificationReducer"
+      },
+      {
+        "input": "import { DataProductLink, FieldMetadata, ReduxState } from 'types/typesx';",
+        "ref": "types/typesx",
+        "file": "types\\typesx",
+        "external": false,
+        "replace": "../../types/typesx"
+      },
+      {
+        "input": "import { buildPathWithQuery, buildUrlFromPathAndOptionalQuery } from 'util/apiUtilities';",
+        "ref": "util/apiUtilities",
+        "file": "util\\apiUtilities",
+        "external": false,
+        "replace": "../../util/apiUtilities"
+      }
+    ]
+  },
+  {
+    "name": "lookupApi",
+    "fullPath": "C:\\Users\\ddolg\\IdeaProjects\\jllis-mono\\webui\\src\\redux\\endpoints\\lookupApi.ts",
+    "path": "redux\\endpoints\\lookupApi",
+    "imports": [
+      {
+        "input": "import { showDefaultNotification, showErrorNotification } from 'redux/notificationReducer';",
+        "ref": "redux/notificationReducer",
+        "file": "redux\\notificationReducer",
+        "external": false,
+        "replace": "../notificationReducer"
+      },
+      {
+        "input": "import { ILibraryData, Lookup, LookupData, LookupKeyValue, ReduxState, UserLookupPermissions } from 'types/typesx';",
+        "ref": "types/typesx",
+        "file": "types\\typesx",
+        "external": false,
+        "replace": "../../types/typesx"
+      },
+      {
+        "input": "import { buildPathWithQuery, buildUrlFromPathAndOptionalQuery } from 'util/apiUtilities';",
+        "ref": "util/apiUtilities",
+        "file": "util\\apiUtilities",
+        "external": false,
+        "replace": "../../util/apiUtilities"
+      }
+    ]
+  },
+  {
+    "name": "organizationApi",
+    "fullPath": "C:\\Users\\ddolg\\IdeaProjects\\jllis-mono\\webui\\src\\redux\\endpoints\\organizationApi.ts",
+    "path": "redux\\endpoints\\organizationApi",
+    "imports": [
+      {
+        "input": "import { showDefaultNotification, showErrorNotification } from 'redux/notificationReducer';",
+        "ref": "redux/notificationReducer",
+        "file": "redux\\notificationReducer",
+        "external": false,
+        "replace": "../notificationReducer"
+      },
+      {
+        "input": "import { Organization, ReduxState } from 'types/typesx';",
+        "ref": "types/typesx",
+        "file": "types\\typesx",
+        "external": false,
+        "replace": "../../types/typesx"
+      },
+      {
+        "input": "import { buildUrlFromPathAndOptionalQuery } from 'util/apiUtilities';",
+        "ref": "util/apiUtilities",
+        "file": "util\\apiUtilities",
+        "external": false,
+        "replace": "../../util/apiUtilities"
+      }
+    ]
+  },
+  {
+    "name": "usersApi",
+    "fullPath": "C:\\Users\\ddolg\\IdeaProjects\\jllis-mono\\webui\\src\\redux\\endpoints\\usersApi.ts",
+    "path": "redux\\endpoints\\usersApi",
+    "imports": [
+      {
+        "input": "import { showDefaultNotification, showErrorNotification } from 'redux/notificationReducer';",
+        "ref": "redux/notificationReducer",
+        "file": "redux\\notificationReducer",
+        "external": false,
+        "replace": "../notificationReducer"
+      },
+      {
+        "input": "import { ReduxState, User } from 'types/typesx';",
+        "ref": "types/typesx",
+        "file": "types\\typesx",
+        "external": false,
+        "replace": "../../types/typesx"
+      },
+      {
+        "input": "import { buildPathWithQuery, buildUrlFromPathAndOptionalQuery } from 'util/apiUtilities';",
+        "ref": "util/apiUtilities",
+        "file": "util\\apiUtilities",
+        "external": false,
+        "replace": "../../util/apiUtilities"
+      }
+    ]
+  },
+  {
+    "name": "hooks",
+    "fullPath": "C:\\Users\\ddolg\\IdeaProjects\\jllis-mono\\webui\\src\\redux\\hooks.ts",
+    "path": "redux\\hooks",
+    "imports": [
+      {
+        "input": "import { getPanelTitle } from 'modules/MyJLLIS/DisplayConfiguration';",
+        "ref": "modules/MyJLLIS/DisplayConfiguration",
+        "file": "modules\\MyJLLIS\\DisplayConfiguration",
+        "external": false,
+        "replace": "../modules/MyJLLIS/DisplayConfiguration"
+      }
+    ]
+  },
+  {
+    "name": "informationReducer",
+    "fullPath": "C:\\Users\\ddolg\\IdeaProjects\\jllis-mono\\webui\\src\\redux\\informationReducer.ts",
+    "path": "redux\\informationReducer",
+    "imports": [
+      {
+        "input": "import { Information, InformationState } from 'types/typesx';",
+        "ref": "types/typesx",
+        "file": "types\\typesx",
+        "external": false,
+        "replace": "../types/typesx"
+      },
+      {
+        "input": "import { buildPathWithQuery, buildUrlFromPathAndOptionalQuery } from 'util/apiUtilities';",
+        "ref": "util/apiUtilities",
+        "file": "util\\apiUtilities",
+        "external": false,
+        "replace": "../util/apiUtilities"
+      }
+    ]
+  },
+  {
+    "name": "notificationReducer",
+    "fullPath": "C:\\Users\\ddolg\\IdeaProjects\\jllis-mono\\webui\\src\\redux\\notificationReducer.ts",
+    "path": "redux\\notificationReducer",
+    "imports": [
+      {
+        "input": "import { NotificationState, ToastOptions } from 'types/typesx';",
+        "ref": "types/typesx",
+        "file": "types\\typesx",
+        "external": false,
+        "replace": "../types/typesx"
+      }
+    ]
+  },
+  {
+    "name": "searchReducer",
+    "fullPath": "C:\\Users\\ddolg\\IdeaProjects\\jllis-mono\\webui\\src\\redux\\searchReducer.ts",
+    "path": "redux\\searchReducer",
+    "imports": [
+      {
+        "input": "import { Filters, RangeFilter, ReduxState, SearchState, ValueFilter } from 'types/typesx';",
+        "ref": "types/typesx",
+        "file": "types\\typesx",
+        "external": false,
+        "replace": "../types/typesx"
+      },
+      {
+        "input": "import { buildUrlFromPathAndOptionalQuery } from 'util/apiUtilities';",
+        "ref": "util/apiUtilities",
+        "file": "util\\apiUtilities",
+        "external": false,
+        "replace": "../util/apiUtilities"
+      }
+    ]
+  },
+  {
+    "name": "notificationActions.spec",
+    "fullPath": "C:\\Users\\ddolg\\IdeaProjects\\jllis-mono\\webui\\src\\redux\\__tests__\\notificationActions.spec.ts",
+    "path": "redux\\__tests__\\notificationActions.spec",
+    "imports": [
+      {
+        "input": "import { showErrorNotification, showSuccessNotification } from 'redux/notificationReducer';",
+        "ref": "redux/notificationReducer",
+        "file": "redux\\notificationReducer",
+        "external": false,
+        "replace": "../notificationReducer"
+      }
+    ]
+  },
+  {
+    "name": "const",
+    "fullPath": "C:\\Users\\ddolg\\IdeaProjects\\jllis-mono\\webui\\src\\shared\\const.ts",
+    "path": "shared\\const",
+    "imports": [
+      {
+        "input": "import { Attachment, DataProductLink, GridSection } from 'types/typesx';",
+        "ref": "types/typesx",
+        "file": "types\\typesx",
+        "external": false,
+        "replace": "../types/typesx"
+      }
+    ]
+  },
+  {
+    "name": "defaults",
+    "fullPath": "C:\\Users\\ddolg\\IdeaProjects\\jllis-mono\\webui\\src\\shared\\defaults.ts",
+    "path": "shared\\defaults",
+    "imports": [
+      {
+        "input": "import { Classification, ClassifiedString, DataProduct, Related } from 'types/typesx';",
+        "ref": "types/typesx",
+        "file": "types\\typesx",
+        "external": false,
+        "replace": "../types/typesx"
+      }
+    ]
+  },
+  {
+    "name": "dataproductTypes",
+    "fullPath": "C:\\Users\\ddolg\\IdeaProjects\\jllis-mono\\webui\\src\\types\\dataproductTypes.ts",
+    "path": "types\\dataproductTypes",
+    "imports": [
+      {
+        "input": "import { SortDirection, SortDropdownMode } from 'modules/MyJLLIS/List/search/SortOrderSelector';",
+        "ref": "modules/MyJLLIS/List/search/SortOrderSelector",
+        "file": "modules\\MyJLLIS\\List\\search\\SortOrderSelector",
+        "external": false,
+        "replace": "../modules/MyJLLIS/List/search/SortOrderSelector"
+      }
+    ]
+  },
+  {
+    "name": "typesx",
+    "fullPath": "C:\\Users\\ddolg\\IdeaProjects\\jllis-mono\\webui\\src\\types\\typesx.ts",
+    "path": "types\\typesx",
+    "imports": [
+      {
+        "input": "import { AppState } from 'redux/appStateReducer';",
+        "ref": "redux/appStateReducer",
+        "file": "redux\\appStateReducer",
+        "external": false,
+        "replace": "../redux/appStateReducer"
+      },
+      {
+        "input": "import { SessionState } from 'redux/sessionReducer';",
+        "ref": "redux/sessionReducer",
+        "file": "redux\\sessionReducer",
+        "external": false,
+        "replace": "../redux/sessionReducer"
+      }
+    ]
+  },
+  {
+    "name": "apiUtilities",
+    "fullPath": "C:\\Users\\ddolg\\IdeaProjects\\jllis-mono\\webui\\src\\util\\apiUtilities.ts",
+    "path": "util\\apiUtilities",
+    "imports": [
+      {
+        "input": "import { ClassifiedString, GeneralFieldPermission, RoleFieldPermission, StatusFieldPermission } from 'types/typesx';",
+        "ref": "types/typesx",
+        "file": "types\\typesx",
+        "external": false,
+        "replace": "../types/typesx"
+      }
+    ]
+  },
+  {
+    "name": "TestState",
+    "fullPath": "C:\\Users\\ddolg\\IdeaProjects\\jllis-mono\\webui\\src\\util\\TestState.ts",
+    "path": "util\\TestState",
+    "imports": [
+      {
+        "input": "import { ReduxState, SearchState } from 'types/typesx';",
+        "ref": "types/typesx",
+        "file": "types\\typesx",
+        "external": false,
+        "replace": "../types/typesx"
+      }
+    ]
+  },
+  {
+    "name": "Toaster",
+    "fullPath": "C:\\Users\\ddolg\\IdeaProjects\\jllis-mono\\webui\\src\\util\\Toaster.tsx",
+    "path": "util\\Toaster",
+    "imports": [
+      {
+        "input": "import { useAppSelector } from 'redux/hooks';",
+        "ref": "redux/hooks",
+        "file": "redux\\hooks",
+        "external": false,
+        "replace": "../redux/hooks"
+      },
+      {
+        "input": "import { ToastOptions } from 'types/typesx';",
+        "ref": "types/typesx",
+        "file": "types\\typesx",
+        "external": false,
+        "replace": "../types/typesx"
+      }
+    ]
+  },
+  {
+    "name": "mockDataProductBuilder",
+    "fullPath": "C:\\Users\\ddolg\\IdeaProjects\\jllis-mono\\webui\\src\\util\\__mocks__\\mockDataProductBuilder.ts",
+    "path": "util\\__mocks__\\mockDataProductBuilder",
+    "imports": [
+      {
+        "input": "import { DataProduct, Related } from 'types/typesx';",
+        "ref": "types/typesx",
+        "file": "types\\typesx",
+        "external": false,
+        "replace": "../../types/typesx"
+      }
+    ]
+  },
+  {
+    "name": "mockHistoryBuilder",
+    "fullPath": "C:\\Users\\ddolg\\IdeaProjects\\jllis-mono\\webui\\src\\util\\__mocks__\\mockHistoryBuilder.ts",
+    "path": "util\\__mocks__\\mockHistoryBuilder",
+    "imports": [
+      {
+        "input": "import { CreateModifyInfo } from 'types/typesx';",
+        "ref": "types/typesx",
+        "file": "types\\typesx",
+        "external": false,
+        "replace": "../../types/typesx"
+      }
+    ]
+  },
+  {
+    "name": "mockLookupBuilder",
+    "fullPath": "C:\\Users\\ddolg\\IdeaProjects\\jllis-mono\\webui\\src\\util\\__mocks__\\mockLookupBuilder.ts",
+    "path": "util\\__mocks__\\mockLookupBuilder",
+    "imports": [
+      {
+        "input": "import { Lookup } from 'types/typesx';",
+        "ref": "types/typesx",
+        "file": "types\\typesx",
+        "external": false,
+        "replace": "../../types/typesx"
+      }
+    ]
+  },
+  {
+    "name": "mockMetadataBuilder",
+    "fullPath": "C:\\Users\\ddolg\\IdeaProjects\\jllis-mono\\webui\\src\\util\\__mocks__\\mockMetadataBuilder.ts",
+    "path": "util\\__mocks__\\mockMetadataBuilder",
+    "imports": [
+      {
+        "input": "import { DataproductMetadata, Related } from 'types/typesx';",
+        "ref": "types/typesx",
+        "file": "types\\typesx",
+        "external": false,
+        "replace": "../../types/typesx"
+      }
+    ]
+  },
+  {
+    "name": "mockOther",
+    "fullPath": "C:\\Users\\ddolg\\IdeaProjects\\jllis-mono\\webui\\src\\util\\__mocks__\\mockOther.ts",
+    "path": "util\\__mocks__\\mockOther",
+    "imports": [
+      {
+        "input": "import { Classification, Lookup } from 'types/typesx';",
+        "ref": "types/typesx",
+        "file": "types\\typesx",
+        "external": false,
+        "replace": "../../types/typesx"
+      }
+    ]
+  },
+  {
+    "name": "mockStateBuilder",
+    "fullPath": "C:\\Users\\ddolg\\IdeaProjects\\jllis-mono\\webui\\src\\util\\__mocks__\\mockStateBuilder.ts",
+    "path": "util\\__mocks__\\mockStateBuilder",
+    "imports": [
+      {
+        "input": "import { initialState as myJllisInitialState } from 'redux/appStateReducer';",
+        "ref": "redux/appStateReducer",
+        "file": "redux\\appStateReducer",
+        "external": false,
+        "replace": "../../redux/appStateReducer"
+      },
+      {
+        "input": "import { initialState as informationInitialState } from 'redux/informationReducer';",
+        "ref": "redux/informationReducer",
+        "file": "redux\\informationReducer",
+        "external": false,
+        "replace": "../../redux/informationReducer"
+      },
+      {
+        "input": "import { initialState as searchInitialState } from 'redux/searchReducer';",
+        "ref": "redux/searchReducer",
+        "file": "redux\\searchReducer",
+        "external": false,
+        "replace": "../../redux/searchReducer"
+      },
+      {
+        "input": "import { initialState as sessionInitialState } from 'redux/sessionReducer';",
+        "ref": "redux/sessionReducer",
+        "file": "redux\\sessionReducer",
+        "external": false,
+        "replace": "../../redux/sessionReducer"
+      },
+      {
+        "input": "import { DataProductTabsEnum } from 'types/dataproductTypes';",
+        "ref": "types/dataproductTypes",
+        "file": "types\\dataproductTypes",
+        "external": false,
+        "replace": "../../types/dataproductTypes"
+      },
+      {
+        "input": "import { ReduxState } from 'types/typesx';",
+        "ref": "types/typesx",
+        "file": "types\\typesx",
+        "external": false,
+        "replace": "../../types/typesx"
+      }
+    ]
+  },
+  {
+    "name": "mockUserBuilder",
+    "fullPath": "C:\\Users\\ddolg\\IdeaProjects\\jllis-mono\\webui\\src\\util\\__mocks__\\mockUserBuilder.ts",
+    "path": "util\\__mocks__\\mockUserBuilder",
+    "imports": [
+      {
+        "input": "import { Related, User } from 'types/typesx';",
+        "ref": "types/typesx",
+        "file": "types\\typesx",
+        "external": false,
+        "replace": "../../types/typesx"
+      }
+    ]
+  }
+]

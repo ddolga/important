@@ -4,10 +4,6 @@ import * as fs from "fs";
 import {Config} from "./config";
 import {matchImportsRegEx} from "./const";
 
-
-// const SOURCE_DIR = 'src';
-// const COMPATIBLE_EXTENSIONS = ['.ts', '.tsx', '.js', '.jsx'];
-
 export class ImportMap extends Map<string, CodeFile> {
 
     public iterateImports(callback) {
@@ -27,15 +23,19 @@ export interface CodeFile {
     fullPath: string,
     imports: ImportEntry[],
     source: string,
-    cycle: boolean,
 }
 
 export interface ImportEntry {
     input: string,
     ref: string,
-    file: CodeFile
+    file: string,
     external: boolean,
     replace?: string
+}
+
+
+export function getCodeFile(path, map): CodeFile {
+    return map.get(path);
 }
 
 
@@ -98,7 +98,6 @@ export default class Scanner {
             path: relativePath,
             source: str,
             imports: new Array<ImportEntry>(),
-            cycle: false
         };
 
         const m = str.matchAll(matchImportsRegEx);
@@ -119,35 +118,42 @@ export default class Scanner {
 
     private linkImportsToCodeFiles() {
 
-        this.map.iterateImports((map, codeFile, imp) => {
-            const targetPath = np.join(codeFile.path, '../', imp.ref)
-            imp.external = !map.has(targetPath);
-            if (!imp.external) {
-                imp.file = map.get(targetPath);
-            }
-        })
-    }
-
-
-    private checkCyclicalReferences() {
-
-        function recurse(link: ImportEntry, start: CodeFile, level) {
-            if (!link.external && link.file) {
-                console.log(`Level: ${level}: ${link.file.name}`);
-                if (link.file === start) {
-                    start.cycle = true;
-                    console.log('Cyclical Reference: ', start.name);
-                    return;
-                }
-                for (let l2 of link.file.imports) {
-                    recurse(l2, start, level + 1);
-                }
+        function rootsy(ref, root) {
+            if (ref.startsWith('.')) {
+                return np.join(root, '../', ref)
+            } else {
+                return np.join('.',ref);
             }
         }
 
-        this.map.iterateImports((map, start, link) => {
-            recurse(link, start, 0);
+        this.map.iterateImports((map, codeFile, imp) => {
+            const targetPath = rootsy(imp.ref, codeFile.path);
+            imp.external = !map.has(targetPath);
+            if (!imp.external) {
+                imp.file = targetPath;
+            }
         })
     }
+
+    // private checkCyclicalReferences() {
+    //
+    //     function recurse(link: ImportEntry, start: CodeFile, level) {
+    //         if (!link.external && link.file) {
+    //             console.log(`Level: ${level}: ${link.file.name}`);
+    //             if (link.file === start) {
+    //                 start.cycle = true;
+    //                 console.log('Cyclical Reference: ', start.name);
+    //                 return;
+    //             }
+    //             for (let l2 of link.file.imports) {
+    //                 recurse(l2, start, level + 1);
+    //             }
+    //         }
+    //     }
+    //
+    //     this.map.iterateImports((map, start, link) => {
+    //         recurse(link, start, 0);
+    //     })
+    // }
 
 }
