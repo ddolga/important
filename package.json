@@ -1,0 +1,26 @@
+{
+  "name": "important",
+  "version": "1.0.0",
+  "description": "module import manager and converter",
+  "main": "src/main.ts",
+  "scripts": {
+    "start": "node ./dist/main.js",
+    "build": "node ./build_script.mjs"
+  },
+  "bin": {
+    "jac": "./dist/main.js"
+  },
+  "author": "Denis Dolgachev",
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^4.1.2",
+    "prompts": "^2.4.2",
+    "yargs": "^17.7.2"
+  },
+  "devDependencies": {
+    "@types/node": "^18.16.3",
+    "@types/yargs": "^17.0.24",
+    "esbuild": "0.17.10",
+    "esbuild-envfile-plugin": "^1.0.5"
+  }
+}
