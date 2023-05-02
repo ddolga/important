@@ -4,13 +4,18 @@ import {ImportMap} from "./scanner";
 
 interface PrintMapOptions {
     internal?: boolean,
-    changed?: boolean
+    changed?: boolean,
+    source?: boolean
 }
 
-export function printMap(map: ImportMap, opt: PrintMapOptions = {internal: false, changed: false}) {
+export function printMap(map: ImportMap, opt: PrintMapOptions = {internal: false, changed: false, source: false}) {
     const arr = Array.from(map.values())
         .map(v => {
-            const {source,...rest} = v;
+            if (opt.source) {
+                return v;
+            }
+
+            const {source, ...rest} = v;
             return rest;
         })
         .map(v => {

@@ -121,8 +121,11 @@ export default class Scanner {
         function rootsy(ref, root) {
             if (ref.startsWith('.')) {
                 return np.join(root, '../', ref)
+            } else if(ref.startsWith('src/')){
+               const r = ref.replace('src/','');
+               return np.join('.',r);
             } else {
-                return np.join('.',ref);
+                return np.join('.', ref);
             }
         }
 

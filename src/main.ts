@@ -2,7 +2,7 @@ import yargs from "yargs";
 import {hideBin} from "yargs/helpers"
 import chalk from "chalk";
 import convertRelative from "./commands/convertRelative";
-import {updateImports} from "./common/updateImports";
+import {saveChanges, updateImports} from "./common/updateImports";
 import {printMap} from "./common/util";
 import * as dotenv from 'dotenv';
 import {Config} from "./common/config";
@@ -35,7 +35,8 @@ function imp() {
         }
 
         updateImports(importMap);
-        printMap(importMap,{internal:true,changed:true});
+        // saveChanges(importMap);
+        printMap(importMap, {internal: false, changed: false, source: false});
     }
 }
 
