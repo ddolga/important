@@ -35,7 +35,7 @@ function imp() {
         }
 
         updateImports(importMap);
-        // saveChanges(importMap);
+        saveChanges(importMap);
         printMap(importMap, {internal: false, changed: false, source: false});
     }
 }

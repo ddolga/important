@@ -23,6 +23,7 @@ export interface CodeFile {
     fullPath: string,
     imports: ImportEntry[],
     source: string,
+    directory: boolean
 }
 
 export interface ImportEntry {
@@ -83,6 +84,23 @@ export default class Scanner {
         }
     }
 
+    private addDirectory(fullPath) {
+        const info = np.parse(fullPath);
+        const p = np.join(info.dir, info.name)
+        const relativePath = np.relative(this.sourceDir, p);
+
+        const codeFile: CodeFile = {
+            name: info.name,
+            fullPath: fullPath,
+            path: relativePath,
+            source: null,
+            directory: true,
+            imports: [],
+        };
+
+        this.map.set(codeFile.path, codeFile);
+    }
+
     private collectImportStatements(fullPath) {
 
         const b = fs.readFileSync(fullPath);
@@ -97,6 +115,7 @@ export default class Scanner {
             fullPath: fullPath,
             path: relativePath,
             source: str,
+            directory: false,
             imports: new Array<ImportEntry>(),
         };
 
@@ -111,9 +130,7 @@ export default class Scanner {
             codeFile.imports.push(imp);
         }
 
-        if (codeFile.imports.length > 0) {
-            this.map.set(codeFile.path, codeFile);
-        }
+        this.map.set(codeFile.path, codeFile);
     }
 
     private linkImportsToCodeFiles() {
@@ -121,9 +138,9 @@ export default class Scanner {
         function rootsy(ref, root) {
             if (ref.startsWith('.')) {
                 return np.join(root, '../', ref)
-            } else if(ref.startsWith('src/')){
-               const r = ref.replace('src/','');
-               return np.join('.',r);
+            } else if (ref.startsWith('src/')) {
+                const r = ref.replace('src/', '');
+                return np.join('.', r);
             } else {
                 return np.join('.', ref);
             }
