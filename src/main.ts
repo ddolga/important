@@ -11,9 +11,29 @@ const optionT = {alias: "type", describe: 'Convert Type', choices: ['absolute', 
 
 dotenv.config()
 
-function imp() {
+
+const commandRunner = (func) => (argv) => {
 
     const config = new Config();
+    const importMap = func(config, argv);
+    updateImports(importMap);
+    if (argv.save) {
+        saveChanges(importMap);
+    }
+    printMap(importMap, {internal: true, changed: true, source: false});
+}
+
+const handleConvert = commandRunner((config, argv) => {
+    switch (argv.type) {
+        case 'relative':
+            return convertRelative(config);
+        case 'absolute':
+            break;
+    }
+})
+
+function imp() {
+
 
     yargs(hideBin(process.argv))
         .scriptName('imp')
@@ -21,23 +41,13 @@ function imp() {
             yargs.option('t', optionT)
         }, handleConvert)
         .demandCommand(1, chalk.red("At least one command must be specified"))
+        .option('s', {
+            alias: 'save',
+            describe: 'save changes',
+            boolean: true
+        })
         .argv;
 
-
-    function handleConvert(argv) {
-        let importMap;
-        switch (argv.type) {
-            case 'relative':
-                importMap = convertRelative(config);
-                break;
-            case 'absolute':
-                break;
-        }
-
-        updateImports(importMap);
-        saveChanges(importMap);
-        printMap(importMap, {internal: false, changed: false, source: false});
-    }
 }
 
 imp();
