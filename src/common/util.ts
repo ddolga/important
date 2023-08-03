@@ -1,17 +1,26 @@
 import * as fs from "fs";
 import * as np from "path";
-import {ImportMap} from "./scanner";
+import {ImportMap} from "./ImportMap";
 
 interface PrintMapOptions {
     internal?: boolean,
     changed?: boolean,
-    source?: boolean
+    sourceText?: boolean,
+    fileName?: string;
 }
 
-export function printMap(map: ImportMap, opt: PrintMapOptions = {internal: false, changed: false, source: false}) {
+export function printMap(map: ImportMap, opt: PrintMapOptions = {
+    internal: false,
+    changed: false,
+    sourceText: false,
+    fileName: 'map.json'
+}) {
+
+    const {internal, changed, sourceText, fileName} = opt;
+
     const arr = Array.from(map.values())
         .map(v => {
-            if (opt.source) {
+            if (sourceText) {
                 return v;
             }
 
@@ -20,10 +29,10 @@ export function printMap(map: ImportMap, opt: PrintMapOptions = {internal: false
         })
         .map(v => {
             const ia = v.imports.filter((imp) => {
-                if (opt.internal && imp.external) {
+                if (internal && imp.external) {
                     return false;
                 }
-                if (opt.changed && !imp.replace) {
+                if (changed && !imp.replace) {
                     return false;
                 }
                 return true;
@@ -33,8 +42,14 @@ export function printMap(map: ImportMap, opt: PrintMapOptions = {internal: false
             }
             return v;
         }).filter(v => v.imports.length > 0);
-    fs.writeFileSync('map.json', JSON.stringify(arr));
+
+    fs.writeFileSync(fileName, JSON.stringify(arr));
 }
+
+export function stripAll(str:string){
+    return str.replaceAll("\n","").replaceAll("\r","").replaceAll(';import',';\rimport');
+}
+
 
 export function stripExtension(path) {
     const ext = np.extname(path);

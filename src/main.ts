@@ -20,7 +20,7 @@ const commandRunner = (func) => (argv) => {
     if (argv.save) {
         saveChanges(importMap);
     }
-    printMap(importMap, {internal: true, changed: true, source: false});
+    printMap(importMap, {internal: true, changed: true, sourceText: false,fileName:'rewriteMap.json'});
 }
 
 const handleConvert = commandRunner((config, argv) => {

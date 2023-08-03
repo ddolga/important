@@ -2,43 +2,20 @@ import * as process from "process";
 import * as np from "path";
 import * as fs from "fs";
 import {Config} from "./config";
-import {matchImportsRegEx} from "./const";
+import {COMPATIBLE_EXTENSIONS, INCLUDED_ASSET_EXTENSIONS, MATCH_IMPORTS_REGEX} from "./const";
+import {CodeFile, ImportEntry, ImportMap} from "./ImportMap";
+import {stripExtension} from "./util";
 
-export class ImportMap extends Map<string, CodeFile> {
-
-    public iterateImports(callback) {
-
-        for (let codeFile of this.values()) {
-            for (let imp of codeFile.imports) {
-                callback(this, codeFile, imp)
-            }
-        }
-    }
-
+export function getCodeFilePath(path: string, map: ImportMap): CodeFile {
+    const boo = alternativeStringTheory(path);
+    return map.get(boo);
 }
 
-export interface CodeFile {
-    name: string,
-    path: string,
-    fullPath: string,
-    imports: ImportEntry[],
-    source: string,
-    directory: boolean
+const trimQuotes = /['"]*/gm;
+
+export function alternativeStringTheory(path) {
+    return INCLUDED_ASSET_EXTENSIONS.includes(np.extname(path)) ? path : stripExtension(path);
 }
-
-export interface ImportEntry {
-    input: string,
-    ref: string,
-    file: string,
-    external: boolean,
-    replace?: string
-}
-
-
-export function getCodeFile(path, map): CodeFile {
-    return map.get(path);
-}
-
 
 export default class Scanner {
 
@@ -64,11 +41,10 @@ export default class Scanner {
     public scan() {
         this.buildProjectMap(this.sourceDir);
         this.linkImportsToCodeFiles();
-        // this.checkCyclicalReferences();
         return this.map;
     }
 
-    private buildProjectMap(path) {
+    private buildProjectMap(path: string) {
 
         const isDirectory = fs.lstatSync(path).isDirectory();
         if (isDirectory) {
@@ -78,30 +54,34 @@ export default class Scanner {
             }
         } else {
             const ext = np.extname(path);
-            if (this.config.compatibleExtensions.includes(ext)) {
+            if (COMPATIBLE_EXTENSIONS.includes(ext)) {
                 this.collectImportStatements(path)
+            } else if (INCLUDED_ASSET_EXTENSIONS.includes(ext)) {
+                this.collectImportedAsset(path);
             }
         }
     }
 
-    private addDirectory(fullPath) {
+    private collectImportedAsset(fullPath: string) {
+
         const info = np.parse(fullPath);
-        const p = np.join(info.dir, info.name)
-        const relativePath = np.relative(this.sourceDir, p);
+        // const p = np.join(info.dir, info.name)
+        const relativePath = np.relative(this.sourceDir, fullPath);
+
 
         const codeFile: CodeFile = {
             name: info.name,
             fullPath: fullPath,
             path: relativePath,
-            source: null,
-            directory: true,
+            source: '',
             imports: [],
+            directory: false,
         };
 
         this.map.set(codeFile.path, codeFile);
     }
 
-    private collectImportStatements(fullPath) {
+    private collectImportStatements(fullPath: string) {
 
         const b = fs.readFileSync(fullPath);
         const str = b.toString();
@@ -109,6 +89,7 @@ export default class Scanner {
         const info = np.parse(fullPath);
         const p = np.join(info.dir, info.name)
         const relativePath = np.relative(this.sourceDir, p);
+
 
         const codeFile: CodeFile = {
             name: info.name,
@@ -119,11 +100,16 @@ export default class Scanner {
             imports: new Array<ImportEntry>(),
         };
 
-        const m = str.matchAll(matchImportsRegEx);
+        const m = str.matchAll(MATCH_IMPORTS_REGEX);
         for (let mElement of m) {
-            const imp: ImportEntry = {
+            const imp: ImportEntry = mElement[1] ? {
                 input: mElement[0],
-                ref: mElement[2],
+                ref: mElement[3].replaceAll(trimQuotes, '').trim(),
+                file: null,
+                external: false
+            } : {
+                input: mElement[0],
+                ref: mElement[5].replaceAll(trimQuotes, '').trim(),
                 file: null,
                 external: false
             }
@@ -133,47 +119,34 @@ export default class Scanner {
         this.map.set(codeFile.path, codeFile);
     }
 
+    private stripExtension(path: string) {
+        const info = np.parse(path);
+        if (info.dir) {
+            return np.join(info.dir, info.name);
+        }
+        return path;
+    }
+
     private linkImportsToCodeFiles() {
 
-        function rootsy(ref, root) {
+        function rootsy(ref: string, root: string) {
+
             if (ref.startsWith('.')) {
                 return np.join(root, '../', ref)
             } else if (ref.startsWith('src/')) {
                 const r = ref.replace('src/', '');
                 return np.join('.', r);
-            } else {
-                return np.join('.', ref);
             }
+            return np.join('.', ref);
         }
 
         this.map.iterateImports((map, codeFile, imp) => {
             const targetPath = rootsy(imp.ref, codeFile.path);
-            imp.external = !map.has(targetPath);
+            const matchPath =  alternativeStringTheory(targetPath);
+            imp.external = !map.has(matchPath);
             if (!imp.external) {
                 imp.file = targetPath;
             }
         })
     }
-
-    // private checkCyclicalReferences() {
-    //
-    //     function recurse(link: ImportEntry, start: CodeFile, level) {
-    //         if (!link.external && link.file) {
-    //             console.log(`Level: ${level}: ${link.file.name}`);
-    //             if (link.file === start) {
-    //                 start.cycle = true;
-    //                 console.log('Cyclical Reference: ', start.name);
-    //                 return;
-    //             }
-    //             for (let l2 of link.file.imports) {
-    //                 recurse(l2, start, level + 1);
-    //             }
-    //         }
-    //     }
-    //
-    //     this.map.iterateImports((map, start, link) => {
-    //         recurse(link, start, 0);
-    //     })
-    // }
-
 }
