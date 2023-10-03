@@ -19,6 +19,7 @@ function isDirectory(path: string) {
 }
 
 const trimQuotes = /['"]*/gm;
+const ROOT_PATH_MATCHER = /^(src,test)/gm;
 
 export function stripExtensionOnCodeFiles(path) {
     return INCLUDED_ASSET_EXTENSIONS.includes(np.extname(path)) ? path : stripExtension(path);
@@ -112,11 +113,13 @@ export default class Scanner {
         const m = str.matchAll(MATCH_IMPORTS_REGEX);
         for (let mElement of m) {
             const imp: ImportEntry = mElement[1] ? {
+                // handle imports that have a from clause
                 input: mElement[0],
                 ref: mElement[3].replaceAll(trimQuotes, '').trim(),
                 file: null,
                 external: false
             } : {
+                // handle imports that don't have from
                 input: mElement[0],
                 ref: mElement[5].replaceAll(trimQuotes, '').trim(),
                 file: null,
@@ -136,21 +139,19 @@ export default class Scanner {
         return path;
     }
 
-    private linkImportsToCodeFiles() {
-
-        function rootsy(ref: string, root: string) {
-
-            if (ref.startsWith('.')) {
-                return np.join(root, '../', ref)
-            } else if (ref.startsWith('src/')) {
-                const r = ref.replace('src/', '');
-                return np.join('.', r);
-            }
-            return np.join('.', ref);
+    private rootsy(ref: string, root: string) {
+        if (ref.startsWith('.')) {
+            return np.join(root, '../', ref)
+        } else if (ref.startsWith('src/')) {
+            const r = ref.replace('src/', '');
+            return np.join('.', r);
         }
+        return np.join('.', ref);
+    }
 
+    private linkImportsToCodeFiles() {
         this.map.iterateImports((map, codeFile, imp) => {
-            const targetPath = rootsy(imp.ref, codeFile.path);
+            const targetPath = this.rootsy(imp.ref, codeFile.path);
             const matchPath = stripExtensionOnCodeFiles(targetPath);
             imp.external = !map.has(matchPath);
             if (!imp.external) {
