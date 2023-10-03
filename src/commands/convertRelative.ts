@@ -1,7 +1,8 @@
 import * as np from "path";
-import Scanner, {alternativeStringTheory, getCodeFilePath} from "../common/scanner";
+import Scanner, {getCodeFilePath, stripExtensionOnCodeFiles} from "../common/scanner";
 import {printMap} from "../common/util";
-import {ImportMap} from "../common/ImportMap";
+import {ImportMap} from "../common/types/ImportMap";
+import Config from "../common/types/config";
 
 
 function initMap(config) {
@@ -11,7 +12,7 @@ function initMap(config) {
     return importMap;
 }
 
-export default function convertRelative(config): ImportMap {
+export default function convertRelative(config: Config): ImportMap {
 
     const map = initMap(config);
     map.iterateImports((map, codeFile, imp) => {
@@ -19,7 +20,7 @@ export default function convertRelative(config): ImportMap {
 
         let replacement = np.relative(f, getCodeFilePath(imp.file, map).fullPath);
         // leave extensions for asset files, i.e. .png, .jpeg, .pdf
-        replacement = alternativeStringTheory(replacement);
+        replacement = stripExtensionOnCodeFiles(replacement);
 
         replacement = replacement.replaceAll('\\', '/');
         if (!replacement.startsWith('..') && !replacement.startsWith('.')) {

@@ -8,7 +8,9 @@ export interface CodeFile {
     fullPath: string,
     imports: ImportEntry[],
     source: string,
-    directory: boolean
+    directory: boolean,
+    isAsset:boolean,
+    hasChanged:boolean
 }
 
 export interface ImportEntry {

@@ -1,6 +1,6 @@
-import {MATCH_IMPORTS_REGEX} from "./const";
+import {MATCH_IMPORTS_REGEX} from "./types/const";
+import {ImportMap} from "./types/ImportMap";
 import * as fs from "fs";
-import {ImportMap} from "./ImportMap";
 
 const replacer = (replace) => (source) => {
     const mElements = MATCH_IMPORTS_REGEX.exec(source);
@@ -15,13 +15,14 @@ export function updateImports(map: ImportMap) {
     map.iterateImports((map, codeFile, imp) => {
         if (!imp.external && imp.replace) {
             codeFile.source = codeFile.source.replace(imp.input, replacer(imp.replace))
+            codeFile.hasChanged = true;
         }
     })
 }
 
 export function saveChanges(map) {
     for (let codeFile of map.values()) {
-        if(codeFile.source){
+        if(codeFile.hasChanged && codeFile.source){
             fs.writeFileSync(codeFile.fullPath, codeFile.source);
         }
     }

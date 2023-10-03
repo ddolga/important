@@ -1,36 +1,41 @@
 import * as process from "process";
 import * as np from "path";
 import * as fs from "fs";
-import {Config} from "./config";
-import {COMPATIBLE_EXTENSIONS, INCLUDED_ASSET_EXTENSIONS, MATCH_IMPORTS_REGEX} from "./const";
-import {CodeFile, ImportEntry, ImportMap} from "./ImportMap";
 import {stripExtension} from "./util";
+import {CodeFile, ImportEntry, ImportMap} from "./types/ImportMap";
+import {COMPATIBLE_EXTENSIONS, INCLUDED_ASSET_EXTENSIONS, MATCH_IMPORTS_REGEX} from "./types/const";
+import Config from "./types/config";
 
 export function getCodeFilePath(path: string, map: ImportMap): CodeFile {
-    const boo = alternativeStringTheory(path);
+    const boo = stripExtensionOnCodeFiles(path);
     return map.get(boo);
+}
+
+function isDirectory(path: string) {
+    if (!fs.existsSync(path))
+        return false;
+
+    return fs.lstatSync(path).isDirectory();
 }
 
 const trimQuotes = /['"]*/gm;
 
-export function alternativeStringTheory(path) {
+export function stripExtensionOnCodeFiles(path) {
     return INCLUDED_ASSET_EXTENSIONS.includes(np.extname(path)) ? path : stripExtension(path);
 }
 
 export default class Scanner {
 
     private map: ImportMap = new ImportMap();
-    private readonly sourceDir: string;
+    private readonly sourceDir: string[];
 
     constructor(private readonly config: Config) {
-        const currDir = this.getRootDirectory(config);
-
-        console.log('Root directory: ' + currDir)
-        this.sourceDir = np.join(currDir, config.sourceDir);
-        console.log('Source directory: ' + this.sourceDir)
+        const rootDirectory = this.getRootDirectory(config);
+        console.log('Root directory: ' + rootDirectory)
+        this.sourceDir = this.config.sourceDir.map(dir => np.join(rootDirectory, dir)).filter(p => isDirectory(p));
     }
 
-    private getRootDirectory(config) {
+    private getRootDirectory(config: Config) {
         const targetDir = config.targetDir;
         if (!targetDir || targetDir === '.') {
             return process.cwd();
@@ -39,34 +44,34 @@ export default class Scanner {
     }
 
     public scan() {
-        this.buildProjectMap(this.sourceDir);
+        this.sourceDir.forEach(p => this.buildProjectMap(p));
         this.linkImportsToCodeFiles();
         return this.map;
     }
 
-    private buildProjectMap(path: string) {
-
-        const isDirectory = fs.lstatSync(path).isDirectory();
-        if (isDirectory) {
-            const files = fs.readdirSync(path);
+    private buildProjectMap(srcPath: string, currPath: string = srcPath) {
+        console.log('Scanning directory: ' + currPath)
+        if (isDirectory(currPath)) {
+            const files = fs.readdirSync(currPath);
             for (let file of files) {
-                this.buildProjectMap(np.resolve(path, file))
+                this.buildProjectMap(srcPath, np.resolve(currPath, file))
             }
-        } else {
-            const ext = np.extname(path);
-            if (COMPATIBLE_EXTENSIONS.includes(ext)) {
-                this.collectImportStatements(path)
-            } else if (INCLUDED_ASSET_EXTENSIONS.includes(ext)) {
-                this.collectImportedAsset(path);
-            }
+            return;
+        }
+
+        const ext = np.extname(currPath);
+        if (COMPATIBLE_EXTENSIONS.includes(ext)) {
+            this.collectImportStatements(srcPath, currPath)
+        } else if (INCLUDED_ASSET_EXTENSIONS.includes(ext)) {
+            this.collectImportedAsset(srcPath, currPath);
         }
     }
 
-    private collectImportedAsset(fullPath: string) {
+    private collectImportedAsset(srcPath: string, fullPath: string) {
 
         const info = np.parse(fullPath);
         // const p = np.join(info.dir, info.name)
-        const relativePath = np.relative(this.sourceDir, fullPath);
+        const relativePath = np.relative(srcPath, fullPath);
 
 
         const codeFile: CodeFile = {
@@ -76,19 +81,21 @@ export default class Scanner {
             source: '',
             imports: [],
             directory: false,
+            isAsset: true,
+            hasChanged: false
         };
 
         this.map.set(codeFile.path, codeFile);
     }
 
-    private collectImportStatements(fullPath: string) {
+    private collectImportStatements(srcPath: string, fullPath: string) {
 
         const b = fs.readFileSync(fullPath);
         const str = b.toString();
 
         const info = np.parse(fullPath);
         const p = np.join(info.dir, info.name)
-        const relativePath = np.relative(this.sourceDir, p);
+        const relativePath = np.relative(srcPath, p);
 
 
         const codeFile: CodeFile = {
@@ -98,6 +105,8 @@ export default class Scanner {
             source: str,
             directory: false,
             imports: new Array<ImportEntry>(),
+            isAsset: false,
+            hasChanged: false
         };
 
         const m = str.matchAll(MATCH_IMPORTS_REGEX);
@@ -142,7 +151,7 @@ export default class Scanner {
 
         this.map.iterateImports((map, codeFile, imp) => {
             const targetPath = rootsy(imp.ref, codeFile.path);
-            const matchPath =  alternativeStringTheory(targetPath);
+            const matchPath = stripExtensionOnCodeFiles(targetPath);
             imp.external = !map.has(matchPath);
             if (!imp.external) {
                 imp.file = targetPath;
