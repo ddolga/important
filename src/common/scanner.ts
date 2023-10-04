@@ -19,7 +19,6 @@ function isDirectory(path: string) {
 }
 
 const trimQuotes = /['"]*/gm;
-const ROOT_PATH_MATCHER = /^(src,test)/gm;
 
 export function stripExtensionOnCodeFiles(path) {
     return INCLUDED_ASSET_EXTENSIONS.includes(np.extname(path)) ? path : stripExtension(path);
@@ -28,12 +27,14 @@ export function stripExtensionOnCodeFiles(path) {
 export default class Scanner {
 
     private map: ImportMap = new ImportMap();
+    private rootDir:string;
     private readonly sourceDir: string[];
 
     constructor(private readonly config: Config) {
         const rootDirectory = this.getRootDirectory(config);
         console.log('Root directory: ' + rootDirectory)
         this.sourceDir = this.config.sourceDir.map(dir => np.join(rootDirectory, dir)).filter(p => isDirectory(p));
+        this.rootDir = rootDirectory;
     }
 
     private getRootDirectory(config: Config) {
@@ -96,8 +97,7 @@ export default class Scanner {
 
         const info = np.parse(fullPath);
         const p = np.join(info.dir, info.name)
-        const relativePath = np.relative(srcPath, p);
-
+        const relativePath = np.relative(this.rootDir, p);
 
         const codeFile: CodeFile = {
             name: info.name,
@@ -131,20 +131,9 @@ export default class Scanner {
         this.map.set(codeFile.path, codeFile);
     }
 
-    private stripExtension(path: string) {
-        const info = np.parse(path);
-        if (info.dir) {
-            return np.join(info.dir, info.name);
-        }
-        return path;
-    }
-
     private rootsy(ref: string, root: string) {
         if (ref.startsWith('.')) {
             return np.join(root, '../', ref)
-        } else if (ref.startsWith('src/')) {
-            const r = ref.replace('src/', '');
-            return np.join('.', r);
         }
         return np.join('.', ref);
     }

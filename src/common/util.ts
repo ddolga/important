@@ -2,6 +2,7 @@ import * as fs from "fs";
 import * as np from "path";
 import {CodeFile, ImportMap} from "./types/ImportMap";
 import {omit} from "lodash";
+import {COMPATIBLE_EXTENSIONS} from "./types/const";
 
 interface PrintMapOptions {
     internal?: boolean,
@@ -48,5 +49,9 @@ export function stripAll(str:string){
 
 export function stripExtension(path) {
     const ext = np.extname(path);
-    return path.replace(ext, '');
+    if(COMPATIBLE_EXTENSIONS.includes(ext)){
+        return path.replace(ext, '');
+    }
+
+    return path;
 }
