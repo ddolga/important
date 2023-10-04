@@ -4,7 +4,7 @@
   "description": "module import manager and converter",
   "main": "src/main.ts",
   "scripts": {
-    "start": "node ./dist/main.js",
+    "start": "node ./dist/imp.build.js",
     "build": "node ./build_script.mjs"
   },
   "bin": {
